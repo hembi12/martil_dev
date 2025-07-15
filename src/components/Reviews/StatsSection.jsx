@@ -23,7 +23,7 @@ const StatsSection = () => {
           ¿Listo para ser el próximo caso de éxito?
         </h3>
         <p className="text-neutral-600 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
-          Únete a más de 200 empresarios que han transformado sus negocios con
+          Únete a más de 100 clientes que han transformado sus negocios con
           nuestras soluciones web
         </p>
         <button className="px-8 sm:px-10 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-full text-sm sm:text-base md:text-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 shadow-lg hover:shadow-xl">

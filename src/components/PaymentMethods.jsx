@@ -70,7 +70,7 @@ export default function PaymentMethodsSingleCard() {
         <div className="text-center mt-6 sm:mt-8 lg:mt-12">
           {/* Payment Terms */}
           <p className="text-xs sm:text-sm md:text-base lg:text-lg text-neutral-600 px-2 sm:px-4 mb-4 sm:mb-6 lg:mb-8">
-            Aceptamos pagos hasta en <strong className="text-neutral-800">12 meses sin intereses</strong>
+            Aceptamos pagos hasta en <strong className="text-blue-600">12 meses sin intereses</strong>
           </p>
           
           {/* Payment Logos */}

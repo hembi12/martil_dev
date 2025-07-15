@@ -107,7 +107,7 @@ import {
   // Estadísticas de la empresa
   export const statsData = [
     {
-      value: "200+",
+      value: "100+",
       label: "Clientes satisfechos",
     },
     {

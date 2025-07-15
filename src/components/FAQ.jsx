@@ -78,7 +78,7 @@ export default function FAQ() {
     >
       <div className="max-w-4xl mx-auto">
         {/* Header de la sección */}
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6">
             Preguntas frecuentes
           </h2>
@@ -173,7 +173,7 @@ export default function FAQ() {
         )}
 
         {/* CTA al final */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8">
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 mb-4 sm:mb-6">
             ¿Tienes alguna otra pregunta?
           </h3>

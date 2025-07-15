@@ -2,24 +2,24 @@ import { CheckCircle } from "lucide-react";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className="bg-gradient-to-b from-blue-50 to-blue-100 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
         {/* Texto principal */}
         <div className="text-center lg:text-left order-2 lg:order-1">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
-            Desarrollo web profesional para negocios y emprendedores
+            Tu sitio web, sin plantillas, sin límites
           </h1>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-600 max-w-2xl mx-auto lg:mx-0">
-            Creamos sitios web profesionales que impulsan tus ideas. Diseño
-            moderno, funcionalidad avanzada y resultados garantizados.
+            Olvídate de lo genérico. Diseñamos desde cero pensando en tu
+            negocio, tus objetivos y tus clientes.
           </p>
 
           {/* Lista de beneficios */}
           <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
             {[
-              "100% responsivo, adaptable y rápido",
-              "Optimización SEO desde el inicio",
-              "Automatización para ahorrar tiempo y recursos",
+              "100% responsivo",
+              "Soporte 24/7",
+              "Facilidades de pago",
             ].map((text, idx) => (
               <div
                 key={idx}
@@ -40,16 +40,47 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Imagen decorativa */}
+        {/* Mockup de navegador Mac */}
         <div className="w-full order-2 lg:order-2">
           <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
-              alt="Desarrollo web"
-              className="w-full h-64 sm:h-80 md:h-96 lg:h-auto object-cover rounded-xl shadow-lg"
-            />
-            {/* Overlay decorativo opcional */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-xl"></div>
+            {/* Contenedor del navegador */}
+            <div className="bg-neutral-100 rounded-t-xl p-3 shadow-2xl">
+              {/* Barra superior del navegador */}
+              <div className="flex items-center gap-2 mb-3">
+                {/* Botones de semáforo */}
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                
+                {/* Barra de dirección */}
+                <div className="flex-1 ml-4">
+                  <div className="bg-neutral-200 rounded-md px-3 py-1 text-xs text-neutral-900 flex items-center">
+                    <div className="w-3 h-3 mr-2">
+                      <svg viewBox="0 0 16 16" fill="currentColor" className="w-3 h-3 text-blue-400">
+                        <path fillRule="evenodd" d="M8 0a8 8 0 100 16A8 8 0 008 0zM6.5 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"/>
+                      </svg>
+                    </div>
+                    <span>https://tuempresa.com</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Área de contenido del navegador */}
+              <div className="bg-white rounded-b-lg overflow-hidden">
+                <img
+                  src="/images/hero-sky.webp"
+                  alt="Desarrollo web"
+                  className="w-full h-64 sm:h-80 md:h-96 lg:h-auto object-cover"
+                />
+                {/* Overlay decorativo */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent rounded-b-lg"></div>
+              </div>
+            </div>
+            
+            {/* Sombra adicional para mayor realismo */}
+            <div className="absolute -inset-2 bg-black/10 rounded-xl -z-10 blur-sm"></div>
           </div>
         </div>
       </div>
