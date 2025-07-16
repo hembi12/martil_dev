@@ -16,7 +16,7 @@ const ServiceCard = ({ service, index }) => {
   // Colores para cada icono principal según el índice
   const getIconColor = (index) => {
     const colors = [
-      "text-indigo-50", // Índice 0
+      "text-yellow-50", // Índice 0
       "text-green-50", // Índice 1
       "text-purple-50", // Índice 2
       "text-orange-50", // Índice 3
@@ -56,7 +56,7 @@ const ServiceCard = ({ service, index }) => {
 
   return (
     <div
-      className={`bg-white shadow-md hover:shadow-lg rounded-lg p-6 sm:p-8 text-left card-hover flex flex-col justify-between min-h-[450px] sm:min-h-[580px] md:min-h-[600px] animate-fade-in-up ${
+      className={`bg-white shadow-md hover:shadow-lg rounded-lg p-6 sm:p-8 text-left card-hover flex flex-col justify-between min-h-[550px] sm:min-h-[580px] md:min-h-[660px] animate-fade-in-up ${
         index === 1
           ? "animate-delay-1"
           : index === 2
@@ -72,7 +72,7 @@ const ServiceCard = ({ service, index }) => {
     >
       <div className="flex-grow">
         {/* Header de la tarjeta */}
-        <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
+        <div className="flex items-start gap-3 sm:gap-4 mb-4">
           <div
             className={`flex-shrink-0 p-2 sm:p-3 ${getBackgroundColor(
               index
@@ -81,19 +81,19 @@ const ServiceCard = ({ service, index }) => {
             {renderMainIcon(service.iconName)}
           </div>
           <div className="flex-grow min-w-0">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-800 leading-tight">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-800 text-shadow-xs leading-tight">
               {service.title}
             </h3>
           </div>
         </div>
 
         {/* Precio y tiempo estimado */}
-        <div className="mb-4 sm:mb-6">
-          <p className="font-bold text-xl sm:text-2xl md:text-3xl mb-1">
+        <div className="mb-4">
+          <p className="font-bold text-xl sm:text-2xl md:text-3xl mb-2">
             <span className="text-neutral-600">Desde </span>
             <span className="text-blue-600 text-shadow-xs">{service.priceUSD}</span>
           </p>
-          <p className="text-neutral-500 font-medium text-sm sm:text-base md:text-lg mb-2">
+          <p className="text-neutral-500 font-medium text-sm sm:text-base md:text-lg mb-4">
             {service.priceMXN}
           </p>
           
@@ -107,7 +107,7 @@ const ServiceCard = ({ service, index }) => {
         </div>
 
         {/* Iconos de características con tooltips */}
-        <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
+        <div className="flex flex-wrap gap-2 mb-4">
           {service.serviceIcons.map((iconItem, iconIndex) => (
             <div
               key={iconIndex}
@@ -131,27 +131,34 @@ const ServiceCard = ({ service, index }) => {
         </div>
 
         {/* Descripción */}
-        <p className="text-neutral-600 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">
+        <p className="text-neutral-600 mb-4 text-sm sm:text-base md:text-lg leading-relaxed">
           {service.description}
         </p>
 
         {/* Lista de características */}
-        <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+        <ul className="space-y-2 sm:space-y-3 mb-4">
           {service.features.map((feature, i) => (
             <li
               key={i}
               className="flex items-start gap-2 sm:gap-3 text-neutral-700 text-sm sm:text-base"
             >
-              <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-0.5 flex-shrink-0" />
+              <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mt-0.5 flex-shrink-0" />
               <span className="leading-relaxed">{feature}</span>
             </li>
           ))}
         </ul>
+
+        {/* Texto adicional sobre más características */}
+        <div className="mb-4">
+          <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
+            Conoce todas las funcionalidades haciendo clic en el botón
+          </p>
+        </div>
       </div>
 
       {/* Botón de CTA */}
       <div className="mt-auto">
-        <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer">
+        <button className="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer">
           Me interesa
         </button>
       </div>

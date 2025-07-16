@@ -21,8 +21,8 @@ export default function Services() {
 
       <div className="max-w-7xl mx-auto">
         {/* Section Header integrado */}
-        <div className="text-center mb-8 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-xs leading-tight">
             Soluciones para cada tipo de cliente
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">

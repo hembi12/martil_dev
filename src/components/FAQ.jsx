@@ -74,12 +74,12 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="bg-gradient-to-b from-neutral-50 to-neutral-100 py-4 sm:py-8 px-4 sm:px-6 lg:px-8"
+      className="bg-gradient-to-b from-neutral-100 to-neutral-50 py-4 sm:py-8 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-4xl mx-auto">
         {/* Header de la sección */}
-        <div className="text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-xs">
             Preguntas frecuentes
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
@@ -177,7 +177,7 @@ export default function FAQ() {
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 mb-4 sm:mb-6">
             ¿Tienes alguna otra pregunta?
           </h3>
-          <p className="text-neutral-600 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
+          <p className="text-neutral-600 text-sm sm:text-base md:text-lg mb-6 max-w-2xl mx-auto">
             Nuestro equipo está aquí para ayudarte. Contáctanos y resolveremos
             todas tus dudas sobre tu proyecto web.
           </p>

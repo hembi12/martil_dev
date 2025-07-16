@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Home, Box, Star, HelpCircle } from 'lucide-react';
+import { Menu, X, Home, Box, Star, HelpCircle, Route } from 'lucide-react';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,6 +19,12 @@ export default function Header() {
       icon: <Box className="w-4 h-4" />
     },
     { 
+      id: 'work-process', 
+      label: 'Proceso de Trabajo', 
+      href: '#work-process', 
+      icon: <Route className="w-4 h-4" />
+    },
+    { 
       id: 'testimonios', 
       label: 'Reseñas', 
       href: '#testimonios', 
@@ -35,7 +41,7 @@ export default function Header() {
   // Función para detectar la sección activa
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['inicio', 'servicios', 'testimonios', 'faq'];
+      const sections = ['inicio', 'servicios', 'work-process', 'testimonios', 'faq'];
       const scrollPosition = window.scrollY + 100; // Offset para mejor detección
 
       // Si estamos en la parte superior de la página

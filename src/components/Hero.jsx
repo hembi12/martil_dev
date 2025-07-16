@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
         {/* Texto principal */}
         <div className="text-center lg:text-left order-2 lg:order-1">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 sm:mb-6 lg:mb-8 text-shadow-xs leading-tight">
             Tu sitio web, sin plantillas, sin límites
           </h1>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-600 max-w-2xl mx-auto lg:mx-0">
@@ -41,7 +41,7 @@ export default function Hero() {
               <span className="text-lg sm:text-xl md:text-2xl text-neutral-600 font-normal ml-1">USD</span>
             </div>
             <p className="text-sm sm:text-base text-neutral-700 mt-1">
-              $1,980 MXN
+              $1,980 MXN Por servicio
             </p>
           </div>
 

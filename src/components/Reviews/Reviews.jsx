@@ -52,12 +52,12 @@ export default function Reviews() {
   return (
     <section
       id="testimonios"
-      className="bg-gradient-to-b from-neutral-100 to-neutral-50 py-4 sm:py-12 px-4 sm:px-6 lg:px-8"
+      className="bg-gradient-to-b from-neutral-50 to-neutral-100 py-4 sm:py-12 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-xs">
             Lo que dicen nuestros clientes
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">

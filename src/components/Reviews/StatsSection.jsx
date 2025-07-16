@@ -22,7 +22,7 @@ const StatsSection = () => {
         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 mb-3 sm:mb-4">
           ¿Listo para ser el próximo caso de éxito?
         </h3>
-        <p className="text-neutral-600 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
+        <p className="text-neutral-600 text-sm sm:text-base md:text-lg mb-6 max-w-2xl mx-auto">
           Únete a más de 100 clientes que han transformado sus negocios con
           nuestras soluciones web
         </p>

@@ -25,14 +25,14 @@ export default function PaymentMethodsSingleCard() {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-neutral-50 to-neutral-100 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-b from-neutral-100 to-neutral-50 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-6 sm:mb-8 lg:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900 mb-2 sm:mb-3 md:mb-4 lg:mb-6 leading-tight">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-xs">
             Métodos de Pago
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4 lg:px-0">
+          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
             Formas de pago disponibles. Usamos canales seguros y confiables.
           </p>
         </div>

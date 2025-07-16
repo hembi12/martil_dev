@@ -41,8 +41,8 @@ export default function Trust() {
       <section className="bg-gradient-to-b from-neutral-50 to-neutral-100 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Título opcional de la sección */}
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-xs">
               Confianza respaldada por nuestros de clientes
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
@@ -144,7 +144,7 @@ export default function Trust() {
   
           {/* Llamada a la acción opcional */}
           <div className="text-center mt-6">
-            <p className="text-sm sm:text-base md:text-lg text-neutral-600 mb-4">
+            <p className="text-sm sm:text-base md:text-lg text-neutral-600 mb-6">
               ¿Listo para unirte a miles de clientes satisfechos?
             </p>
             <button className="px-6 py-3 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer">

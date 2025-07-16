@@ -28,7 +28,7 @@ const CustomQuoteCTA = () => {
         </h3>
         
         {/* Descripción */}
-        <p className="text-neutral-600 text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
+        <p className="text-neutral-600 text-sm sm:text-base md:text-lg lg:text-xl mb-6 max-w-3xl mx-auto leading-relaxed px-4">
           Creamos soluciones personalizadas para proyectos únicos. 
           Cuéntanos tu idea y te ayudamos a hacerla realidad.
         </p>
