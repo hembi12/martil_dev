@@ -61,7 +61,7 @@ export default function Reviews() {
             Lo que dicen nuestros clientes
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-            Más de 200 clientes satisfechos confían en nosotros para hacer
+            Más de 100 clientes satisfechos confían en nosotros para hacer
             crecer sus negocios online
           </p>
         </div>

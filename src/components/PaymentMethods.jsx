@@ -38,7 +38,7 @@ export default function PaymentMethodsSingleCard() {
         </div>
 
         {/* Payment Options Card */}
-        <div className="bg-white border border-neutral-200 rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div className="bg-white border border-neutral-200 rounded-lg p-4 sm:p-6 md:p-8 lg:p-10 shadow-md hover:shadow-lg transition-shadow duration-300">
           {/* Payment Methods Grid */}
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
             {paymentOptions.map((option, index) => (
@@ -47,7 +47,7 @@ export default function PaymentMethodsSingleCard() {
                 className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 md:p-2 lg:p-3 hover:bg-blue-50 rounded-lg transition-colors duration-200"
               >
                 {/* Icon Container */}
-                <div className="p-2 sm:p-2.5 md:p-3 bg-blue-50 rounded-full flex-shrink-0">
+                <div className="p-2 sm:p-2.5 md:p-3 bg-blue-50 rounded-lg flex-shrink-0">
                   {option.icon}
                 </div>
 

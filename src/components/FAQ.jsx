@@ -74,7 +74,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="bg-gradient-to-b from-blue-100 to-blue-50 py-4 sm:py-8 px-4 sm:px-6 lg:px-8"
+      className="bg-gradient-to-b from-neutral-50 to-neutral-100 py-4 sm:py-8 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-4xl mx-auto">
         {/* Header de la sección */}
@@ -93,8 +93,8 @@ export default function FAQ() {
           {faqs.slice(0, visibleItems).map((faq, index) => (
             <div
               key={index}
-              className={`bg-white rounded-xl sm:rounded-2xl border border-neutral-200 transition-all duration-300 shadow-md hover:shadow-lg ${
-                openItem === index ? "shadow-lg ring-2 ring-blue-100" : ""
+              className={`bg-white rounded-lg border border-neutral-200 transition-all duration-300 shadow-md hover:shadow-lg ${
+                openItem === index ? "shadow-md ring-2 ring-blue-100" : ""
               }`}
             >
               {/* Pregunta - Botón clickeable */}
@@ -113,7 +113,7 @@ export default function FAQ() {
                   {/* Icono de expansión */}
                   <div className="flex-shrink-0 ml-4">
                     <div
-                      className={`p-1 rounded-full transition-all duration-300 ${
+                      className={`p-1 rounded-lg transition-all duration-300 cursor-pointer ${
                         openItem === index
                           ? "bg-blue-600 text-white rotate-180"
                           : "bg-white border border-blue-600 text-blue-600 hover:bg-blue-100"
@@ -157,7 +157,7 @@ export default function FAQ() {
                 onClick={showMoreFAQs}
                 className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm sm:text-base hover:text-blue-700 transition-all duration-300 group"
               >
-                <span className="group-hover:border-blue-700 hover:underline pb-0.5">Ver más preguntas</span>
+                <span className="group-hover:border-blue-700 hover:underline pb-0.5 cursor-pointer">Ver más preguntas</span>
                 <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
               </button>
             ) : (
@@ -165,7 +165,7 @@ export default function FAQ() {
                 onClick={showLessFAQs}
                 className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm sm:text-base hover:text-blue-700 transition-all duration-300 group"
               >
-                <span className="group-hover:border-blue-700 hover:underline pb-0.5">Ver menos preguntas</span>
+                <span className="group-hover:border-blue-700 hover:underline pb-0.5 cursor-pointer">Ver menos preguntas</span>
                 <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-y-0.5 transition-transform duration-300" />
               </button>
             )}
@@ -181,7 +181,7 @@ export default function FAQ() {
             Nuestro equipo está aquí para ayudarte. Contáctanos y resolveremos
             todas tus dudas sobre tu proyecto web.
           </p>
-          <button className="px-8 sm:px-10 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-full text-sm sm:text-base md:text-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 shadow-md hover:shadow-lg">
+          <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer">
             Contáctanos ahora
           </button>
         </div>

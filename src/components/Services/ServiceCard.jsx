@@ -1,4 +1,4 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Clock } from "lucide-react";
 import { useState } from "react";
 import { iconMap } from "./data/servicesData";
 
@@ -87,15 +87,23 @@ const ServiceCard = ({ service, index }) => {
           </div>
         </div>
 
-        {/* Precio destacado */}
+        {/* Precio y tiempo estimado */}
         <div className="mb-4 sm:mb-6">
           <p className="font-bold text-xl sm:text-2xl md:text-3xl mb-1">
             <span className="text-neutral-600">Desde </span>
             <span className="text-blue-600 text-shadow-xs">{service.priceUSD}</span>
           </p>
-          <p className="text-neutral-500 font-medium text-sm sm:text-base md:text-lg">
+          <p className="text-neutral-500 font-medium text-sm sm:text-base md:text-lg mb-2">
             {service.priceMXN}
           </p>
+          
+          {/* Tiempo estimado */}
+          <div className="flex items-center gap-2 text-green-600">
+            <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="text-sm sm:text-base font-medium">
+              Tiempo estimado: {service.estimatedTime}
+            </span>
+          </div>
         </div>
 
         {/* Iconos de características con tooltips */}

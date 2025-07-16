@@ -41,7 +41,7 @@ export default function Hero() {
               <span className="text-lg sm:text-xl md:text-2xl text-neutral-600 font-normal ml-1">USD</span>
             </div>
             <p className="text-sm sm:text-base text-neutral-700 mt-1">
-              $1,880 MXN
+              $1,980 MXN
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export default function Hero() {
         <div className="w-full order-2 lg:order-2">
           <div className="relative">
             {/* Contenedor del navegador */}
-            <div className="bg-neutral-300 rounded-lg p-3 shadow-md">
+            <div className="bg-white rounded-lg p-3 shadow-md border border-neutral-200">
               {/* Barra superior del navegador */}
               <div className="flex items-center gap-2 mb-3">
                 {/* Botones de semáforo */}
@@ -68,7 +68,7 @@ export default function Hero() {
                 
                 {/* Barra de dirección */}
                 <div className="flex-1 ml-4">
-                  <div className="bg-neutral-100 rounded-md px-3 py-1 text-xs text-neutral-900 flex items-center">
+                  <div className="bg-neutral-200 rounded-md px-3 py-1 text-xs text-neutral-900 border border-neutral-200 flex items-center">
                     <div className="w-3 h-3 mr-2">
                       <svg viewBox="0 0 16 16" fill="currentColor" className="w-3 h-3 text-blue-400">
                         <path fillRule="evenodd" d="M8 0a8 8 0 100 16A8 8 0 008 0zM6.5 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"/>

@@ -16,16 +16,16 @@ const TestimonialCard = ({ testimonial }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-lg p-6 sm:p-8 md:p-12 relative overflow-hidden">
-      <div className="absolute top-4 left-4 sm:top-6 sm:left-6">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 sm:p-8 md:p-12 relative overflow-hidden">
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
         <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-blue-200" />
       </div>
 
       <div className="relative z-10">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-6">
           <div className="flex-shrink-0">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center">
-              <span className="text-blue-600 font-bold text-lg sm:text-xl">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-blue-50 font-bold text-lg sm:text-xl">
                 {getInitials(testimonial.name)}
               </span>
             </div>
@@ -77,7 +77,7 @@ const TestimonialCard = ({ testimonial }) => {
           "{testimonial.review}"
         </blockquote>
 
-        <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+        <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-lg text-sm font-medium">
           <span>Servicio:</span>
           <span className="font-semibold">{testimonial.service}</span>
         </div>
