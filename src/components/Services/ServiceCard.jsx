@@ -1,6 +1,6 @@
 import { CheckCircle } from "lucide-react";
 import { useState } from "react";
-import { iconMap } from './data/servicesData';
+import { iconMap } from "./data/servicesData";
 
 const ServiceCard = ({ service, index }) => {
   const [tooltip, setTooltip] = useState(null);
@@ -13,20 +13,50 @@ const ServiceCard = ({ service, index }) => {
     setTooltip(null);
   };
 
+  // Colores para cada icono principal según el índice
+  const getIconColor = (index) => {
+    const colors = [
+      "text-indigo-50", // Índice 0
+      "text-green-50", // Índice 1
+      "text-purple-50", // Índice 2
+      "text-orange-50", // Índice 3
+      "text-red-50", // Índice 4
+      "text-teal-50", // Índice 5
+    ];
+    return colors[index % colors.length];
+  };
+
+  // Colores de fondo correspondientes para cada icono
+  const getBackgroundColor = (index) => {
+    const backgrounds = [
+      "bg-gradient-to-br from-yellow-500 to-yellow-700 shadow-xs", // Índice 0
+      "bg-gradient-to-br from-green-500 to-emerald-700 shadow-xs", // Índice 1
+      "bg-gradient-to-br from-purple-500 to-fuchsia-700 shadow-xs", // Índice 2
+      "bg-gradient-to-br from-orange-400 to-amber-600 shadow-xs", // Índice 3
+      "bg-gradient-to-br from-red-500 to-rose-700 shadow-xs", // Índice 4
+      "bg-gradient-to-br from-teal-400 to-cyan-600 shadow-xs", // Índice 5
+    ];
+    return backgrounds[index % backgrounds.length];
+  };
+
   // Función para renderizar iconos desde el mapa
   const renderIcon = (iconName, className = "w-4 h-4") => {
     const IconComponent = iconMap[iconName];
     return IconComponent ? <IconComponent className={className} /> : null;
   };
 
-  // Renderizar el icono principal con clases responsivas
+  // Renderizar el icono principal con clases responsivas y color específico
   const renderMainIcon = (iconName) => {
-    return renderIcon(iconName, "w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-600");
+    const colorClass = getIconColor(index);
+    return renderIcon(
+      iconName,
+      `w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ${colorClass}`
+    );
   };
 
   return (
     <div
-      className={`bg-white shadow-md hover:shadow-lg rounded-xl p-6 sm:p-8 text-left card-hover flex flex-col justify-between min-h-[450px] sm:min-h-[580px] md:min-h-[600px] animate-fade-in-up ${
+      className={`bg-white shadow-md hover:shadow-lg rounded-lg p-6 sm:p-8 text-left card-hover flex flex-col justify-between min-h-[450px] sm:min-h-[580px] md:min-h-[600px] animate-fade-in-up ${
         index === 1
           ? "animate-delay-1"
           : index === 2
@@ -43,7 +73,11 @@ const ServiceCard = ({ service, index }) => {
       <div className="flex-grow">
         {/* Header de la tarjeta */}
         <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
-          <div className="flex-shrink-0 p-2 sm:p-3 bg-blue-50 rounded-lg">
+          <div
+            className={`flex-shrink-0 p-2 sm:p-3 ${getBackgroundColor(
+              index
+            )} rounded-lg`}
+          >
             {renderMainIcon(service.iconName)}
           </div>
           <div className="flex-grow min-w-0">
@@ -55,8 +89,9 @@ const ServiceCard = ({ service, index }) => {
 
         {/* Precio destacado */}
         <div className="mb-4 sm:mb-6">
-          <p className="text-blue-600 font-bold text-xl sm:text-2xl md:text-3xl mb-1">
-            Desde {service.priceUSD}
+          <p className="font-bold text-xl sm:text-2xl md:text-3xl mb-1">
+            <span className="text-neutral-600">Desde </span>
+            <span className="text-blue-600 text-shadow-xs">{service.priceUSD}</span>
           </p>
           <p className="text-neutral-500 font-medium text-sm sm:text-base md:text-lg">
             {service.priceMXN}
@@ -72,8 +107,8 @@ const ServiceCard = ({ service, index }) => {
               onMouseEnter={() => handleMouseEnter(iconIndex)}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="p-2 bg-neutral-100 hover:bg-blue-50 rounded-lg transition-colors duration-200 cursor-help">
-                <span className="text-neutral-700 hover:text-blue-600 transition-colors">
+              <div className="p-2 bg-blue-100 hover:bg-blue-200 rounded-lg transition-colors duration-200 cursor-help">
+                <span className="text-blue-600 hover:text-blue-700 transition-colors">
                   {renderIcon(iconItem.iconName)}
                 </span>
               </div>
@@ -108,7 +143,7 @@ const ServiceCard = ({ service, index }) => {
 
       {/* Botón de CTA */}
       <div className="mt-auto">
-        <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-full text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-200">
+        <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer">
           Me interesa
         </button>
       </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Home, Package, Star, HelpCircle } from 'lucide-react';
+import { Menu, X, Home, Box, Star, HelpCircle } from 'lucide-react';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,7 +16,7 @@ export default function Header() {
       id: 'servicios', 
       label: 'Servicios', 
       href: '#servicios', 
-      icon: <Package className="w-4 h-4" />
+      icon: <Box className="w-4 h-4" />
     },
     { 
       id: 'testimonios', 
@@ -90,9 +90,14 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-blue-50 shadow-md">
+    <header className="sticky top-0 z-50 bg-neutral-50 shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <h1 className="text-xl font-bold text-blue-600">MARTIL.DEV</h1>
+        <div className="flex items-center gap-2">
+          <div className="rounded-lg bg-blue-600 p-2 shadow-md">
+            <Box className="w-6 h-6 text-white" />
+          </div>
+          <h1 className="text-xl font-bold text-neutral-900 text-shadow-xs">MARTIL.DEV</h1>
+        </div>
 
         {/* Botón de hamburguesa */}
         <button
@@ -108,7 +113,7 @@ export default function Header() {
             <button
               key={item.id}
               onClick={() => handleMenuClick(item)}
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 ${
+              className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 cursor-pointer ${
                 activeSection === item.id
                   ? 'text-blue-600 bg-blue-100 font-medium'
                   : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
@@ -123,12 +128,12 @@ export default function Header() {
 
       {/* Menú móvil desplegable */}
       {menuOpen && (
-        <nav className="lg:hidden px-6 pb-4 space-y-2 bg-blue-50 border-t border-gray-200">
+        <nav className="lg:hidden px-6 pb-4 space-y-2 bg-neutral-50">
           {menuItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleMenuClick(item)}
-              className={`flex items-center gap-2 w-full px-2 py-2 mt-4 rounded-lg transition-all duration-200 ${
+              className={`flex items-center gap-2 w-full px-2 py-2 mt-4 rounded-lg transition-all duration-200 cursor-pointer ${
                 activeSection === item.id
                   ? 'text-blue-600 bg-blue-100 font-medium'
                   : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'

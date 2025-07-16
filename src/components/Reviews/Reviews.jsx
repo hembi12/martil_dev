@@ -52,7 +52,7 @@ export default function Reviews() {
   return (
     <section
       id="testimonios"
-      className="bg-gradient-to-b from-blue-50 to-blue-100 py-4 sm:py-12 px-4 sm:px-6 lg:px-8"
+      className="bg-gradient-to-b from-neutral-100 to-neutral-50 py-4 sm:py-12 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}

@@ -10,7 +10,6 @@ import {
     Box,
     Zap,
     Shield,
-    Heart
   } from "lucide-react";
   
   export default function Footer() {

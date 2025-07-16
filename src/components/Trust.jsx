@@ -30,7 +30,7 @@ export default function Trust() {
       return (
         <div className="flex justify-center gap-0.5">
           {[...Array(fullStars)].map((_, i) => (
-            <span key={i} className="text-amber-500 text-lg sm:text-xl md:text-2xl">★</span>
+            <span key={i} className="text-amber-500 text-shadow-xs text-lg sm:text-xl md:text-2xl">★</span>
           ))}
           {halfStar && <span className="text-amber-500 text-lg sm:text-xl md:text-2xl">☆</span>}
         </div>
@@ -38,7 +38,7 @@ export default function Trust() {
     };
   
     return (
-      <section className="bg-gradient-to-b from-blue-100 to-blue-50 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-b from-neutral-50 to-neutral-100 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Título opcional de la sección */}
           <div className="text-center mb-8">
@@ -66,11 +66,11 @@ export default function Trust() {
                       <div className="text-xl sm:text-2xl font-semibold mb-2 flex items-center">
                         {item.name === 'Credibleon' ? (
                           <div className="flex items-center">
-                            <span className="italic font-light text-green-600">Credi</span>
-                            <span className="font-bold text-green-800">bleon</span>
+                            <span className="font-light text-green-600 text-shadow-xs">Credi</span>
+                            <span className="font-bold text-green-800 text-shadow-xs">bleon</span>
                           </div>
                         ) : (
-                          <span className="text-green-600">{item.name}</span>
+                          <span className="text-green-600 text-shadow-xs">{item.name}</span>
                         )}
                       </div>
   
@@ -81,8 +81,8 @@ export default function Trust() {
   
                       {/* Puntaje y número de reseñas */}
                       <div className="text-center">
-                        <p className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1">
-                          {item.score}<span className="text-lg sm:text-xl text-blue-900">/5</span>
+                        <p className="text-2xl sm:text-3xl text-shadow-xs font-bold text-blue-600 mb-1">
+                          {item.score}<span className="text-lg sm:text-xl text-shadow-xs text-blue-900">/5</span>
                         </p>
                         <p className="text-sm sm:text-base text-blue-900">
                           {item.reviews} opiniones
@@ -98,17 +98,17 @@ export default function Trust() {
                 {ratings.map((item, index) => (
                   <div 
                     key={index} 
-                    className="flex flex-col items-center p-8 bg-white rounded-xl transition-all duration-300 shadow-sm hover:shadow-md hover:scale-105"
+                    className="flex flex-col items-center p-8 bg-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
                   >
                     {/* Logo/Nombre de la plataforma */}
                     <div className="text-2xl lg:text-3xl font-semibold mb-2 h-12 flex items-center">
                       {item.name === 'Credibleon' ? (
                         <div className="flex items-center">
-                          <span className="italic font-light text-green-600">Credi</span>
-                          <span className="font-bold text-green-800">bleon</span>
+                          <span className="font-light text-green-600 text-shadow-xs">Credi</span>
+                          <span className="font-bold text-green-800 text-shadow-xs">bleon</span>
                         </div>
                       ) : (
-                        <span className="text-green-600">{item.name}</span>
+                        <span className="text-green-600 text-shadow-xs">{item.name}</span>
                       )}
                     </div>
   
@@ -144,10 +144,10 @@ export default function Trust() {
   
           {/* Llamada a la acción opcional */}
           <div className="text-center mt-6">
-            <p className="text-sm sm:text-base md:text-lg text-neutral-600 mb-4 sm:mb-6">
+            <p className="text-sm sm:text-base md:text-lg text-neutral-600 mb-4">
               ¿Listo para unirte a miles de clientes satisfechos?
             </p>
-            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-full hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg">
+            <button className="px-6 py-3 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer">
               Comenzar ahora
             </button>
           </div>

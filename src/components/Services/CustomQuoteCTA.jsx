@@ -36,7 +36,7 @@ const CustomQuoteCTA = () => {
         {/* Botón principal */}
         <button 
           onClick={handleQuoteRequest}
-          className="inline-block px-8 sm:px-10 lg:px-12 py-3 sm:py-4 lg:py-5 bg-blue-600 text-white font-semibold rounded-full text-sm sm:text-base md:text-lg lg:text-xl hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 shadow-md hover:shadow-lg"
+          className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg lg:text-xl hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
         >
           Cotización personalizada
         </button>

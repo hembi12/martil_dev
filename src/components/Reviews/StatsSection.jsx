@@ -7,7 +7,7 @@ const StatsSection = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
         {statsData.map((stat, index) => (
           <div key={index} className="text-center group">
-            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-600 mb-3 sm:mb-4 drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
+            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-600 mb-3 sm:mb-4 text-shadow-lg group-hover:scale-110 transition-transform duration-300">
               {stat.value}
             </div>
             <div className="text-neutral-800 text-sm sm:text-base md:text-lg font-semibold">
@@ -26,7 +26,7 @@ const StatsSection = () => {
           Únete a más de 100 clientes que han transformado sus negocios con
           nuestras soluciones web
         </p>
-        <button className="px-8 sm:px-10 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-full text-sm sm:text-base md:text-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 shadow-lg hover:shadow-xl">
+        <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer">
           Comenzar mi proyecto
         </button>
       </div>
