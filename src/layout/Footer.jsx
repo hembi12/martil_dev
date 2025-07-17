@@ -10,6 +10,7 @@ import {
   Box,
   CheckCircle,
 } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -143,16 +144,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = link.href;
-                    }}
+                  <Link
+                    to={link.href}
                     className="text-neutral-300 text-sm sm:text-base hover:text-blue-300 transition-colors duration-200 block"
                   >
                     {link.text}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -247,26 +244,18 @@ export default function Footer() {
 
             {/* Enlaces legales */}
             <div className="flex gap-6 text-sm text-neutral-100">
-              <a
-                href="/privacidad"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = "/privacidad";
-                }}
+              <Link
+                to="/privacidad"
                 className="hover:text-blue-300 transition-colors duration-200"
               >
                 Privacidad
-              </a>
-              <a
-                href="/terminos"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = "/terminos";
-                }}
+              </Link>
+              <Link
+                to="/terminos"
                 className="hover:text-blue-300 transition-colors duration-200"
               >
                 Términos
-              </a>
+              </Link>
             </div>
           </div>
         </div>
