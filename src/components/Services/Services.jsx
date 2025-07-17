@@ -1,8 +1,27 @@
+import { useRef } from 'react';
 import { servicesData } from "./data/servicesData";
 import ServiceCard from "./ServiceCard";
 import CustomQuoteCTA from "./CustomQuoteCTA";
 
 export default function Services() {
+  const scrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      // Obtener el ancho de la tarjeta más el gap
+      const cardWidth = window.innerWidth < 640 ? 320 + 24 : 384 + 32; // w-80 + gap-6 o w-96 + gap-8
+      scrollRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      // Obtener el ancho de la tarjeta más el gap
+      const cardWidth = window.innerWidth < 640 ? 320 + 24 : 384 + 32; // w-80 + gap-6 o w-96 + gap-8
+      scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
       id="servicios"
@@ -34,7 +53,7 @@ export default function Services() {
         {/* Scroll horizontal de servicios */}
         <div className="relative">
           {/* Contenedor con scroll horizontal */}
-          <div className="overflow-x-auto scrollbar-hide pb-4">
+          <div className="overflow-x-auto scrollbar-hide pb-4" ref={scrollRef}>
             <div className="flex gap-6 sm:gap-8 min-w-max">
               {servicesData.map((service, index) => (
                 <div
@@ -57,6 +76,49 @@ export default function Services() {
                 <div className="w-2 h-2 rounded-full bg-blue-300"></div>
               </div>
             </div>
+          </div>
+
+          {/* Flechas de navegación */}
+          <div className="flex justify-center mt-4 gap-4">
+            <button
+              onClick={scrollLeft}
+              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200"
+              aria-label="Anterior"
+            >
+              <svg
+                className="w-6 h-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            
+            <button
+              onClick={scrollRight}
+              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200"
+              aria-label="Siguiente"
+            >
+              <svg
+                className="w-6 h-6 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
           </div>
         </div>
 
