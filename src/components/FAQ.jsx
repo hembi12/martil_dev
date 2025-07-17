@@ -5,6 +5,15 @@ export default function FAQ() {
   const [openItem, setOpenItem] = useState(null);
   const [visibleItems, setVisibleItems] = useState(2);
 
+  const handleContactUs = () => {
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
+    const message = "¡Hola! He revisado sus preguntas frecuentes pero tengo algunas dudas específicas sobre mi proyecto web. ¿Podrían ayudarme a resolverlas?";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
   const faqs = [
     {
       question: "¿Cuánto tiempo toma desarrollar mi sitio web?",
@@ -181,7 +190,10 @@ export default function FAQ() {
             Nuestro equipo está aquí para ayudarte. Contáctanos y resolveremos
             todas tus dudas sobre tu proyecto web.
           </p>
-          <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer">
+          <button 
+            onClick={handleContactUs}
+            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+          >
             Contáctanos ahora
           </button>
         </div>

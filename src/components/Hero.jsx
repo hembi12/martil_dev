@@ -1,6 +1,15 @@
 import { CheckCircle, ShieldCheck } from "lucide-react";
 
 export default function Hero() {
+  const handleWhatsAppClick = () => {
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
+    const message = "¡Hola! Me interesa solicitar una cotización gratuita para mi sitio web";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="bg-gradient-to-b from-neutral-100 to-neutral-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8">
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
@@ -50,7 +59,10 @@ export default function Hero() {
           </div>
 
           <div className="mt-8">
-            <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer">
+            <button 
+              onClick={handleWhatsAppClick}
+              className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
+            >
               Cotización gratuita
             </button>
 

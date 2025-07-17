@@ -1,6 +1,15 @@
 import { statsData } from './data/reviewsData';
 
 const StatsSection = () => {
+  const handleStartProject = () => {
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
+    const message = "¡Hola! He visto sus estadísticas y casos de éxito, y me convencieron completamente.";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <>
       {/* Estadísticas */}
@@ -26,7 +35,10 @@ const StatsSection = () => {
           Únete a más de 100 clientes que han transformado sus negocios con
           nuestras soluciones web
         </p>
-        <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer">
+        <button 
+          onClick={handleStartProject}
+          className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+        >
           Comenzar mi proyecto
         </button>
       </div>

@@ -13,6 +13,15 @@ const ServiceCard = ({ service, index }) => {
     setTooltip(null);
   };
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
+    const message = "¡Hola! Me interesa solicitar una cotización gratuita para mi sitio web";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
   // Colores para cada icono principal según el índice
   const getIconColor = (index) => {
     const colors = [
@@ -158,7 +167,10 @@ const ServiceCard = ({ service, index }) => {
 
       {/* Botón de CTA */}
       <div className="mt-auto">
-        <button className="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer">
+        <button 
+          onClick={handleWhatsAppClick}
+          className="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+        >
           Me interesa
         </button>
       </div>
