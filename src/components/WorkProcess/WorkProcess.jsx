@@ -8,6 +8,7 @@ import {
   CheckCircle,
   Clock,
 } from "lucide-react";
+import WorkCTA from "./WorkCTA";
 
 const WorkProcess = () => {
   const steps = [
@@ -263,19 +264,7 @@ const WorkProcess = () => {
         </div>
 
         {/* CTA minimalista */}
-        <div className="text-center mt-12 sm:mt-16">
-          <div className="max-w-lg mx-auto">
-            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">
-              ¿Comenzamos tu proyecto?
-            </h3>
-            <p className="text-neutral-600 mb-6">
-              Inicia el proceso hoy y ten tu sitio web listo en tiempo récord
-            </p>
-            <button className="w-full sm:w-auto bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-sm hover:shadow-md">
-              Comenzar ahora
-            </button>
-          </div>
-        </div>
+        <WorkCTA />
       </div>
     </section>
   );

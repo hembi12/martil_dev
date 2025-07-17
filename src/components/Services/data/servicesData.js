@@ -6,9 +6,6 @@ import {
   Users,
   Store,
   Sparkles,
-  Smartphone,
-  Tablet,
-  Monitor,
   Moon,
   Languages,
   Zap,
@@ -19,6 +16,10 @@ import {
   Calendar,
   Clock,
   Contact,
+  UserPlus,
+  ScreenShare,
+  Code,
+  TabletSmartphone,
 } from "lucide-react";
 
 export const servicesData = [
@@ -36,24 +37,24 @@ export const servicesData = [
     ],
     serviceIcons: [
       {
-        iconName: "Smartphone",
-        tooltip: "Optimizado para móviles",
+        iconName: "ScreenShare",
+        tooltip: "Dominio",
       },
       {
-        iconName: "Tablet",
-        tooltip: "Compatible con tablets",
+        iconName: "Code",
+        tooltip: "Hosting",
       },
       {
-        iconName: "Monitor",
-        tooltip: "Diseño para desktop",
+        iconName: "TabletSmartphone",
+        tooltip: "Diseño responsivo",
       },
       {
         iconName: "Search",
-        tooltip: "SEO básico incluido",
+        tooltip: "SEO básico",
       },
       {
         iconName: "Moon",
-        tooltip: "Modo oscuro disponible",
+        tooltip: "Modo oscuro",
       },
       {
         iconName: "Languages",
@@ -79,20 +80,20 @@ export const servicesData = [
     ],
     serviceIcons: [
       {
-        iconName: "Smartphone",
-        tooltip: "Optimizado para móviles",
+        iconName: "ScreenShare",
+        tooltip: "Dominio",
       },
       {
-        iconName: "Tablet",
-        tooltip: "Compatible con tablets",
+        iconName: "Code",
+        tooltip: "Hosting",
       },
       {
-        iconName: "Monitor",
-        tooltip: "Diseño para desktop",
+        iconName: "TabletSmartphone",
+        tooltip: "Diseño responsivo",
       },
       {
         iconName: "Moon",
-        tooltip: "Modo oscuro disponible",
+        tooltip: "Modo oscuro",
       },
       {
         iconName: "Languages",
@@ -122,16 +123,16 @@ export const servicesData = [
     ],
     serviceIcons: [
       {
-        iconName: "Smartphone",
-        tooltip: "Optimizado para móviles",
+        iconName: "ScreenShare",
+        tooltip: "Dominio",
       },
       {
-        iconName: "Tablet",
-        tooltip: "Compatible con tablets",
+        iconName: "Code",
+        tooltip: "Hosting",
       },
       {
-        iconName: "Monitor",
-        tooltip: "Diseño para desktop",
+        iconName: "TabletSmartphone",
+        tooltip: "Diseño responsivo",
       },
       {
         iconName: "ShoppingCart",
@@ -165,20 +166,20 @@ export const servicesData = [
     ],
     serviceIcons: [
       {
-        iconName: "Smartphone",
-        tooltip: "Optimizado para móviles",
+        iconName: "ScreenShare",
+        tooltip: "Dominio",
       },
       {
-        iconName: "Tablet",
-        tooltip: "Compatible con tablets",
+        iconName: "Code",
+        tooltip: "Hosting",
       },
       {
-        iconName: "Monitor",
-        tooltip: "Diseño para desktop",
+        iconName: "TabletSmartphone",
+        tooltip: "Diseño responsivo",
       },
       {
         iconName: "Moon",
-        tooltip: "Modo oscuro disponible",
+        tooltip: "Modo oscuro",
       },
       {
         iconName: "Shield",
@@ -189,7 +190,7 @@ export const servicesData = [
         tooltip: "Galerías optimizadas",
       },
       {
-        iconName: "Globe",
+        iconName: "UserPlus",
         tooltip: "Integración redes sociales",
       },
     ],
@@ -208,16 +209,16 @@ export const servicesData = [
     ],
     serviceIcons: [
       {
-        iconName: "Smartphone",
-        tooltip: "Optimizado para móviles",
+        iconName: "ScreenShare",
+        tooltip: "Dominio",
       },
       {
-        iconName: "Tablet",
-        tooltip: "Compatible con tablets",
+        iconName: "Code",
+        tooltip: "Hosting",
       },
       {
-        iconName: "Monitor",
-        tooltip: "Diseño para desktop",
+        iconName: "TabletSmartphone",
+        tooltip: "Diseño responsivo",
       },
       {
         iconName: "Calendar",
@@ -251,16 +252,16 @@ export const servicesData = [
     ],
     serviceIcons: [
       {
-        iconName: "Smartphone",
-        tooltip: "Optimizado para móviles",
+        iconName: "ScreenShare",
+        tooltip: "Dominio",
       },
       {
-        iconName: "Tablet",
-        tooltip: "Compatible con tablets",
+        iconName: "Code",
+        tooltip: "Hosting",
       },
       {
-        iconName: "Monitor",
-        tooltip: "Diseño para desktop",
+        iconName: "TabletSmartphone",
+        tooltip: "Diseño responsivo",
       },
       {
         iconName: "Calendar",
@@ -290,9 +291,6 @@ export const iconMap = {
   Users,
   Store,
   Sparkles,
-  Smartphone,
-  Tablet,
-  Monitor,
   Moon,
   Languages,
   Zap,
@@ -303,4 +301,8 @@ export const iconMap = {
   Calendar,
   Clock,
   Contact,
+  UserPlus,
+  ScreenShare,
+  Code,
+  TabletSmartphone,
 };

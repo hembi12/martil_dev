@@ -77,7 +77,7 @@ const TestimonialCard = ({ testimonial }) => {
           "{testimonial.review}"
         </blockquote>
 
-        <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-lg text-sm font-medium">
+        <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-3 py-1 rounded-lg text-sm font-medium">
           <span>Servicio:</span>
           <span className="font-semibold">{testimonial.service}</span>
         </div>

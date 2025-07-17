@@ -62,7 +62,7 @@ export default function Reviews() {
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
             Más de 100 clientes satisfechos confían en nosotros para hacer
-            crecer sus negocios online
+            crecer sus negocios online.
           </p>
         </div>
 
