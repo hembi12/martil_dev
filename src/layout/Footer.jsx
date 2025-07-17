@@ -24,19 +24,30 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    "Sobre nosotros",
-    "Portafolio",
-    "Precios",
-    "Blog",
-    "Contacto",
+    { text: "Sobre nosotros", href: "/sobre-nosotros" },
+    { text: "Portafolio", href: "/portafolio" },
+    { text: "Precios", href: "/precios" },
+    { text: "Blog", href: "/blog" },
+    { text: "Contacto", href: "/contacto" },
   ];
 
+  /*
   const socialLinks = [
     { icon: <Facebook className="w-5 h-5" />, href: "#", label: "Facebook" },
     { icon: <Instagram className="w-5 h-5" />, href: "#", label: "Instagram" },
     { icon: <Twitter className="w-5 h-5" />, href: "#", label: "Twitter" },
     { icon: <Linkedin className="w-5 h-5" />, href: "#", label: "LinkedIn" },
   ];
+  */
+
+  const handleWhatsAppClick = (e) => {
+    e.preventDefault();
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
+    const message = "¡Hola! Tengo algunas dudas específicas sobre mi proyecto web. ¿Podrían ayudarme a resolverlas?";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -105,8 +116,17 @@ export default function Footer() {
               {services.map((service, index) => (
                 <li key={index}>
                   <a
-                    href="#"
+                    href="#servicios"
                     className="text-neutral-300 text-sm sm:text-base hover:text-blue-300 transition-colors duration-200 block"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.getElementById('servicios');
+                      if (element) {
+                        const yOffset = -80; // Offset negativo para posicionar por encima del título
+                        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                      }
+                    }}
                   >
                     {service}
                   </a>
@@ -124,10 +144,14 @@ export default function Footer() {
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a
-                    href="#"
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = link.href;
+                    }}
                     className="text-neutral-300 text-sm sm:text-base hover:text-blue-300 transition-colors duration-200 block"
                   >
-                    {link}
+                    {link.text}
                   </a>
                 </li>
               ))}
@@ -145,7 +169,7 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-neutral-400">Email</p>
                   <a
-                    href="mailto:contacto@webstudio.com"
+                    href="mailto:contacto@martil.dev"
                     className="text-neutral-200 text-sm sm:text-base hover:text-blue-300 transition-colors duration-200"
                   >
                     contacto@martil.dev
@@ -158,8 +182,9 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-neutral-400">Teléfono</p>
                   <a
-                    href="tel:+525555123456"
-                    className="text-neutral-200 text-sm sm:text-base hover:text-blue-300 transition-colors duration-200"
+                    href="#"
+                    onClick={handleWhatsAppClick}
+                    className="text-neutral-200 text-sm sm:text-base hover:text-blue-300 transition-colors duration-200 cursor-pointer"
                   >
                     +52 56 3750 0980
                   </a>
@@ -199,7 +224,8 @@ export default function Footer() {
               <span>© {currentYear} MARTIL.DEV</span>
             </div>
 
-            {/* Redes sociales */}
+            {/* Redes sociales - COMENTADO */}
+            {/*
             <div className="flex items-center gap-4">
               <span className="text-sm text-neutral-100 hidden sm:block">
                 Síguenos:
@@ -217,17 +243,26 @@ export default function Footer() {
                 ))}
               </div>
             </div>
+            */}
 
             {/* Enlaces legales */}
             <div className="flex gap-6 text-sm text-neutral-100">
               <a
-                href="#"
+                href="/privacidad"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = "/privacidad";
+                }}
                 className="hover:text-blue-300 transition-colors duration-200"
               >
                 Privacidad
               </a>
               <a
-                href="#"
+                href="/terminos"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = "/terminos";
+                }}
                 className="hover:text-blue-300 transition-colors duration-200"
               >
                 Términos
