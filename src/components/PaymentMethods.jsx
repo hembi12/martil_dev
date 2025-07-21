@@ -29,12 +29,9 @@ export default function PaymentMethodsSingleCard() {
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-xs">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-sm">
             Métodos de Pago
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-            Formas de pago disponibles. Usamos canales seguros y confiables.
-          </p>
         </div>
 
         {/* Payment Options Card */}
@@ -51,12 +48,12 @@ export default function PaymentMethodsSingleCard() {
                   {option.icon}
                 </div>
 
-                {/* Content */}
+                {/* Content - MEJORADO */}
                 <div className="min-w-0 flex-1">
-                  <p className="font-semibold text-neutral-700 text-sm sm:text-base md:text-lg leading-tight mb-1">
+                  <p className="font-semibold text-neutral-700 text-base sm:text-lg md:text-xl leading-tight mb-1">
                     {option.title}
                   </p>
-                  <p className="text-xs sm:text-sm md:text-base text-neutral-500 break-words leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-neutral-500 break-words leading-relaxed">
                     {option.description}
                   </p>
                 </div>
@@ -67,10 +64,10 @@ export default function PaymentMethodsSingleCard() {
 
         {/* Payment Terms & Logos - Outside Container */}
         <div className="text-center mt-6 sm:mt-8 lg:mt-12">
-          {/* Payment Terms */}
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-neutral-600 px-2 sm:px-4 mb-4 sm:mb-6 lg:mb-8">
+          {/* Payment Terms - MEJORADO */}
+          <p className="text-sm sm:text-base md:text-lg text-neutral-600 px-2 sm:px-4 mb-4 sm:mb-6 lg:mb-8">
             Aceptamos pagos hasta en{" "}
-            <strong className="text-blue-600">12 meses sin intereses</strong>
+            <strong className="text-blue-600">12 meses sin intereses*</strong>
           </p>
 
           {/* Payment Logos */}

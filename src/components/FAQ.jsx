@@ -83,72 +83,76 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="bg-gradient-to-b from-neutral-100 to-neutral-50 py-4 sm:py-8 px-4 sm:px-6 lg:px-8"
+      className="bg-gradient-to-b from-neutral-100 to-neutral-50 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-4xl mx-auto">
-        {/* Header de la sección */}
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-xs">
+        {/* Header de la sección - títulos más balanceados */}
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-3 sm:mb-4 lg:mb-6 leading-tight">
             Preguntas frecuentes
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-            Resolvemos las dudas más comunes sobre nuestros servicios de
-            desarrollo web
-          </p>
         </div>
 
         {/* Lista de FAQs */}
-        <div className="space-y-4 sm:space-y-6">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
           {faqs.slice(0, visibleItems).map((faq, index) => (
             <div
               key={index}
-              className={`bg-white rounded-lg border border-neutral-200 transition-all duration-300 shadow-md hover:shadow-lg ${
-                openItem === index ? "shadow-md ring-2 ring-blue-100" : ""
+              className={`bg-white rounded-xl border border-neutral-200 transition-all duration-300 shadow-sm hover:shadow-md ${
+                openItem === index ? "shadow-md ring-1 ring-blue-200 border-blue-200" : ""
               }`}
             >
-              {/* Pregunta - Botón clickeable */}
+              {/* Pregunta - Botón clickeable con mejor UX móvil */}
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full text-left p-6 sm:p-8 focus:outline-none focus:ring-4 focus:ring-blue-200 rounded-xl sm:rounded-2xl transition-all duration-200"
+                className="w-full text-left p-4 sm:p-6 lg:p-8 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset rounded-xl transition-all duration-200 group"
+                aria-expanded={openItem === index}
+                aria-controls={`faq-answer-${index}`}
               >
-                <div className="flex items-start gap-4 sm:gap-6">
-                  {/* Pregunta */}
-                  <div className="flex-grow min-w-0">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-900 leading-tight mb-1">
+                <div className="flex items-start gap-3 sm:gap-4 lg:gap-6">
+                  {/* Pregunta - tamaños optimizados */}
+                  <div className="flex-grow min-w-0 pr-2">
+                    <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-neutral-900 leading-snug group-hover:text-blue-600 transition-colors duration-200">
                       {faq.question}
                     </h3>
                   </div>
 
-                  {/* Icono de expansión */}
-                  <div className="flex-shrink-0 ml-4">
+                  {/* Icono de expansión - más touch-friendly */}
+                  <div className="flex-shrink-0">
                     <div
-                      className={`p-1 rounded-lg transition-all duration-300 cursor-pointer ${
+                      className={`p-2 rounded-lg transition-all duration-300 ${
                         openItem === index
-                          ? "bg-blue-600 text-white rotate-180"
-                          : "bg-white border border-blue-600 text-blue-600 hover:bg-blue-100"
+                          ? "bg-blue-600 text-white"
+                          : "bg-blue-50 border border-blue-200 text-blue-600 hover:bg-blue-100 group-hover:border-blue-300"
                       }`}
                     >
                       {openItem === index ? (
-                        <Minus className="w-5 h-5 sm:w-6 sm:h-6" />
+                        <Minus className="w-4 h-4 sm:w-5 sm:h-5" />
                       ) : (
-                        <Plus className="w-5 h-5 sm:w-6 sm:h-6" />
+                        <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
                       )}
                     </div>
                   </div>
                 </div>
               </button>
 
-              {/* Respuesta - Panel expandible */}
+              {/* Respuesta - Panel expandible con mejor animación */}
               <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                id={`faq-answer-${index}`}
+                className={`overflow-hidden transition-all duration-500 ease-out ${
                   openItem === index
-                    ? "max-h-96 opacity-100"
+                    ? "max-h-[500px] opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
               >
-                <div className="px-6 sm:px-8 pb-6 mt-4 sm:pb-8">
-                  <div className="pl-12 sm:pl-16 md:pl-20">
-                    <p className="text-neutral-700 text-sm sm:text-base md:text-lg leading-relaxed">
+                <div className="px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8">
+                  {/* Línea divisoria sutil */}
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent mb-4 sm:mb-6"></div>
+                  
+                  <div className="pl-0 sm:pl-2 lg:pl-4">
+                    <p className="text-neutral-700 text-sm sm:text-base lg:text-lg leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -158,44 +162,52 @@ export default function FAQ() {
           ))}
         </div>
 
-        {/* Enlace Ver Más/Ver Menos */}
+        {/* Enlace Ver Más/Ver Menos - mejor UX */}
         {faqs.length > 2 && (
-          <div className="text-center mt-8 sm:mt-12">
+          <div className="text-center mt-6 sm:mt-8 lg:mt-12">
             {hasMoreToShow ? (
               <button
                 onClick={showMoreFAQs}
-                className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm sm:text-base hover:text-blue-700 transition-all duration-300 group"
+                className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm sm:text-base hover:text-blue-700 transition-all duration-300 group py-2 px-4 rounded-lg hover:bg-blue-50"
+                aria-label={`Mostrar ${Math.min(2, faqs.length - visibleItems)} preguntas más`}
               >
-                <span className="group-hover:border-blue-700 hover:underline pb-0.5 cursor-pointer">Ver más preguntas</span>
+                <span className="underline-offset-2 group-hover:underline">Ver más preguntas</span>
                 <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
               </button>
             ) : (
               <button
                 onClick={showLessFAQs}
-                className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm sm:text-base hover:text-blue-700 transition-all duration-300 group"
+                className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm sm:text-base hover:text-blue-700 transition-all duration-300 group py-2 px-4 rounded-lg hover:bg-blue-50"
+                aria-label="Mostrar menos preguntas"
               >
-                <span className="group-hover:border-blue-700 hover:underline pb-0.5 cursor-pointer">Ver menos preguntas</span>
+                <span className="underline-offset-2 group-hover:underline">Ver menos preguntas</span>
                 <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-y-0.5 transition-transform duration-300" />
               </button>
             )}
           </div>
         )}
 
-        {/* CTA al final */}
-        <div className="text-center mt-8">
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 mb-4 sm:mb-6">
+        {/* CTA al final - mejorado para móvil */}
+        <div className="text-center mt-8 sm:mt-12 lg:mt-16 px-2 sm:px-4">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-900 mb-3 sm:mb-4 lg:mb-6 leading-tight">
             ¿Tienes alguna otra pregunta?
           </h3>
-          <p className="text-neutral-600 text-sm sm:text-base md:text-lg mb-6 max-w-2xl mx-auto">
+          <p className="text-neutral-600 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
             Nuestro equipo está aquí para ayudarte. Contáctanos y resolveremos
             todas tus dudas sobre tu proyecto web.
           </p>
           <button 
             onClick={handleContactUs}
-            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-xl text-sm sm:text-base lg:text-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:scale-95 transition-all duration-300 shadow-md hover:shadow-lg min-h-[44px] min-w-[140px]"
+            role="button"
           >
-            Contáctanos ahora
+            <span>Contáctanos ahora</span>
           </button>
+          
+          {/* Indicador WhatsApp */}
+          <p className="text-xs sm:text-sm text-neutral-500 mt-3 sm:mt-4">
+            💬 Te responderemos por WhatsApp
+          </p>
         </div>
       </div>
     </section>

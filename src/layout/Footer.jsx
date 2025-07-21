@@ -52,7 +52,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
         {/* Newsletter al principio - COMENTADO */}
         {/*
         <div className="mb-12 pb-8 border-b border-neutral-800">
@@ -78,49 +78,45 @@ export default function Footer() {
         </div>
         */}
 
-        {/* Sección principal del footer */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        {/* Sección principal del footer - Grid mejorado para móvil */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           {/* Información de la empresa */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="p-2 bg-blue-600 rounded-lg">
-                <Box className="w-6 h-6 text-blue-50" />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold">MARTIL.DEV</h3>
-            </div>
-            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed mb-6">
+          <div className="sm:col-span-2 lg:col-span-1">
+            
+            {/* Descripción más legible */}
+            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
               Olvídate de lo genérico. Diseñamos desde cero pensando en tu
               negocio, tus objetivos y tus clientes.
             </p>
 
-            {/* Características destacadas */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-sm text-neutral-300">
-                <CheckCircle className="w-4 h-4 text-green-400" />
+            {/* Características destacadas - mejor espaciado */}
+            <div className="space-y-2 sm:space-y-3">
+              <div className="flex items-center gap-2 sm:gap-3 text-sm text-neutral-300">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
                 <span>Dominio y hosting gratis</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-neutral-300">
-                <CheckCircle className="w-4 h-4 text-green-400" />
+              <div className="flex items-center gap-2 sm:gap-3 text-sm text-neutral-300">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
                 <span>100% responsivo</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-neutral-300">
-                <CheckCircle className="w-4 h-4 text-green-400" />
+              <div className="flex items-center gap-2 sm:gap-3 text-sm text-neutral-300">
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
                 <span>Soporte 24/7</span>
               </div>
             </div>
           </div>
 
-          {/* Servicios */}
+          {/* Servicios - mejor organización */}
           <div className="lg:col-span-1">
-            <h4 className="text-lg sm:text-xl font-semibold mb-6">
-              Paginas web para:
+            <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-4 sm:mb-6 text-white">
+              Páginas web para:
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
                   <a
                     href="#servicios"
-                    className="text-neutral-300 text-sm sm:text-base hover:text-blue-300 transition-colors duration-200 block"
+                    className="text-neutral-300 text-sm sm:text-base hover:text-blue-300 focus:text-blue-300 focus:outline-none transition-colors duration-200 block py-1"
                     onClick={(e) => {
                       e.preventDefault();
                       const element = document.getElementById('servicios');
@@ -140,15 +136,15 @@ export default function Footer() {
 
           {/* Enlaces rápidos */}
           <div className="lg:col-span-1">
-            <h4 className="text-lg sm:text-xl font-semibold mb-6">
+            <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-4 sm:mb-6 text-white">
               Enlaces rápidos
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     to={link.href}
-                    className="text-neutral-300 text-sm sm:text-base hover:text-blue-300 transition-colors duration-200 block"
+                    className="text-neutral-300 text-sm sm:text-base hover:text-blue-300 focus:text-blue-300 focus:outline-none transition-colors duration-200 block py-1"
                   >
                     {link.text}
                   </Link>
@@ -157,53 +153,57 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Información de contacto */}
-          <div className="lg:col-span-1">
-            <h4 className="text-lg sm:text-xl font-semibold mb-6">
+          {/* Información de contacto - mejor organización móvil */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-4 sm:mb-6 text-white">
               Contáctanos
             </h4>
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
+              {/* Email */}
               <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-blue-300 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-neutral-400">Email</p>
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 mt-1 flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-xs sm:text-sm text-neutral-400 mb-0.5">Email</p>
                   <a
                     href="mailto:contacto@martil.dev"
-                    className="text-neutral-200 text-sm sm:text-base hover:text-blue-300 transition-colors duration-200"
+                    className="text-neutral-200 text-sm sm:text-base hover:text-blue-300 focus:text-blue-300 focus:outline-none transition-colors duration-200 break-all"
                   >
                     contacto@martil.dev
                   </a>
                 </div>
               </div>
 
+              {/* Teléfono */}
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-blue-300 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-neutral-400">Teléfono</p>
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 mt-1 flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-xs sm:text-sm text-neutral-400 mb-0.5">WhatsApp</p>
                   <a
                     href="#"
                     onClick={handleWhatsAppClick}
-                    className="text-neutral-200 text-sm sm:text-base hover:text-blue-300 transition-colors duration-200 cursor-pointer"
+                    className="text-neutral-200 text-sm sm:text-base hover:text-blue-300 focus:text-blue-300 focus:outline-none transition-colors duration-200 cursor-pointer"
                   >
                     +52 56 3750 0980
                   </a>
                 </div>
               </div>
 
+              {/* Ubicación */}
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-blue-300 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-neutral-300">Ubicación</p>
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 mt-1 flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-xs sm:text-sm text-neutral-400 mb-0.5">Ubicación</p>
                   <p className="text-neutral-200 text-sm sm:text-base">
                     Ciudad de México, México
                   </p>
                 </div>
               </div>
 
+              {/* Horarios */}
               <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-blue-300 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-neutral-400">Horarios</p>
+                <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 mt-1 flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-xs sm:text-sm text-neutral-400 mb-0.5">Horarios</p>
                   <p className="text-neutral-200 text-sm sm:text-base">
                     Lun - Vie: 9:00 - 18:00
                   </p>
@@ -214,13 +214,13 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Sección inferior del footer */}
+      {/* Sección inferior del footer - mejor responsive */}
       <div className="border-t border-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            {/* Copyright */}
-            <div className="flex items-center gap-1 text-sm text-neutral-100">
-              <span>© {currentYear} MARTIL.DEV</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+            {/* Copyright - mejor legibilidad */}
+            <div className="flex items-center gap-1 text-xs sm:text-sm text-neutral-300 order-2 sm:order-1">
+              <span>© {currentYear} MARTIL.DEV - Todos los derechos reservados</span>
             </div>
 
             {/* Redes sociales - COMENTADO */}
@@ -244,17 +244,17 @@ export default function Footer() {
             </div>
             */}
 
-            {/* Enlaces legales */}
-            <div className="flex gap-6 text-sm text-neutral-100">
+            {/* Enlaces legales - mejor spacing móvil */}
+            <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm text-neutral-300 order-1 sm:order-2">
               <Link
                 to="/privacidad"
-                className="hover:text-blue-300 transition-colors duration-200"
+                className="hover:text-blue-300 focus:text-blue-300 focus:outline-none transition-colors duration-200 py-1"
               >
                 Privacidad
               </Link>
               <Link
                 to="/terminos"
-                className="hover:text-blue-300 transition-colors duration-200"
+                className="hover:text-blue-300 focus:text-blue-300 focus:outline-none transition-colors duration-200 py-1"
               >
                 Términos
               </Link>

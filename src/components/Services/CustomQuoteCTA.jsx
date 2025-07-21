@@ -12,23 +12,28 @@ const CustomQuoteCTA = () => {
   return (
     <div className="text-center mt-6">
       {/* Título principal */}
-      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-3 sm:mb-4 lg:mb-6">
+      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6">
         ¿No encuentras lo que necesitas?
       </h3>
 
-      {/* Descripción */}
-      <p className="text-neutral-600 text-sm sm:text-base md:text-lg lg:text-xl mb-6 max-w-3xl mx-auto leading-relaxed px-4">
+      {/* Descripción - MEJORADA */}
+      <p className="text-neutral-600 text-sm sm:text-base md:text-lg lg:text-xl mb-4 max-w-3xl mx-auto leading-relaxed px-4">
         Creamos soluciones personalizadas para proyectos únicos. Cuéntanos tu
         idea y te ayudamos a hacerla realidad.
       </p>
 
-      {/* Botón principal */}
+      {/* Botón principal - MEJORADO */}
       <button
         onClick={handleQuoteRequest}
         className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg lg:text-xl hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
       >
         Cotización personalizada
       </button>
+
+      {/* Indicador WhatsApp */}
+      <p className="text-xs sm:text-sm text-neutral-500 mt-3 sm:mt-4">
+        💬 Te responderemos por WhatsApp
+      </p>
     </div>
   );
 };

@@ -14,14 +14,16 @@ const WorkCTA = () => {
         <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-3 sm:mb-4 lg:mb-6">
           ¿Comenzamos tu proyecto?
         </h3>
-        <p className="text-neutral-600 text-sm sm:text-base md:text-lg lg:text-xl mb-6 max-w-3xl mx-auto leading-relaxed px-4">
+        {/* Descripción - MEJORADA */}
+        <p className="text-neutral-600 text-sm sm:text-base md:text-lg mb-4 max-w-3xl mx-auto leading-relaxed px-4">
           Inicia el proceso hoy y ten tu sitio web listo en tiempo récord.
         </p>
+        {/* Botón CTA - MEJORADO */}
         <button 
           onClick={handleStartProject}
-          className="w-full sm:w-auto bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-sm hover:shadow-md cursor-pointer"
-        >
-          Comenzar ahora
+          className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+          >
+              Comenzar ahora
         </button>
       </div>
     </div>

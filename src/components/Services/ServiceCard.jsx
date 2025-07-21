@@ -22,15 +22,15 @@ const ServiceCard = ({ service, index }) => {
     window.open(whatsappUrl, '_blank');
   };
 
-  // Colores para cada icono principal según el índice
+  // Colores para cada icono principal
   const getIconColor = (index) => {
     const colors = [
-      "text-yellow-50", // Índice 0
-      "text-green-50", // Índice 1
-      "text-purple-50", // Índice 2
-      "text-orange-50", // Índice 3
-      "text-red-50", // Índice 4
-      "text-teal-50", // Índice 5
+      "text-yellow-50",
+      "text-green-50", 
+      "text-purple-50", 
+      "text-orange-50", 
+      "text-red-50", 
+      "text-teal-50", 
     ];
     return colors[index % colors.length];
   };
@@ -38,12 +38,12 @@ const ServiceCard = ({ service, index }) => {
   // Colores de fondo correspondientes para cada icono
   const getBackgroundColor = (index) => {
     const backgrounds = [
-      "bg-gradient-to-br from-yellow-500 to-yellow-700 shadow-xs", // Índice 0
-      "bg-gradient-to-br from-green-500 to-emerald-700 shadow-xs", // Índice 1
-      "bg-gradient-to-br from-purple-500 to-fuchsia-700 shadow-xs", // Índice 2
-      "bg-gradient-to-br from-orange-400 to-amber-600 shadow-xs", // Índice 3
-      "bg-gradient-to-br from-red-500 to-rose-700 shadow-xs", // Índice 4
-      "bg-gradient-to-br from-teal-400 to-cyan-600 shadow-xs", // Índice 5
+      "bg-gradient-to-br from-yellow-500 to-yellow-700 shadow-xs", 
+      "bg-gradient-to-br from-green-500 to-emerald-700 shadow-xs", 
+      "bg-gradient-to-br from-purple-500 to-fuchsia-700 shadow-xs", 
+      "bg-gradient-to-br from-orange-400 to-amber-600 shadow-xs",
+      "bg-gradient-to-br from-red-500 to-rose-700 shadow-xs", 
+      "bg-gradient-to-br from-teal-400 to-cyan-600 shadow-xs",
     ];
     return backgrounds[index % backgrounds.length];
   };
@@ -65,7 +65,7 @@ const ServiceCard = ({ service, index }) => {
 
   return (
     <div
-      className={`bg-white shadow-md hover:shadow-lg rounded-lg p-6 sm:p-8 text-left card-hover flex flex-col justify-between min-h-[550px] sm:min-h-[580px] md:min-h-[660px] animate-fade-in-up ${
+      className={`bg-white shadow-md hover:shadow-lg rounded-lg p-6 sm:p-8 text-left card-hover flex flex-col justify-between min-h-[560px] md:min-h-[670px] animate-fade-in-up ${
         index === 1
           ? "animate-delay-1"
           : index === 2
@@ -90,26 +90,27 @@ const ServiceCard = ({ service, index }) => {
             {renderMainIcon(service.iconName)}
           </div>
           <div className="flex-grow min-w-0">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-800 text-shadow-xs leading-tight">
+            {/* Título optimizado */}
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-800 text-shadow-sm leading-tight">
               {service.title}
             </h3>
           </div>
         </div>
 
-        {/* Precio y tiempo estimado */}
+        {/* Precio y tiempo estimado - MEJORADO */}
         <div className="mb-4">
-          <p className="font-bold text-xl sm:text-2xl md:text-3xl mb-2">
-            <span className="text-neutral-600">Desde </span>
-            <span className="text-blue-600 text-shadow-xs">{service.priceUSD}</span>
+          <p className="font-bold text-lg sm:text-xl md:text-2xl mb-2">
+            <span className="text-neutral-600 text-base sm:text-lg">Desde </span>
+            <span className="text-blue-600 text-2xl sm:text-3xl text-shadow-sm">{service.priceUSD}</span>
           </p>
           <p className="text-neutral-500 font-medium text-sm sm:text-base md:text-lg mb-4">
             {service.priceMXN}
           </p>
           
           {/* Tiempo estimado */}
-          <div className="flex items-center gap-2 text-green-600">
+          <div className="flex items-center gap-2 text-green-500">
             <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-sm sm:text-base font-medium">
+            <span className="text-sm sm:text-base md:text-lg font-medium">
               Tiempo estimado: {service.estimatedTime}
             </span>
           </div>
@@ -129,8 +130,9 @@ const ServiceCard = ({ service, index }) => {
                   {renderIcon(iconItem.iconName)}
                 </span>
               </div>
+              {/* Tooltip optimizado */}
               {tooltip === iconIndex && (
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-neutral-900 text-white text-xs rounded whitespace-nowrap z-10">
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-blue-600 text-white text-xs sm:text-sm rounded whitespace-nowrap z-10">
                   {iconItem.tooltip}
                   <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-neutral-900"></div>
                 </div>
@@ -139,27 +141,27 @@ const ServiceCard = ({ service, index }) => {
           ))}
         </div>
 
-        {/* Descripción */}
+        {/* Descripción - MEJORADA */}
         <p className="text-neutral-600 mb-4 text-sm sm:text-base md:text-lg leading-relaxed">
           {service.description}
         </p>
 
-        {/* Lista de características */}
+        {/* Lista de características - MEJORADA */}
         <ul className="space-y-2 sm:space-y-3 mb-4">
           {service.features.map((feature, i) => (
             <li
               key={i}
-              className="flex items-start gap-2 sm:gap-3 text-neutral-700 text-sm sm:text-base"
+              className="flex items-start gap-2 sm:gap-3 text-neutral-700 text-sm sm:text-base md:text-lg"
             >
-              <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mt-0.5 flex-shrink-0" />
+              <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-0.5 flex-shrink-0" />
               <span className="leading-relaxed">{feature}</span>
             </li>
           ))}
         </ul>
 
-        {/* Texto adicional sobre más características */}
+        {/* Texto adicional sobre más características - MEJORADO */}
         <div className="mb-4">
-          <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
+          <p className="text-neutral-600 text-sm sm:text-base leading-relaxed">
             Conoce todas las funcionalidades haciendo clic en el botón
           </p>
         </div>

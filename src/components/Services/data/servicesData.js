@@ -28,8 +28,8 @@ export const servicesData = [
     iconName: "Briefcase", // Solo el nombre del icono
     description: "Crea tu presencia online desde cero para atraer más clientes locales.",
     priceUSD: "$99 USD",
-    priceMXN: "$1,980 MXN",
-    estimatedTime: "5-7 días",
+    priceMXN: "$1,980 MXN Pago único.*",
+    estimatedTime: "5-7 días*",
     features: [
       "Página informativa y contacto",
       "Diseño responsivo",
@@ -71,8 +71,8 @@ export const servicesData = [
     iconName: "Building",
     description: "Desarrollamos sitios escalables, modernos y listos para crecer contigo.",
     priceUSD: "$199 USD",
-    priceMXN: "$3,980 MXN",
-    estimatedTime: "14-30 días",
+    priceMXN: "$3,980 MXN Pago único.*",
+    estimatedTime: "14-30 días*",
     features: [
       "Múltiples secciones y CMS",
       "Alta velocidad y seguridad",
@@ -114,8 +114,8 @@ export const servicesData = [
     iconName: "Store",
     description: "Vende productos 24/7 con una tienda rápida, segura y personalizada.",
     priceUSD: "$99 USD",
-    priceMXN: "$1,980 MXN",
-    estimatedTime: "7-30 días",
+    priceMXN: "$1,980 MXN Pago único.*",
+    estimatedTime: "7-30 días*",
     features: [
       "Catálogo de productos",
       "Pasarelas de pago",
@@ -157,8 +157,8 @@ export const servicesData = [
     iconName: "Sparkles",
     description: "Una web con tu estilo, integrada con redes sociales y enfocada en tu audiencia.",
     priceUSD: "$99 USD",
-    priceMXN: "$1,980 MXN",
-    estimatedTime: "7-21 días",
+    priceMXN: "$1,980 MXN Pago único.*",
+    estimatedTime: "7-21 días*",
     features: [
       "Integración con redes",
       "Galerías y videos",
@@ -200,8 +200,8 @@ export const servicesData = [
     iconName: "Users",
     description: "Portafolios, reservas de citas y contacto directo con tus clientes.",
     priceUSD: "$99 USD",
-    priceMXN: "$1,980 MXN",
-    estimatedTime: "7-30 días",
+    priceMXN: "$1,980 MXN Pago único.*",
+    estimatedTime: "7-30 días*",
     features: [
       "Portafolio profesional",
       "Botón de contacto rápido",
@@ -243,8 +243,8 @@ export const servicesData = [
     iconName: "Globe",
     description: "Webs ideales para profesionales que agendan con clientes: doctores, coaches, terapeutas, etc.",
     priceUSD: "$99 USD",
-    priceMXN: "$1,980 MXN",
-    estimatedTime: "7-28 días",
+    priceMXN: "$1,980 MXN Pago único.*",
+    estimatedTime: "7-28 días*",
     features: [
       "Agenda interactiva",
       "Notificaciones por correo",

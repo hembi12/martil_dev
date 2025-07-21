@@ -1,46 +1,56 @@
-import { statsData } from './data/reviewsData';
+import { statsData } from "./data/reviewsData";
 
 const StatsSection = () => {
   const handleStartProject = () => {
     const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
-    const message = "¡Hola! He visto sus estadísticas y casos de éxito, y me convencieron completamente.";
+    const message =
+      "¡Hola! He visto sus estadísticas y casos de éxito, y me convencieron completamente.";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
-    window.open(whatsappUrl, '_blank');
+
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
     <>
-      {/* Estadísticas */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
+      {/* Estadísticas - Grid optimizado para mejor lectura */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
         {statsData.map((stat, index) => (
           <div key={index} className="text-center group">
-            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-600 mb-3 sm:mb-4 text-shadow-lg group-hover:scale-110 transition-transform duration-300">
+            {/* Números principales - tamaños más balanceados */}
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-blue-600 mb-2 sm:mb-3 md:mb-4 group-hover:scale-105 transition-all duration-300 ease-out leading-none">
               {stat.value}
             </div>
-            <div className="text-neutral-800 text-sm sm:text-base md:text-lg font-semibold">
+
+            {/* Labels - mejor jerarquía tipográfica */}
+            <div className="text-neutral-700 text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-snug px-1">
               {stat.label}
             </div>
           </div>
         ))}
       </div>
 
-      {/* Call to Action Final */}
-      <div className="text-center mt-12">
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 mb-3 sm:mb-4">
+      {/* Call to Action Final - mejorado para móviles */}
+      <div className="text-center mt-10 sm:mt-12 lg:mt-16 px-4 sm:px-6">
+        {/* Título principal - más legible en móvil */}
+        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6">
           ¿Listo para ser el próximo caso de éxito?
         </h3>
-        <p className="text-neutral-600 text-sm sm:text-base md:text-lg mb-6 max-w-2xl mx-auto">
-          Únete a más de 100 clientes que han transformado sus negocios con
-          nuestras soluciones web
-        </p>
-        <button 
+
+        {/* Botón CTA - mejor usabilidad móvil */}
+        <button
           onClick={handleStartProject}
-          className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+          className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base lg:text-lg hover:bg-blue-700 focus:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:scale-95 transition-all duration-300 shadow-md hover:shadow-lg min-h-[44px] min-w-[160px] cursor-pointer"
+          role="button"
+          tabIndex={0}
         >
-          Comenzar mi proyecto
+          <span>Comenzar mi proyecto</span>
         </button>
+
+        {/* Indicador adicional sutil para móvil */}
+        <p className="text-xs sm:text-sm text-neutral-500 mt-3 sm:mt-4">
+          💬 Respuesta inmediata por WhatsApp
+        </p>
       </div>
     </>
   );

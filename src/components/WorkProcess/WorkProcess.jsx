@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 import { CheckCircle, Clock } from "lucide-react";
 import { workSteps } from "./data/workData";
 import WorkCTA from "./WorkCTA";
@@ -10,7 +10,7 @@ const WorkProcess = () => {
     if (scrollRef.current) {
       // Obtener el ancho de la tarjeta más el gap
       const cardWidth = window.innerWidth < 640 ? 320 + 24 : 384 + 32; // w-80 + gap-6 o w-96 + gap-8
-      scrollRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
     }
   };
 
@@ -18,7 +18,7 @@ const WorkProcess = () => {
     if (scrollRef.current) {
       // Obtener el ancho de la tarjeta más el gap
       const cardWidth = window.innerWidth < 640 ? 320 + 24 : 384 + 32; // w-80 + gap-6 o w-96 + gap-8
-      scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
     }
   };
   return (
@@ -39,12 +39,9 @@ const WorkProcess = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header minimalista */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-xs leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-sm">
             Proceso de trabajo
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-            Simple y eficiente en 6 pasos
-          </p>
         </div>
 
         {/* Scroll horizontal de pasos */}
@@ -86,22 +83,23 @@ const WorkProcess = () => {
                             />
                           </div>
                           <div className="flex-grow min-w-0">
-                            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-800 text-shadow-xs leading-tight">
+                            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-800 text-shadow-sm leading-tight">
                               {step.title}
                             </h3>
+                            {/* Número del paso - MEJORADO */}
                             <div className="flex items-center gap-2 text-neutral-500 mt-1">
-                              <span className="text-2xl sm:text-3xl font-bold text-neutral-200 text-shadow-xs">
+                              <span className="text-xl sm:text-2xl font-bold text-neutral-200 text-shadow-sm">
                                 {String(step.id).padStart(2, "0")}
                               </span>
                             </div>
                           </div>
                         </div>
 
-                        {/* Duración */}
+                        {/* Duración - MEJORADA */}
                         <div className="mb-4 sm:mb-6">
                           <div className="flex items-center gap-2 text-green-600">
                             <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
-                            <span className="text-sm sm:text-base font-medium">
+                            <span className="text-xs sm:text-sm md:text-base font-medium">
                               Tiempo estimado: {step.duration}
                             </span>
                           </div>
@@ -112,16 +110,16 @@ const WorkProcess = () => {
                           {step.description}
                         </p>
 
-                        {/* Lista de características */}
+                        {/* Lista de características - MEJORADA */}
                         <div className="space-y-3 mb-4">
-                          <h4 className="font-semibold text-neutral-900 text-sm sm:text-base">
+                          <h4 className="font-semibold text-neutral-900 text-xs sm:text-sm md:text-base">
                             Qué incluye este paso:
                           </h4>
                           <ul className="space-y-2 sm:space-y-3">
                             {step.details.map((detail, i) => (
                               <li
                                 key={i}
-                                className="flex items-start gap-2 sm:gap-3 text-neutral-700 text-sm sm:text-base"
+                                className="flex items-start gap-2 sm:gap-3 text-neutral-700 text-xs sm:text-sm md:text-base"
                               >
                                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-0.5 flex-shrink-0" />
                                 <span className="leading-relaxed">
@@ -141,10 +139,10 @@ const WorkProcess = () => {
                         </div>
                       </div>
 
-                      {/* Badge del paso */}
+                      {/* Badge del paso - MEJORADO */}
                       <div className="mt-auto">
                         <div
-                          className={`w-full px-4 py-3 ${step.bgColor} ${step.color} font-semibold rounded-lg text-sm sm:text-base text-center text-shadow-xs border-2 ${step.borderColor}`}
+                          className={`w-full px-4 py-3 ${step.bgColor} ${step.color} font-semibold rounded-lg text-xs sm:text-sm md:text-base text-center text-shadow-sm border-2 ${step.borderColor}`}
                         >
                           Paso {step.id} de {workSteps.length}
                         </div>
@@ -189,7 +187,7 @@ const WorkProcess = () => {
                 />
               </svg>
             </button>
-            
+
             <button
               onClick={scrollRight}
               className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200"
@@ -211,9 +209,6 @@ const WorkProcess = () => {
             </button>
           </div>
         </div>
-
-        {/* CTA minimalista */}
-        <WorkCTA />
       </div>
     </section>
   );

@@ -107,7 +107,7 @@ export default function Header() {
 
         {/* Botón de hamburguesa */}
         <button
-          className="lg:hidden text-gray-700 focus:outline-none"
+          className="lg:hidden text-neutral-700 hover:text-blue-600 focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -122,7 +122,7 @@ export default function Header() {
               className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 cursor-pointer ${
                 activeSection === item.id
                   ? 'text-blue-600 bg-blue-100 font-medium'
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                  : 'text-neutral-700 hover:text-blue-600 hover:bg-blue-50'
               }`}
             >
               {item.icon}
@@ -139,10 +139,10 @@ export default function Header() {
             <button
               key={item.id}
               onClick={() => handleMenuClick(item)}
-              className={`flex items-center gap-2 w-full px-2 py-2 mt-4 rounded-lg transition-all duration-200 cursor-pointer ${
+              className={`flex items-center gap-2 w-full px-2 py-2 mt-2 rounded-lg transition-all duration-200 cursor-pointer ${
                 activeSection === item.id
                   ? 'text-blue-600 bg-blue-100 font-medium'
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                  : 'text-neutral-700 hover:text-blue-600 hover:bg-blue-50'
               }`}
             >
               {item.icon}

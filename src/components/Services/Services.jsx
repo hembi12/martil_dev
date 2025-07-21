@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 import { servicesData } from "./data/servicesData";
 import ServiceCard from "./ServiceCard";
 import CustomQuoteCTA from "./CustomQuoteCTA";
@@ -10,7 +10,7 @@ export default function Services() {
     if (scrollRef.current) {
       // Obtener el ancho de la tarjeta más el gap
       const cardWidth = window.innerWidth < 640 ? 320 + 24 : 384 + 32; // w-80 + gap-6 o w-96 + gap-8
-      scrollRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
     }
   };
 
@@ -18,7 +18,7 @@ export default function Services() {
     if (scrollRef.current) {
       // Obtener el ancho de la tarjeta más el gap
       const cardWidth = window.innerWidth < 640 ? 320 + 24 : 384 + 32; // w-80 + gap-6 o w-96 + gap-8
-      scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
     }
   };
 
@@ -41,13 +41,9 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header integrado */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-xs leading-tight">
-            Soluciones para cada tipo de cliente
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-sm">
+            Soluciones únicas para ti
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-            Ofrecemos sitios web adaptados a diferentes sectores, necesidades y
-            objetivos.
-          </p>
         </div>
 
         {/* Scroll horizontal de servicios */}
@@ -68,7 +64,7 @@ export default function Services() {
 
           {/* Indicador de scroll */}
           <div className="flex justify-center mt-4 gap-2">
-            <div className="text-sm text-neutral-500 flex items-center gap-2">
+            <div className="text-base text-neutral-500 flex items-center gap-2">
               <span>Desliza para ver más servicios</span>
               <div className="flex gap-1">
                 <div className="w-2 h-2 rounded-full bg-blue-300"></div>
@@ -99,7 +95,7 @@ export default function Services() {
                 />
               </svg>
             </button>
-            
+
             <button
               onClick={scrollRight}
               className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200"

@@ -15,16 +15,16 @@ export default function Hero() {
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
         {/* Texto principal */}
         <div className="text-center lg:text-left order-2 lg:order-1">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 sm:mb-6 lg:mb-8 text-shadow-xs leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-sm leading-tight">
             Tu sitio web, sin plantillas, sin límites
           </h1>
-          <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-600 max-w-2xl mx-auto lg:mx-0">
+          <p className="mt-4 sm:mt-6 text-lg md:text-xl lg:text-2xl text-neutral-600 max-w-2xl mx-auto lg:mx-0">
             Olvídate de lo genérico. Diseñamos desde cero pensando en tu
             negocio, tus objetivos y tus clientes.
           </p>
 
-          {/* Lista de beneficios */}
-          <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
+          {/* Lista de beneficios - MEJORADO */}
+          <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
             {[
               "Dominio y hosting gratis",
               "100% responsivo",
@@ -34,48 +34,49 @@ export default function Hero() {
                 key={idx}
                 className="flex items-start sm:items-center gap-3 text-neutral-700 justify-center lg:justify-start"
               >
-                <CheckCircle className="text-green-600 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 sm:mt-0" />
-                <span className="text-sm sm:text-base md:text-lg text-left">
+                <CheckCircle className="text-green-500 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <span className="text-base md:text-lg text-left">
                   {text}
                 </span>
               </div>
             ))}
           </div>
 
-          {/* Precio */}
-          <div className="mt-6 sm:mt-8 text-center lg:text-left">
-            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900">
-              <span className="text-lg sm:text-xl md:text-2xl text-neutral-600 font-normal">
+          {/* Precio - MEJORADO */}
+          <div className="mt-4 sm:mt-6 text-center lg:text-left">
+            <div className="text-3xl md:text-4xl font-bold text-neutral-900">
+              <span className="text-base sm:text-lg md:text-xl text-neutral-600 font-normal">
                 Desde
               </span>
-              <span className="ml-2 text-blue-600 text-shadow-xs">$99</span>
-              <span className="text-lg sm:text-xl md:text-2xl text-neutral-600 font-normal ml-1">
+              <span className="ml-2 text-blue-600 text-shadow-sm">$99</span>
+              <span className="text-lg md:text-xl text-neutral-600 font-normal ml-1">
                 USD
               </span>
             </div>
-            <p className="text-sm sm:text-base text-neutral-700 mt-1">
-              $1,980 MXN Por servicio
+            <p className="text-sm md:text-base text-neutral-700 mt-1">
+              $1,980 MXN Pago único.*
             </p>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-4 sm:mt-6">
+            {/* Botón CTA - MEJORADO */}
             <button 
               onClick={handleWhatsAppClick}
-              className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
+              className="w-auto sm:w-auto px-6 py-3 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
             >
               Cotización gratuita
             </button>
 
-            {/* Badge de seguridad */}
+            {/* Badge de seguridad - MEJORADO */}
             <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-neutral-600">
-              <ShieldCheck className="w-4 h-4 text-green-600" />
-              <span className="text-sm">Garantía de satisfacción</span>
+              <ShieldCheck className="w-4 h-4 text-green-500" />
+              <span className="text-xs sm:text-sm">Garantía de satisfacción*</span>
             </div>
           </div>
         </div>
 
         {/* Mockup de navegador Mac */}
-        <div className="w-full order-2 lg:order-2">
+        <div className="mt-4 sm:mt-6 w-full order-2 lg:order-2">
           <div className="relative">
             {/* Contenedor del navegador */}
             <div className="bg-white rounded-lg p-3 shadow-md border border-neutral-200">
@@ -88,9 +89,9 @@ export default function Hero() {
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
 
-                {/* Barra de dirección */}
+                {/* Barra de dirección - MEJORADO */}
                 <div className="flex-1 ml-4">
-                  <div className="bg-neutral-200 rounded-md px-3 py-1 text-xs text-neutral-900 border border-neutral-200 flex items-center">
+                  <div className="bg-neutral-200 rounded-md px-3 py-1 text-xs sm:text-sm text-neutral-900 border border-neutral-200 flex items-center">
                     <div className="w-3 h-3 mr-2">
                       <svg
                         viewBox="0 0 16 16"

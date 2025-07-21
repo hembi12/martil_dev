@@ -19,7 +19,7 @@ import {
       borderColor: "border-teal-200",
       gradientColor: "bg-gradient-to-br from-teal-400 to-cyan-600 shadow-xs",
       iconColor: "text-blue-50",
-      duration: "1 día",
+      duration: "1 día*",
       details: [
         "Análisis de requerimientos",
         "Definición de objetivos",
@@ -37,7 +37,7 @@ import {
       borderColor: "border-red-200",
       gradientColor: "bg-gradient-to-br from-red-500 to-rose-700 shadow-xs",
       iconColor: "text-purple-50",
-      duration: "1-2 días",
+      duration: "1-2 días*",
       details: [
         "Arquitectura del sitio",
         "Wireframes básicos",
@@ -55,7 +55,7 @@ import {
       borderColor: "border-orange-200",
       gradientColor: "bg-gradient-to-br from-orange-400 to-amber-600 shadow-xs",
       iconColor: "text-pink-50",
-      duration: "2-5 días",
+      duration: "2-5 días*",
       details: [
         "Mockups de alta fidelidad",
         "Paleta de colores",
@@ -74,7 +74,7 @@ import {
       gradientColor:
         "bg-gradient-to-br from-purple-500 to-fuchsia-700 shadow-xs",
       iconColor: "text-green-50",
-      duration: "3-15 días",
+      duration: "3-15 días*",
       details: [
         "Código limpio y optimizado",
         "Funcionalidades avanzadas",
@@ -93,7 +93,7 @@ import {
       gradientColor:
         "bg-gradient-to-br from-green-500 to-emerald-700 shadow-xs",
       iconColor: "text-orange-50",
-      duration: "1-3 días",
+      duration: "1-3 días*",
       details: [
         "Testing multiplataforma",
         "Optimización de rendimiento",
@@ -112,7 +112,7 @@ import {
       gradientColor:
         "bg-gradient-to-br from-yellow-500 to-yellow-700 shadow-xs",
       iconColor: "text-indigo-50",
-      duration: "1 día",
+      duration: "1 día*",
       details: [
         "Despliegue en producción",
         "Configuración de dominio",
