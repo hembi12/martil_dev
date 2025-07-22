@@ -1,3 +1,4 @@
+import { FaWhatsapp } from 'react-icons/fa';
 import { statsData } from "./data/reviewsData";
 
 const StatsSection = () => {
@@ -18,7 +19,7 @@ const StatsSection = () => {
         {statsData.map((stat, index) => (
           <div key={index} className="text-center group">
             {/* Números principales - tamaños más balanceados */}
-            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-blue-600 mb-2 sm:mb-3 md:mb-4 group-hover:scale-105 transition-all duration-300 ease-out leading-none">
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-blue-600 mb-2 sm:mb-3 md:mb-4 group-hover:scale-105 transition-all duration-300 ease-out leading-none text-shadow-md">
               {stat.value}
             </div>
 
@@ -30,26 +31,25 @@ const StatsSection = () => {
         ))}
       </div>
 
-      {/* Call to Action Final - mejorado para móviles */}
+      {/* Call to Action Final - CTA unificado */}
       <div className="text-center mt-10 sm:mt-12 lg:mt-16 px-4 sm:px-6">
         {/* Título principal - más legible en móvil */}
-        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6">
+        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6 text-shadow-sm">
           ¿Listo para ser el próximo caso de éxito?
         </h3>
 
-        {/* Botón CTA - mejor usabilidad móvil */}
+        {/* Botón CTA - mismo estilo que Hero y FAQ */}
         <button
           onClick={handleStartProject}
-          className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base lg:text-lg hover:bg-blue-700 focus:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:scale-95 transition-all duration-300 shadow-md hover:shadow-lg min-h-[44px] min-w-[160px] cursor-pointer"
-          role="button"
-          tabIndex={0}
+          className="w-auto sm:w-auto px-6 py-3 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
         >
-          <span>Comenzar mi proyecto</span>
+          Comenzar mi proyecto
         </button>
 
         {/* Indicador adicional sutil para móvil */}
-        <p className="text-xs sm:text-sm text-neutral-500 mt-3 sm:mt-4">
-          💬 Respuesta inmediata por WhatsApp
+        <p className="text-xs sm:text-sm text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-1">
+          <FaWhatsapp className="w-4 h-4 text-green-600" />
+          Respuesta inmediata por WhatsApp
         </p>
       </div>
     </>

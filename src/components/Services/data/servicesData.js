@@ -27,7 +27,7 @@ export const servicesData = [
     title: "Negocios pequeños",
     iconName: "Briefcase", // Solo el nombre del icono
     description: "Crea tu presencia online desde cero para atraer más clientes locales.",
-    priceUSD: "$99 USD",
+    priceUSD: "$99",
     priceMXN: "$1,980 MXN Pago único.*",
     estimatedTime: "5-7 días*",
     features: [
@@ -70,7 +70,7 @@ export const servicesData = [
     title: "Empresas medianas y grandes",
     iconName: "Building",
     description: "Desarrollamos sitios escalables, modernos y listos para crecer contigo.",
-    priceUSD: "$199 USD",
+    priceUSD: "$199",
     priceMXN: "$3,980 MXN Pago único.*",
     estimatedTime: "14-30 días*",
     features: [
@@ -113,7 +113,7 @@ export const servicesData = [
     title: "Tiendas en línea",
     iconName: "Store",
     description: "Vende productos 24/7 con una tienda rápida, segura y personalizada.",
-    priceUSD: "$99 USD",
+    priceUSD: "$99",
     priceMXN: "$1,980 MXN Pago único.*",
     estimatedTime: "7-30 días*",
     features: [
@@ -156,7 +156,7 @@ export const servicesData = [
     title: "Influencers y creadores",
     iconName: "Sparkles",
     description: "Una web con tu estilo, integrada con redes sociales y enfocada en tu audiencia.",
-    priceUSD: "$99 USD",
+    priceUSD: "$99",
     priceMXN: "$1,980 MXN Pago único.*",
     estimatedTime: "7-21 días*",
     features: [
@@ -199,7 +199,7 @@ export const servicesData = [
     title: "Freelancers y servicios",
     iconName: "Users",
     description: "Portafolios, reservas de citas y contacto directo con tus clientes.",
-    priceUSD: "$99 USD",
+    priceUSD: "$99",
     priceMXN: "$1,980 MXN Pago único.*",
     estimatedTime: "7-30 días*",
     features: [
@@ -242,7 +242,7 @@ export const servicesData = [
     title: "Reservas y citas en línea",
     iconName: "Globe",
     description: "Webs ideales para profesionales que agendan con clientes: doctores, coaches, terapeutas, etc.",
-    priceUSD: "$99 USD",
+    priceUSD: "$99",
     priceMXN: "$1,980 MXN Pago único.*",
     estimatedTime: "7-28 días*",
     features: [

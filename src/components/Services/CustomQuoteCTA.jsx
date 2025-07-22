@@ -1,3 +1,5 @@
+import { FaWhatsapp } from 'react-icons/fa';
+
 const CustomQuoteCTA = () => {
   const handleQuoteRequest = () => {
     const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
@@ -12,7 +14,7 @@ const CustomQuoteCTA = () => {
   return (
     <div className="text-center mt-6">
       {/* Título principal */}
-      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6">
+      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6 text-shadow-sm">
         ¿No encuentras lo que necesitas?
       </h3>
 
@@ -31,8 +33,9 @@ const CustomQuoteCTA = () => {
       </button>
 
       {/* Indicador adicional sutil para móvil */}
-      <p className="text-xs sm:text-sm text-neutral-500 mt-3 sm:mt-4">
-        💬 Respuesta inmediata por WhatsApp
+      <p className="text-xs sm:text-sm text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-1">
+        <FaWhatsapp className="w-4 h-4 text-green-600" />
+        Respuesta inmediata por WhatsApp
       </p>
     </div>
   );

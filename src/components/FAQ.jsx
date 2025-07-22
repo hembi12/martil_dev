@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Plus, Minus, Mail, ChevronDown, ChevronUp } from "lucide-react";
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function FAQ() {
   const [openItem, setOpenItem] = useState(null);
@@ -197,9 +198,9 @@ export default function FAQ() {
           </div>
         )}
 
-        {/* CTA al final - mejorado para móvil */}
+        {/* CTA al final - actualizado con el mismo estilo del Hero */}
         <div className="text-center mt-8 sm:mt-12 lg:mt-16 px-2 sm:px-4">
-          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6">
+          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6 text-shadow-sm">
             ¿Tienes alguna otra pregunta?
           </h3>
           <p className="text-neutral-600 text-sm sm:text-base md:text-lg lg:text-xl mb-4 max-w-3xl mx-auto leading-relaxed px-4">
@@ -208,15 +209,15 @@ export default function FAQ() {
           </p>
           <button
             onClick={handleContactUs}
-            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-xl text-sm sm:text-base lg:text-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:scale-95 transition-all duration-300 shadow-md hover:shadow-lg min-h-[44px] min-w-[140px]"
-            role="button"
+            className="w-auto sm:w-auto px-6 py-3 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
           >
-            <span>Contáctanos ahora</span>
+            Contáctanos ahora
           </button>
 
           {/* Indicador adicional sutil para móvil */}
-          <p className="text-xs sm:text-sm text-neutral-500 mt-3 sm:mt-4">
-            💬 Respuesta inmediata por WhatsApp
+          <p className="text-xs sm:text-sm text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-1">
+            <FaWhatsapp className="w-4 h-4 text-green-600" />
+            Respuesta inmediata por WhatsApp
           </p>
         </div>
       </div>

@@ -39,7 +39,7 @@ const WorkProcess = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header minimalista */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-sm">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-md">
             Proceso de trabajo
           </h2>
         </div>
@@ -76,19 +76,19 @@ const WorkProcess = () => {
                         {/* Header de la tarjeta */}
                         <div className="flex items-start gap-3 sm:gap-4 mb-4">
                           <div
-                            className={`flex-shrink-0 p-2 sm:p-3 ${step.gradientColor} rounded-lg shadow-xs`}
+                            className={`flex-shrink-0 p-2 sm:p-3 ${step.gradientColor} rounded-lg shadow-md`}
                           >
                             <Icon
                               className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ${step.iconColor}`}
                             />
                           </div>
                           <div className="flex-grow min-w-0">
-                            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-800 text-shadow-sm leading-tight">
+                            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-800 text-shadow-md leading-tight">
                               {step.title}
                             </h3>
                             {/* Número del paso - MEJORADO */}
                             <div className="flex items-center gap-2 text-neutral-500 mt-1">
-                              <span className="text-xl sm:text-2xl font-bold text-neutral-200 text-shadow-sm">
+                              <span className="text-xl sm:text-2xl font-bold text-neutral-300 text-shadow-md">
                                 {String(step.id).padStart(2, "0")}
                               </span>
                             </div>
@@ -97,8 +97,8 @@ const WorkProcess = () => {
 
                         {/* Duración - MEJORADA */}
                         <div className="mb-4 sm:mb-6">
-                          <div className="flex items-center gap-2 text-green-600">
-                            <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+                          <div className="flex items-center gap-2 text-green-700">
+                            <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-green-700" />
                             <span className="text-xs sm:text-sm md:text-base font-medium">
                               Tiempo estimado: {step.duration}
                             </span>
@@ -142,7 +142,7 @@ const WorkProcess = () => {
                       {/* Badge del paso - MEJORADO */}
                       <div className="mt-auto">
                         <div
-                          className={`w-full px-4 py-3 ${step.bgColor} ${step.color} font-semibold rounded-lg text-xs sm:text-sm md:text-base text-center text-shadow-sm border-2 ${step.borderColor}`}
+                          className={`w-full px-4 py-3 ${step.bgColor} ${step.color} font-semibold rounded-lg text-xs sm:text-sm md:text-base text-center text-shadow-md border-2 ${step.borderColor}`}
                         >
                           Paso {step.id} de {workSteps.length}
                         </div>
@@ -170,7 +170,7 @@ const WorkProcess = () => {
           <div className="flex justify-center mt-4 gap-4">
             <button
               onClick={scrollLeft}
-              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200 cursor-pointer"
+              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-md transition-all duration-300 hover:scale-110 border border-neutral-200 cursor-pointer"
               aria-label="Anterior"
             >
               <svg
@@ -190,7 +190,7 @@ const WorkProcess = () => {
 
             <button
               onClick={scrollRight}
-              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200 cursor-pointer"
+              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-md transition-all duration-300 hover:scale-110 border border-neutral-200 cursor-pointer"
               aria-label="Siguiente"
             >
               <svg

@@ -57,7 +57,7 @@ export default function Hero() {
                     onMouseEnter={() => setActiveTooltip(idx)}
                     onMouseLeave={() => setActiveTooltip(null)}
                     onClick={() => setActiveTooltip(activeTooltip === idx ? null : idx)}
-                    className="text-neutral-400 hover:text-blue-600 transition-colors duration-200"
+                    className="text-neutral-400 hover:text-blue-600 transition-colors duration-200 cursor-pointer"
                   >
                     <CircleHelp className="w-4 h-4" />
                   </button>

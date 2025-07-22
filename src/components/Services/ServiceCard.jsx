@@ -38,12 +38,12 @@ const ServiceCard = ({ service, index }) => {
   // Colores de fondo correspondientes para cada icono
   const getBackgroundColor = (index) => {
     const backgrounds = [
-      "bg-gradient-to-br from-yellow-500 to-yellow-700 shadow-sm", 
-      "bg-gradient-to-br from-green-500 to-emerald-700 shadow-sm", 
-      "bg-gradient-to-br from-purple-500 to-fuchsia-700 shadow-sm", 
-      "bg-gradient-to-br from-orange-400 to-amber-600 shadow-sm",
-      "bg-gradient-to-br from-red-500 to-rose-700 shadow-sm", 
-      "bg-gradient-to-br from-teal-400 to-cyan-600 shadow-sm",
+      "bg-gradient-to-br from-yellow-500 to-yellow-700 shadow-md", 
+      "bg-gradient-to-br from-green-500 to-emerald-700 shadow-md", 
+      "bg-gradient-to-br from-purple-500 to-fuchsia-700 shadow-md", 
+      "bg-gradient-to-br from-orange-400 to-amber-600 shadow-md",
+      "bg-gradient-to-br from-red-500 to-rose-700 shadow-md", 
+      "bg-gradient-to-br from-teal-400 to-cyan-600 shadow-md",
     ];
     return backgrounds[index % backgrounds.length];
   };
@@ -91,7 +91,7 @@ const ServiceCard = ({ service, index }) => {
           </div>
           <div className="flex-grow min-w-0">
             {/* Título optimizado */}
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-800 text-shadow-sm leading-tight">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-neutral-800 text-shadow-md leading-tight">
               {service.title}
             </h3>
           </div>
@@ -99,16 +99,17 @@ const ServiceCard = ({ service, index }) => {
 
         {/* Precio y tiempo estimado - MEJORADO */}
         <div className="mb-4">
-          <p className="font-bold text-lg sm:text-xl md:text-2xl mb-2">
-            <span className="text-neutral-600 text-base sm:text-lg">Desde </span>
-            <span className="text-blue-600 text-2xl sm:text-3xl text-shadow-sm">{service.priceUSD}</span>
+          <p className="text-lg sm:text-xl md:text-2xl mb-2">
+            <span className="text-neutral-600 font-normal text-base sm:text-lg">Desde </span>
+            <span className="text-blue-600 font-bold text-2xl sm:text-3xl text-shadow-md">{service.priceUSD}</span>
+            <span className="text-neutral-600 font-normal text-base sm:text-lg"> USD</span>
           </p>
           <p className="text-neutral-500 font-medium text-sm sm:text-base md:text-lg mb-4">
             {service.priceMXN}
           </p>
           
           {/* Tiempo estimado */}
-          <div className="flex items-center gap-2 text-green-500">
+          <div className="flex items-center gap-2 text-green-700">
             <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
             <span className="text-sm sm:text-base md:text-lg font-medium">
               Tiempo estimado: {service.estimatedTime}

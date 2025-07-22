@@ -29,7 +29,7 @@ export default function PaymentMethodsSingleCard() {
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-sm">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-md">
             Métodos de Pago
           </h2>
         </div>
@@ -41,7 +41,7 @@ export default function PaymentMethodsSingleCard() {
             {paymentOptions.map((option, index) => (
               <li
                 key={index}
-                className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 md:p-2 lg:p-3 hover:bg-blue-50 rounded-lg transition-colors duration-200 cursor-"
+                className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 md:p-2 lg:p-3 hover:bg-blue-50 hover:shadow-md rounded-lg transition-all duration-300 cursor-"
               >
                 {/* Icon Container */}
                 <div className="p-2 sm:p-2.5 md:p-3 bg-blue-50 rounded-lg flex-shrink-0">
