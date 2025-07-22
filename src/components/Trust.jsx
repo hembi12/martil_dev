@@ -13,7 +13,7 @@ export default function Trust() {
     },
     {
       name: "Credibleon",
-      score: "4.9",
+      score: "4.8",
       reviews: "82",
       stars: 5,
       logo: "/hostadvice-logo.svg",
