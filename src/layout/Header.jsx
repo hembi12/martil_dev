@@ -20,7 +20,7 @@ export default function Header() {
     },
     { 
       id: 'work-process', 
-      label: 'Proceso de Trabajo', 
+      label: 'Proceso', 
       href: '#work-process', 
       icon: <Route className="w-4 h-4" />
     },
@@ -95,61 +95,125 @@ export default function Header() {
     }
   };
 
+  // Cerrar menú cuando se redimensiona
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) { // lg breakpoint
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-neutral-50 shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-2">
-          <div className="rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 p-2 shadow-md">
-            <Box className="w-6 h-6 text-blue-50" />
+    <header className="sticky top-0 z-50 bg-white border-b border-neutral-200 shadow-sm">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+        {/* Logo y nombre - más compacto en móvil */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 p-1.5 sm:p-2 shadow-md">
+            <Box className="w-5 h-5 sm:w-6 sm:h-6 text-blue-50" />
           </div>
-          <h1 className="text-xl font-bold text-neutral-900 text-shadow-xs">MARTIL.DEV</h1>
+          <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-900">
+            MARTIL.DEV
+          </h1>
         </div>
 
-        {/* Botón de hamburguesa */}
+        {/* Botón de hamburguesa - mejor touch target */}
         <button
-          className="lg:hidden text-neutral-700 hover:text-blue-600 focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
+          className="lg:hidden text-neutral-700 hover:text-blue-600 focus:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg p-2 transition-all duration-200 relative z-50"
+          onClick={(e) => {
+            e.stopPropagation();
+            setMenuOpen(!menuOpen);
+          }}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
         >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          {menuOpen ? (
+            <X className="w-6 h-6 sm:w-7 sm:h-7" />
+          ) : (
+            <Menu className="w-6 h-6 sm:w-7 sm:h-7" />
+          )}
         </button>
 
-        {/* Menú de navegación grande */}
-        <nav className="hidden lg:flex space-x-2">
+        {/* Menú de navegación desktop - mejor spacing */}
+        <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
           {menuItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleMenuClick(item)}
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 cursor-pointer ${
+              className={`flex items-center gap-2 px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base font-medium transition-all duration-200 cursor-pointer min-h-[40px] ${
                 activeSection === item.id
-                  ? 'text-blue-600 bg-blue-100 font-medium'
-                  : 'text-neutral-700 hover:text-blue-600 hover:bg-blue-50'
+                  ? 'text-blue-600 bg-blue-100 shadow-md'
+                  : 'text-neutral-700 hover:text-blue-600 hover:bg-blue-50 focus:text-blue-600 focus:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1'
               }`}
+              role="menuitem"
+              tabIndex={0}
             >
               {item.icon}
-              <span>{item.label}</span>
+              <span className="whitespace-nowrap">
+                {/* Texto más corto en pantallas LG, completo en XL */}
+                <span className="lg:hidden xl:inline">{item.label}</span>
+                <span className="hidden lg:inline xl:hidden">
+                  {item.id === 'work-process' ? 'Proceso' : item.label}
+                </span>
+              </span>
             </button>
           ))}
         </nav>
       </div>
 
-      {/* Menú móvil desplegable */}
-      {menuOpen && (
-        <nav className="lg:hidden px-6 pb-4 space-y-2 bg-neutral-50">
+      {/* Menú móvil desplegable - mejorado */}
+      <div 
+        className={`lg:hidden relative z-50 transition-all duration-300 ease-out ${
+          menuOpen 
+            ? 'max-h-96 opacity-100 visible' 
+            : 'max-h-0 opacity-0 invisible'
+        }`}
+      >
+        <nav 
+          className="px-4 sm:px-6 pb-4 space-y-1 bg-white border-t border-neutral-100 shadow-lg"
+          role="menu"
+          aria-label="Menú de navegación móvil"
+        >
           {menuItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => handleMenuClick(item)}
-              className={`flex items-center gap-2 w-full px-2 py-2 mt-2 rounded-lg transition-all duration-200 cursor-pointer ${
+              onClick={(e) => {
+                e.stopPropagation();
+                handleMenuClick(item);
+              }}
+              className={`flex items-center gap-3 w-full px-3 py-3 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer min-h-[44px] ${
                 activeSection === item.id
-                  ? 'text-blue-600 bg-blue-100 font-medium'
-                  : 'text-neutral-700 hover:text-blue-600 hover:bg-blue-50'
+                  ? 'text-blue-600 bg-blue-100 shadow-md'
+                  : 'text-neutral-700 hover:text-blue-600 hover:bg-blue-50 focus:text-blue-600 focus:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset'
               }`}
+              role="menuitem"
+              tabIndex={0}
             >
-              {item.icon}
-              <span>{item.label}</span>
+              <div className="flex-shrink-0">
+                {item.icon}
+              </div>
+              <span className="flex-grow text-left">{item.label}</span>
+              {activeSection === item.id && (
+                <div className="w-2 h-2 bg-blue-600 rounded-lg flex-shrink-0"></div>
+              )}
             </button>
           ))}
         </nav>
+      </div>
+
+      {/* Overlay para cerrar menú en móvil */}
+      {menuOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 z-40"
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
       )}
     </header>
   );
