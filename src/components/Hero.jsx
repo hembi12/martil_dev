@@ -30,7 +30,7 @@ export default function Hero() {
           <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
             {[
               {
-                text: "Dominio personalizado gratis",
+                text: "Dominio gratis",
                 tooltip: "Incluimos el registro de tu dominio personalizado por el primer año completamente gratis. Sujeto a disponibilidad del dominio."
               },
               {

@@ -1,4 +1,5 @@
 // src/layout/footer/Footer.jsx
+import { Link } from 'react-router-dom';
 import CompanyInfo from './CompanyInfo';
 import ServicesLinks from './ServicesLinks';
 import ContactSection from './ContactSection';
@@ -28,18 +29,18 @@ export default function Footer() {
 
             {/* Enlaces legales */}
             <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm text-neutral-300 order-1 sm:order-2">
-              <a
-                href="/privacidad"
+              <Link
+                to="/politica-de-privacidad"
                 className="hover:text-blue-300 focus:text-blue-300 focus:outline-none transition-colors duration-200 py-1"
               >
-                Privacidad
-              </a>
-              <a
-                href="/terminos"
+                Política de privacidad
+              </Link>
+              <Link
+                to="/terminos-y-condiciones"
                 className="hover:text-blue-300 focus:text-blue-300 focus:outline-none transition-colors duration-200 py-1"
               >
-                Términos
-              </a>
+                Términos y condiciones
+              </Link>
             </div>
           </div>
         </div>
