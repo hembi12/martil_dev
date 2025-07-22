@@ -127,7 +127,7 @@ export default function Trust() {
               {ratings.map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center p-8 bg-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+                  className="flex flex-col items-center p-8 bg-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
                 >
                   {/* Logo/Nombre de la plataforma */}
                   <div className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-2 h-12 flex items-center">

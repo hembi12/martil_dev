@@ -78,7 +78,7 @@ export default function Services() {
           <div className="flex justify-center mt-4 gap-4">
             <button
               onClick={scrollLeft}
-              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200"
+              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200 cursor-pointer"
               aria-label="Anterior"
             >
               <svg
@@ -98,7 +98,7 @@ export default function Services() {
 
             <button
               onClick={scrollRight}
-              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200"
+              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200 cursor-pointer"
               aria-label="Siguiente"
             >
               <svg
