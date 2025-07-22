@@ -27,7 +27,7 @@ const TestimonialCard = ({ testimonial }) => {
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 lg:gap-6 mb-4 sm:mb-6">
           {/* Avatar */}
           <div className="flex-shrink-0">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center">
               <span className="text-blue-50 font-bold text-sm sm:text-lg lg:text-xl">
                 {getInitials(testimonial.name)}
               </span>
@@ -99,10 +99,12 @@ const TestimonialCard = ({ testimonial }) => {
           <span className="text-neutral-400 text-lg sm:text-xl lg:text-2xl leading-none">"</span>
         </blockquote>
 
-        {/* Badge de servicio - mejorado para móvil */}
-        <div className="inline-flex items-center gap-2 bg-blue-50 sm:bg-blue-100 text-blue-600 px-3 py-2 rounded-lg text-xs sm:text-sm lg:text-base font-medium border border-blue-100 sm:border-transparent">
-          <span className="text-neutral-500 sm:text-blue-600">Servicio:</span>
-          <span className="font-semibold text-blue-700">{testimonial.service}</span>
+        {/* Badge de servicio - centrado en móvil, alineado normal en desktop */}
+        <div className="flex justify-center sm:justify-start">
+          <div className="inline-flex items-center gap-2 bg-blue-50 sm:bg-blue-100 text-blue-600 px-3 py-2 rounded-lg text-xs sm:text-sm lg:text-base font-medium border border-blue-100 sm:border-transparent">
+            <span className="text-neutral-500 sm:text-blue-600">Servicio:</span>
+            <span className="font-semibold text-blue-700">{testimonial.service}</span>
+          </div>
         </div>
       </div>
     </div>

@@ -99,7 +99,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-neutral-50 shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-2">
-          <div className="rounded-lg bg-blue-600 p-2 shadow-md">
+          <div className="rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 p-2 shadow-md">
             <Box className="w-6 h-6 text-blue-50" />
           </div>
           <h1 className="text-xl font-bold text-neutral-900 text-shadow-xs">MARTIL.DEV</h1>

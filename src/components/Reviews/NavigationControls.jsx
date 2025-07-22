@@ -14,14 +14,14 @@ const NavigationControls = ({
       {/* Flechas de navegación - Solo visible en móviles (sm y menor) */}
       <button
         onClick={onPrevious}
-        className="absolute left-4 top-40 -translate-y-1/2 w-10 h-10 bg-white shadow-lg rounded-lg hover:scale-110  flex items-center justify-center hover:bg-blue-50 transition-colors duration-200 z-10 cursor-pointer"
+        className="absolute left-4 top-93 sm:top-33 md:top-33 lg:top-40 -translate-y-1/2 w-10 h-10 bg-white shadow-lg rounded-lg hover:scale-110  flex items-center justify-center hover:bg-blue-50 transition-colors duration-200 z-10 cursor-pointer"
         aria-label="Testimonio anterior"
       >
         <ChevronLeft className="w-5 h-5 text-blue-600" />
       </button>
       <button
         onClick={onNext}
-        className="absolute right-4 top-40 -translate-y-1/2 w-10 h-10 bg-white shadow-lg rounded-lg hover:scale-110  flex items-center justify-center hover:bg-blue-50 transition-colors duration-200 z-10 cursor-pointer"
+        className="absolute right-4 top-93 sm:top-33 md:top-33 lg:top-40 -translate-y-1/2 w-10 h-10 bg-white shadow-lg rounded-lg hover:scale-110  flex items-center justify-center hover:bg-blue-50 transition-colors duration-200 z-10 cursor-pointer"
         aria-label="Siguiente testimonio"
       >
         <ChevronRight className="w-5 h-5 text-blue-600" />

@@ -38,12 +38,12 @@ const ServiceCard = ({ service, index }) => {
   // Colores de fondo correspondientes para cada icono
   const getBackgroundColor = (index) => {
     const backgrounds = [
-      "bg-gradient-to-br from-yellow-500 to-yellow-700 shadow-xs", 
-      "bg-gradient-to-br from-green-500 to-emerald-700 shadow-xs", 
-      "bg-gradient-to-br from-purple-500 to-fuchsia-700 shadow-xs", 
-      "bg-gradient-to-br from-orange-400 to-amber-600 shadow-xs",
-      "bg-gradient-to-br from-red-500 to-rose-700 shadow-xs", 
-      "bg-gradient-to-br from-teal-400 to-cyan-600 shadow-xs",
+      "bg-gradient-to-br from-yellow-500 to-yellow-700 shadow-sm", 
+      "bg-gradient-to-br from-green-500 to-emerald-700 shadow-sm", 
+      "bg-gradient-to-br from-purple-500 to-fuchsia-700 shadow-sm", 
+      "bg-gradient-to-br from-orange-400 to-amber-600 shadow-sm",
+      "bg-gradient-to-br from-red-500 to-rose-700 shadow-sm", 
+      "bg-gradient-to-br from-teal-400 to-cyan-600 shadow-sm",
     ];
     return backgrounds[index % backgrounds.length];
   };

@@ -30,9 +30,9 @@ const CustomQuoteCTA = () => {
         Cotización personalizada
       </button>
 
-      {/* Indicador WhatsApp */}
+      {/* Indicador adicional sutil para móvil */}
       <p className="text-xs sm:text-sm text-neutral-500 mt-3 sm:mt-4">
-        💬 Te responderemos por WhatsApp
+        💬 Respuesta inmediata por WhatsApp
       </p>
     </div>
   );

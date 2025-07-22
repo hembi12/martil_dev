@@ -7,18 +7,19 @@ export default function FAQ() {
 
   const handleContactUs = () => {
     const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
-    const message = "¡Hola! He revisado sus preguntas frecuentes pero tengo algunas dudas específicas sobre mi proyecto web. ¿Podrían ayudarme a resolverlas?";
+    const message =
+      "¡Hola! He revisado sus preguntas frecuentes pero tengo algunas dudas específicas sobre mi proyecto web. ¿Podrían ayudarme a resolverlas?";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
-    window.open(whatsappUrl, '_blank');
+
+    window.open(whatsappUrl, "_blank");
   };
 
   const faqs = [
     {
       question: "¿Cuánto tiempo toma desarrollar mi sitio web?",
       answer:
-        "El tiempo de desarrollo varía según el tipo de proyecto. Un sitio básico para pequeños negocios toma entre 5-7 días hábiles, mientras que tiendas en línea o sitios más complejos pueden tomar de 10-15 días. Te proporcionamos un cronograma detallado antes de comenzar.",
+        "El tiempo de desarrollo depende del tamaño del proyecto. Va desde 5 días hábiles para sitios pequeños hasta 30 días o más para proyectos grandes. Siempre te damos un cronograma antes de iniciar.",
       icon: <Mail className="w-5 h-5 text-blue-600" />,
     },
     {
@@ -70,7 +71,7 @@ export default function FAQ() {
   };
 
   const showMoreFAQs = () => {
-    setVisibleItems(prev => Math.min(prev + 2, faqs.length));
+    setVisibleItems((prev) => Math.min(prev + 2, faqs.length));
   };
 
   const showLessFAQs = () => {
@@ -99,7 +100,9 @@ export default function FAQ() {
             <div
               key={index}
               className={`bg-white rounded-xl border border-neutral-200 transition-all duration-300 shadow-sm hover:shadow-md ${
-                openItem === index ? "shadow-md ring-1 ring-blue-200 border-blue-200" : ""
+                openItem === index
+                  ? "shadow-md ring-1 ring-blue-200 border-blue-200"
+                  : ""
               }`}
             >
               {/* Pregunta - Botón clickeable con mejor UX móvil */}
@@ -150,7 +153,7 @@ export default function FAQ() {
                 <div className="px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8">
                   {/* Línea divisoria sutil */}
                   <div className="w-full h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent mb-4 sm:mb-6"></div>
-                  
+
                   <div className="pl-0 sm:pl-2 lg:pl-4">
                     <p className="text-neutral-700 text-sm sm:text-base lg:text-lg leading-relaxed">
                       {faq.answer}
@@ -169,9 +172,14 @@ export default function FAQ() {
               <button
                 onClick={showMoreFAQs}
                 className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm sm:text-base hover:text-blue-700 transition-all duration-300 group py-2 px-4 rounded-lg hover:bg-blue-50"
-                aria-label={`Mostrar ${Math.min(2, faqs.length - visibleItems)} preguntas más`}
+                aria-label={`Mostrar ${Math.min(
+                  2,
+                  faqs.length - visibleItems
+                )} preguntas más`}
               >
-                <span className="underline-offset-2 group-hover:underline">Ver más preguntas</span>
+                <span className="underline-offset-2 group-hover:underline">
+                  Ver más preguntas
+                </span>
                 <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
               </button>
             ) : (
@@ -180,7 +188,9 @@ export default function FAQ() {
                 className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm sm:text-base hover:text-blue-700 transition-all duration-300 group py-2 px-4 rounded-lg hover:bg-blue-50"
                 aria-label="Mostrar menos preguntas"
               >
-                <span className="underline-offset-2 group-hover:underline">Ver menos preguntas</span>
+                <span className="underline-offset-2 group-hover:underline">
+                  Ver menos preguntas
+                </span>
                 <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-y-0.5 transition-transform duration-300" />
               </button>
             )}
@@ -192,21 +202,21 @@ export default function FAQ() {
           <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-900 mb-3 sm:mb-4 lg:mb-6 leading-tight">
             ¿Tienes alguna otra pregunta?
           </h3>
-          <p className="text-neutral-600 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-neutral-600 text-sm sm:text-base lg:text-lg mb-4 lg:mb-6 max-w-2xl mx-auto leading-relaxed">
             Nuestro equipo está aquí para ayudarte. Contáctanos y resolveremos
             todas tus dudas sobre tu proyecto web.
           </p>
-          <button 
+          <button
             onClick={handleContactUs}
             className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-xl text-sm sm:text-base lg:text-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:scale-95 transition-all duration-300 shadow-md hover:shadow-lg min-h-[44px] min-w-[140px]"
             role="button"
           >
             <span>Contáctanos ahora</span>
           </button>
-          
-          {/* Indicador WhatsApp */}
+
+          {/* Indicador adicional sutil para móvil */}
           <p className="text-xs sm:text-sm text-neutral-500 mt-3 sm:mt-4">
-            💬 Te responderemos por WhatsApp
+            💬 Respuesta inmediata por WhatsApp
           </p>
         </div>
       </div>
