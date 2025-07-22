@@ -1,10 +1,10 @@
-import Hero from "../components/Hero";
-import Trust from "../components/Trust";
-import Services from "../components/Services/Services";
-import WorkProcess from "../components/WorkProcess/WorkProcess";
-import PaymentMethods from "../components/PaymentMethods";
-import Reviews from "../components/Reviews/Reviews";
-import FAQ from "../components/FAQ";
+import Hero from "../components/home/Hero";
+import Trust from "../components/home/Trust";
+import Services from "../components/home/Services/Services";
+import WorkProcess from "../components/home/WorkProcess/WorkProcess";
+import PaymentMethods from "../components/home/PaymentMethods";
+import Reviews from "../components/home/Reviews/Reviews";
+import FAQ from "../components/home/FAQ";
 
 export default function Home() {
   return (
