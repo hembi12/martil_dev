@@ -1,6 +1,9 @@
-import { CheckCircle, ShieldCheck } from "lucide-react";
+import { CheckCircle, ShieldCheck, CircleHelp } from "lucide-react";
+import { useState } from "react";
 
 export default function Hero() {
+  const [activeTooltip, setActiveTooltip] = useState(null);
+
   const handleWhatsAppClick = () => {
     const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
     const message = "¡Hola! Me interesa solicitar una cotización gratuita para mi sitio web";
@@ -23,21 +26,54 @@ export default function Hero() {
             negocio, tus objetivos y tus clientes.
           </p>
 
-          {/* Lista de beneficios - MEJORADO */}
+          {/* Lista de beneficios - MEJORADO CON TOOLTIP INDIVIDUAL */}
           <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
             {[
-              "Dominio y hosting gratis",
-              "100% responsivo",
-              "Soporte 24/7",
-            ].map((text, idx) => (
+              {
+                text: "Dominio personalizado gratis",
+                tooltip: "Incluimos el registro de tu dominio personalizado por el primer año completamente gratis. Sujeto a disponibilidad del dominio."
+              },
+              {
+                text: "Hosting gratis",
+                tooltip: "Alojamiento web de alta calidad incluido por el primer año. Servidores rápidos y seguros para garantizar que tu sitio esté siempre disponible."
+              },
+              {
+                text: "Soporte 24/7",
+                tooltip: "Atención técnica disponible todos los días, las 24 horas via WhatsApp y email para resolver cualquier duda."
+              }
+            ].map((item, idx) => (
               <div
                 key={idx}
-                className="flex items-start sm:items-center gap-3 text-neutral-700 justify-center lg:justify-start"
+                className="flex items-start sm:items-center gap-3 text-neutral-700 justify-center lg:justify-start relative"
               >
                 <CheckCircle className="text-green-500 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 sm:mt-0" />
                 <span className="text-base md:text-lg text-left">
-                  {text}
+                  {item.text}
                 </span>
+                
+                {/* Ícono de ayuda individual */}
+                <div className="relative">
+                  <button
+                    onMouseEnter={() => setActiveTooltip(idx)}
+                    onMouseLeave={() => setActiveTooltip(null)}
+                    onClick={() => setActiveTooltip(activeTooltip === idx ? null : idx)}
+                    className="text-neutral-400 hover:text-blue-600 transition-colors duration-200"
+                  >
+                    <CircleHelp className="w-4 h-4" />
+                  </button>
+                  
+                  {/* Tooltip individual */}
+                  {activeTooltip === idx && (
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 bg-blue-600 border border-neutral-200 rounded-lg shadow-lg p-3 z-20">
+                      <p className="text-xs text-white">
+                        {item.tooltip}
+                      </p>
+                      
+                      {/* Flecha del tooltip */}
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-600"></div>
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
