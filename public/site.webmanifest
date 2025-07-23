@@ -1,0 +1,111 @@
+{
+    "name": "MARTIL.DEV - Desarrollo Web Profesional",
+    "short_name": "MARTIL.DEV",
+    "description": "Agencia de desarrollo web especializada en sitios profesionales para empresas, e-commerce, y presencia digital. Precios accesibles, entrega rápida.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2563eb",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "es-MX",
+    "categories": ["business", "productivity", "technology"],
+    "icons": [
+      {
+        "src": "/favicon/icons8-retratos-ios-17-outlined-16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon/icons8-retratos-ios-17-outlined-32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon/icons8-retratos-ios-17-outlined-60.png",
+        "sizes": "60x60",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon/icons8-retratos-ios-17-outlined-72.png",
+        "sizes": "72x72",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon/icons8-retratos-ios-17-outlined-76.png",
+        "sizes": "76x76",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon/icons8-retratos-ios-17-outlined-96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon/apple-touch-icon.png",
+        "sizes": "96x96",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ],
+    "shortcuts": [
+      {
+        "name": "Contacto",
+        "short_name": "Contacto",
+        "description": "Contacta con nosotros para tu proyecto",
+        "url": "/contacto",
+        "icons": [
+          {
+            "src": "/favicon/icons8-retratos-ios-17-outlined-32.png",
+            "sizes": "32x32"
+          }
+        ]
+      },
+      {
+        "name": "Servicios",
+        "short_name": "Servicios", 
+        "description": "Nuestros servicios de desarrollo web",
+        "url": "/#servicios",
+        "icons": [
+          {
+            "src": "/favicon/icons8-retratos-ios-17-outlined-32.png",
+            "sizes": "32x32"
+          }
+        ]
+      },
+      {
+        "name": "Sobre Nosotros",
+        "short_name": "Nosotros",
+        "description": "Conoce más sobre MARTIL.DEV",
+        "url": "/sobre-nosotros",
+        "icons": [
+          {
+            "src": "/favicon/icons8-retratos-ios-17-outlined-32.png",
+            "sizes": "32x32"
+          }
+        ]
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "/screenshot-wide.png",
+        "sizes": "1280x720",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "MARTIL.DEV - Página principal"
+      },
+      {
+        "src": "/screenshot-narrow.png", 
+        "sizes": "750x1334",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "MARTIL.DEV - Vista móvil"
+      }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+    "edge_side_panel": {
+      "preferred_width": 480
+    }
+  }
