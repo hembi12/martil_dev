@@ -8,7 +8,7 @@ export default function Logo() {
         <Box className="w-5 h-5 sm:w-6 sm:h-6 text-blue-50" />
       </div>
       <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-900 text-shadow-md">
-        MARTIL.DEV
+        Martil.dev
       </h1>
     </div>
   );

@@ -119,7 +119,7 @@ import {
       label: "Tasa de satisfacción",
     },
     {
-      value: "24h",
-      label: "Tiempo de respuesta",
+      value: "24/7",
+      label: "Soporte Técnico",
     },
   ];

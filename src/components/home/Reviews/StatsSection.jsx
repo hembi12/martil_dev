@@ -19,7 +19,7 @@ const StatsSection = () => {
         {statsData.map((stat, index) => (
           <div key={index} className="text-center group">
             {/* Números principales - tamaños más balanceados */}
-            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-blue-600 mb-2 sm:mb-3 md:mb-4 group-hover:scale-105 transition-all duration-300 ease-out leading-none text-shadow-md">
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-green-600 mb-2 sm:mb-3 md:mb-4 group-hover:scale-105 transition-all duration-300 ease-out leading-none text-shadow-md">
               {stat.value}
             </div>
 

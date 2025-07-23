@@ -29,13 +29,13 @@ export default function PaymentMethodsSingleCard() {
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 mb-4 sm:mb-6 text-shadow-md">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 text-shadow-md">
             Métodos de Pago
           </h2>
         </div>
 
         {/* Payment Methods Grid - Sin contenedor de tarjeta */}
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 lg:mb-12">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12">
           {paymentOptions.map((option, index) => (
             <li
               key={index}

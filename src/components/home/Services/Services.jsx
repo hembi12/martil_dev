@@ -42,7 +42,7 @@ export default function Services() {
         {/* Section Header integrado */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-sm">
-            Soluciones únicas para ti
+            Soluciones únicas
           </h2>
         </div>
 
@@ -67,9 +67,9 @@ export default function Services() {
             <div className="text-base text-neutral-500 flex items-center gap-2">
               <span>Desliza para ver más servicios</span>
               <div className="flex gap-1">
-                <div className="w-2 h-2 rounded-full bg-blue-300"></div>
-                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                <div className="w-2 h-2 rounded-full bg-blue-300"></div>
+                <div className="w-2 h-2 rounded-lg bg-blue-300"></div>
+                <div className="w-2 h-2 rounded-lg bg-blue-500"></div>
+                <div className="w-2 h-2 rounded-lg bg-blue-300"></div>
               </div>
             </div>
           </div>

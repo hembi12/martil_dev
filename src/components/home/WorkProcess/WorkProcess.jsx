@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { CheckCircle, Clock } from "lucide-react";
 import { workSteps } from "./data/workData";
-import WorkCTA from "./WorkCTA";
 
 const WorkProcess = () => {
   const scrollRef = useRef(null);

@@ -17,7 +17,7 @@ import {
       color: "text-teal-600",
       bgColor: "bg-teal-50",
       borderColor: "border-teal-200",
-      gradientColor: "bg-gradient-to-br from-teal-400 to-cyan-600 shadow-xs",
+      gradientColor: "bg-gradient-to-br from-teal-400 to-cyan-600 shadow-md",
       iconColor: "text-blue-50",
       duration: "1 día*",
       details: [
@@ -35,7 +35,7 @@ import {
       color: "text-red-600",
       bgColor: "bg-red-50",
       borderColor: "border-red-200",
-      gradientColor: "bg-gradient-to-br from-red-500 to-rose-700 shadow-xs",
+      gradientColor: "bg-gradient-to-br from-red-500 to-rose-700 shadow-md",
       iconColor: "text-purple-50",
       duration: "1-2 días*",
       details: [
@@ -53,7 +53,7 @@ import {
       color: "text-orange-600",
       bgColor: "bg-orange-50",
       borderColor: "border-orange-200",
-      gradientColor: "bg-gradient-to-br from-orange-400 to-amber-600 shadow-xs",
+      gradientColor: "bg-gradient-to-br from-orange-400 to-amber-600 shadow-md",
       iconColor: "text-pink-50",
       duration: "2-5 días*",
       details: [
@@ -72,7 +72,7 @@ import {
       bgColor: "bg-purple-50",
       borderColor: "border-purple-200",
       gradientColor:
-        "bg-gradient-to-br from-purple-500 to-fuchsia-700 shadow-xs",
+        "bg-gradient-to-br from-purple-500 to-fuchsia-700 shadow-md",
       iconColor: "text-green-50",
       duration: "3-15 días*",
       details: [
@@ -91,7 +91,7 @@ import {
       bgColor: "bg-green-50",
       borderColor: "border-green-200",
       gradientColor:
-        "bg-gradient-to-br from-green-500 to-emerald-700 shadow-xs",
+        "bg-gradient-to-br from-green-500 to-emerald-700 shadow-md",
       iconColor: "text-orange-50",
       duration: "1-3 días*",
       details: [
@@ -110,7 +110,7 @@ import {
       bgColor: "bg-amber-50",
       borderColor: "border-amber-200",
       gradientColor:
-        "bg-gradient-to-br from-yellow-500 to-yellow-700 shadow-xs",
+        "bg-gradient-to-br from-yellow-500 to-yellow-700 shadow-md",
       iconColor: "text-indigo-50",
       duration: "1 día*",
       details: [

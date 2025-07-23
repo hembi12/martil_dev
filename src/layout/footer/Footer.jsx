@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
             {/* Copyright */}
             <div className="flex items-center gap-1 text-xs sm:text-sm text-neutral-300 order-2 sm:order-1">
-              <span>© {currentYear} MARTIL.DEV - Todos los derechos reservados</span>
+              <span>© {currentYear} Martil.dev - Todos los derechos reservados</span>
             </div>
 
             {/* Enlaces legales */}

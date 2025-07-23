@@ -1,7 +1,8 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Trust() {
   const scrollRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const ratings = [
     {
@@ -50,25 +51,44 @@ export default function Trust() {
     );
   };
 
-  const scrollLeft = () => {
+  const scrollToCard = (index) => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      const container = scrollRef.current;
+      const containerWidth = container.clientWidth;
+      const cardWidth = window.innerWidth >= 640 ? 320 : 288; // w-80 en sm, w-72 en móvil
+      const gap = window.innerWidth >= 640 ? 32 : 24; // gap-8 en sm, gap-6 en móvil
+      const padding = 16; // px-4 = 16px de padding total
+      
+      // Calcular la posición para centrar la tarjeta considerando el padding
+      const cardPosition = (cardWidth + gap) * index + padding;
+      const scrollPosition = cardPosition - (containerWidth / 2) + (cardWidth / 2);
+      
+      container.scrollTo({
+        left: Math.max(0, Math.min(scrollPosition, container.scrollWidth - containerWidth)),
+        behavior: "smooth"
+      });
+      
+      setCurrentIndex(index);
     }
+  };
+
+  const scrollLeft = () => {
+    const newIndex = Math.max(0, currentIndex - 1);
+    scrollToCard(newIndex);
   };
 
   const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
-    }
+    const newIndex = Math.min(ratings.length - 1, currentIndex + 1);
+    scrollToCard(newIndex);
   };
 
   return (
-    <section className="bg-gradient-to-br from-blue-500 to-blue-700 py-6 sm:py-10 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-br from-blue-500 to-blue-700 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Título opcional de la sección */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 mb-4 sm:mb-6 text-shadow-sm">
-            Confianza respaldada por nuestros de clientes
+            Confianza respaldada por nuestros clientes
           </h2>
         </div>
 
@@ -81,11 +101,13 @@ export default function Trust() {
               className="lg:hidden overflow-x-auto scrollbar-hide"
               ref={scrollRef}
             >
-              <div className="flex gap-6 sm:gap-8 pb-4 min-w-max">
+              <div className="flex gap-6 sm:gap-8 pb-4 pt-2 min-w-max px-6">
                 {ratings.map((item, index) => (
                   <div
                     key={index}
-                    className="flex-none w-72 sm:w-80 flex flex-col items-center p-6 sm:p-8 bg-white rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
+                    className={`flex-none w-72 sm:w-80 flex flex-col items-center p-6 sm:p-8 bg-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform ${
+                      currentIndex === index ? 'scale-105 ring-2 ring-blue-300 ring-opacity-50' : ''
+                    }`}
                   >
                     {/* Logo/Nombre de la plataforma - MEJORADO */}
                     <div className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-2 flex items-center">
@@ -155,9 +177,7 @@ export default function Trust() {
 
                   {/* Puntaje y número de reseñas */}
                   <div className="text-center">
-                    <p
-                      className="text-2xl sm:text-3xl font-bold text-green-600 mb-1"
-                    >
+                    <p className="text-2xl sm:text-3xl font-bold text-green-600 mb-1">
                       {item.score}
                       <span className="text-base sm:text-lg lg:text-xl text-green-900">
                         /5
@@ -172,14 +192,19 @@ export default function Trust() {
             </div>
           </div>
 
-          {/* Indicador de scroll - MEJORADO */}
+          {/* Indicadores de posición - MEJORADO */}
           <div className="flex justify-center mt-4 gap-2">
             <div className="text-sm text-neutral-200 flex items-center gap-2 lg:hidden">
               <span>Desliza para ver más reseñas</span>
               <div className="flex gap-1">
-                <div className="w-2 h-2 rounded-full bg-blue-100"></div>
-                <div className="w-2 h-2 rounded-full bg-blue-300"></div>
-                <div className="w-2 h-2 rounded-full bg-blue-100"></div>
+                {ratings.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`w-2 h-2 rounded-lg transition-colors duration-300 ${
+                      currentIndex === index ? 'bg-white' : 'bg-blue-300'
+                    }`}
+                  ></div>
+                ))}
               </div>
             </div>
           </div>
@@ -188,11 +213,16 @@ export default function Trust() {
           <div className="flex justify-center mt-4 gap-4 lg:hidden">
             <button
               onClick={scrollLeft}
-              className="flex items-center justify-center w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-blue-500"
+              disabled={currentIndex === 0}
+              className={`flex items-center justify-center w-10 h-10 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border ${
+                currentIndex === 0 
+                  ? 'bg-blue-400 text-blue-200 cursor-not-allowed border-blue-400' 
+                  : 'bg-blue-500 hover:bg-blue-600 text-blue-50 border-blue-500'
+              }`}
               aria-label="Anterior"
             >
               <svg
-                className="w-6 h-6 text-blue-50"
+                className="w-6 h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -208,11 +238,16 @@ export default function Trust() {
 
             <button
               onClick={scrollRight}
-              className="flex items-center justify-center w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-blue-500"
+              disabled={currentIndex === ratings.length - 1}
+              className={`flex items-center justify-center w-10 h-10 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border ${
+                currentIndex === ratings.length - 1
+                  ? 'bg-blue-400 text-blue-200 cursor-not-allowed border-blue-400' 
+                  : 'bg-blue-500 hover:bg-blue-600 text-blue-50 border-blue-500'
+              }`}
               aria-label="Siguiente"
             >
               <svg
-                className="w-6 h-6 text-blue-50"
+                className="w-6 h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

@@ -48,7 +48,7 @@ const PrivacyPolicy = () => {
             <h2 className="text-xl font-semibold text-gray-900 mb-4">1. Introducción</h2>
             <div className="prose prose-gray max-w-none">
               <p className="text-gray-600 leading-relaxed mb-4">
-                En MARTIL.DEV, nos comprometemos a proteger tu privacidad y la confidencialidad de tu información personal. 
+                En Martil.dev, nos comprometemos a proteger tu privacidad y la confidencialidad de tu información personal. 
                 Esta política de privacidad explica cómo recopilamos, utilizamos, almacenamos y protegemos la información 
                 que nos proporcionas cuando utilizas nuestros servicios de desarrollo web.
               </p>
@@ -395,7 +395,7 @@ const PrivacyPolicy = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div>
                 <p className="font-medium text-gray-900">Responsable de Datos</p>
-                <p className="text-sm text-gray-600">MARTIL.DEV</p>
+                <p className="text-sm text-gray-600">Martil.dev</p>
               </div>
               <div>
                 <p className="font-medium text-gray-900">Email de Privacidad</p>
