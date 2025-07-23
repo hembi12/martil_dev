@@ -53,20 +53,13 @@ const TestimonialCard = ({ testimonial }) => {
                 {testimonial.category}
               </span>
             </div>
-            
-            {/* Ubicación y tipo de negocio */}
-            <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-base text-neutral-500 flex-wrap">
-              <span className="whitespace-nowrap">{testimonial.location}</span>
-              <span className="hidden sm:inline">•</span>
-              <span className="whitespace-nowrap">{testimonial.businessType}</span>
-            </div>
           </div>
 
           {/* Rating y fecha */}
           <div className="flex-shrink-0 w-full sm:w-auto">
             <div className="flex sm:block items-center justify-between sm:justify-start">
               {/* Fecha - mejor posicionada en móvil */}
-              <p className="text-xs sm:text-xs lg:text-sm text-neutral-400 mb-0 sm:mb-1 text-left sm:text-right order-2 sm:order-1">
+              <p className="text-xs sm:text-xs lg:text-sm text-neutral-600 mb-0 sm:mb-1 text-left sm:text-right order-2 sm:order-1">
                 {testimonial.date}
               </p>
               
@@ -102,7 +95,7 @@ const TestimonialCard = ({ testimonial }) => {
         {/* Badge de servicio - centrado en móvil, alineado normal en desktop */}
         <div className="flex justify-center sm:justify-start">
           <div className="inline-flex items-center gap-2 bg-blue-50 sm:bg-blue-100 text-blue-600 px-3 py-2 rounded-lg text-xs sm:text-sm lg:text-base font-medium border border-blue-100 sm:border-transparent shadow-md">
-            <span className="text-neutral-500 sm:text-blue-600">Servicio:</span>
+            <span className="text-blue-600">Servicio:</span>
             <span className="font-semibold text-blue-700">{testimonial.service}</span>
           </div>
         </div>

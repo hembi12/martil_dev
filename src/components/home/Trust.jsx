@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 
 export default function Trust() {
   const scrollRef = useRef(null);
@@ -52,22 +52,22 @@ export default function Trust() {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
 
   return (
-    <section className="bg-gradient-to-b from-neutral-50 to-neutral-100 py-6 sm:py-10 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-br from-blue-500 to-blue-700 py-6 sm:py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Título opcional de la sección */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-sm">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 mb-4 sm:mb-6 text-shadow-sm">
             Confianza respaldada por nuestros de clientes
           </h2>
         </div>
@@ -77,7 +77,10 @@ export default function Trust() {
           {/* Scroll horizontal en móvil y tablet, grid en desktop */}
           <div className="lg:grid lg:grid-cols-3 lg:gap-12">
             {/* Scroll horizontal para móvil/tablet */}
-            <div className="lg:hidden overflow-x-auto scrollbar-hide" ref={scrollRef}>
+            <div
+              className="lg:hidden overflow-x-auto scrollbar-hide"
+              ref={scrollRef}
+            >
               <div className="flex gap-6 sm:gap-8 pb-4 min-w-max">
                 {ratings.map((item, index) => (
                   <div
@@ -113,7 +116,7 @@ export default function Trust() {
                           /5
                         </span>
                       </p>
-                      <p className="text-sm sm:text-base text-neutral-900">
+                      <p className="text-sm sm:text-base font-medium text-neutral-900">
                         {item.reviews} opiniones
                       </p>
                     </div>
@@ -152,9 +155,13 @@ export default function Trust() {
 
                   {/* Puntaje y número de reseñas */}
                   <div className="text-center">
-                    <p className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1">
+                    <p
+                      className="text-2xl sm:text-3xl font-bold text-green-600 mb-1"
+                    >
                       {item.score}
-                      <span className="text-base sm:text-lg lg:text-xl text-blue-900">/5</span>
+                      <span className="text-base sm:text-lg lg:text-xl text-green-900">
+                        /5
+                      </span>
                     </p>
                     <p className="text-sm sm:text-base text-neutral-900">
                       {item.reviews} opiniones
@@ -167,12 +174,12 @@ export default function Trust() {
 
           {/* Indicador de scroll - MEJORADO */}
           <div className="flex justify-center mt-4 gap-2">
-            <div className="text-sm text-neutral-500 flex items-center gap-2 lg:hidden">
+            <div className="text-sm text-neutral-200 flex items-center gap-2 lg:hidden">
               <span>Desliza para ver más reseñas</span>
               <div className="flex gap-1">
+                <div className="w-2 h-2 rounded-full bg-blue-100"></div>
                 <div className="w-2 h-2 rounded-full bg-blue-300"></div>
-                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                <div className="w-2 h-2 rounded-full bg-blue-300"></div>
+                <div className="w-2 h-2 rounded-full bg-blue-100"></div>
               </div>
             </div>
           </div>
@@ -181,11 +188,11 @@ export default function Trust() {
           <div className="flex justify-center mt-4 gap-4 lg:hidden">
             <button
               onClick={scrollLeft}
-              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200"
+              className="flex items-center justify-center w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-blue-500"
               aria-label="Anterior"
             >
               <svg
-                className="w-6 h-6 text-blue-600"
+                className="w-6 h-6 text-blue-50"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -198,14 +205,14 @@ export default function Trust() {
                 />
               </svg>
             </button>
-            
+
             <button
               onClick={scrollRight}
-              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-neutral-200"
+              className="flex items-center justify-center w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border border-blue-500"
               aria-label="Siguiente"
             >
               <svg
-                className="w-6 h-6 text-blue-600"
+                className="w-6 h-6 text-blue-50"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

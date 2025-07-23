@@ -119,7 +119,7 @@ const WorkProcess = () => {
                             {step.details.map((detail, i) => (
                               <li
                                 key={i}
-                                className="flex items-start gap-2 sm:gap-3 text-neutral-700 text-xs sm:text-sm md:text-base"
+                                className="flex items-start gap-2 sm:gap-3 text-neutral-700 font-medium text-xs sm:text-sm md:text-base"
                               >
                                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-0.5 flex-shrink-0" />
                                 <span className="leading-relaxed">

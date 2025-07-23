@@ -14,7 +14,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-neutral-100 to-neutral-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8">
+    <div className="bg-gradient-to-b from-neutral-100 to-neutral-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
         {/* Texto principal */}
         <div className="text-center lg:text-left order-2 lg:order-1">
@@ -44,7 +44,7 @@ export default function Hero() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="flex items-start sm:items-center gap-3 text-neutral-700 justify-center lg:justify-start relative"
+                className="flex items-start sm:items-center gap-3 text-neutral-700 font-medium justify-center lg:justify-start relative"
               >
                 <CheckCircle className="text-green-500 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 sm:mt-0" />
                 <span className="text-base md:text-lg text-left">
@@ -57,7 +57,7 @@ export default function Hero() {
                     onMouseEnter={() => setActiveTooltip(idx)}
                     onMouseLeave={() => setActiveTooltip(null)}
                     onClick={() => setActiveTooltip(activeTooltip === idx ? null : idx)}
-                    className="text-neutral-400 hover:text-blue-600 transition-colors duration-200 cursor-pointer"
+                    className="text-neutral-500 hover:text-blue-600 transition-colors duration-200 cursor-pointer"
                   >
                     <CircleHelp className="w-4 h-4" />
                   </button>
@@ -89,7 +89,7 @@ export default function Hero() {
                 USD
               </span>
             </div>
-            <p className="text-sm md:text-base text-neutral-700 mt-1">
+            <p className="text-sm md:text-base font-medium text-neutral-700 mt-1">
               $1,980 MXN Pago único.*
             </p>
           </div>
@@ -106,7 +106,7 @@ export default function Hero() {
             {/* Badge de seguridad - MEJORADO */}
             <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-neutral-600">
               <ShieldCheck className="w-4 h-4 text-green-500" />
-              <span className="text-xs sm:text-sm">Garantía de satisfacción*</span>
+              <span className="text-xs font-medium sm:text-sm">Garantía de satisfacción*</span>
             </div>
           </div>
         </div>

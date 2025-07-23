@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Plus, Minus, Mail, ChevronDown, ChevronUp } from "lucide-react";
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function FAQ() {
   const [openItem, setOpenItem] = useState(null);
@@ -215,9 +215,9 @@ export default function FAQ() {
           </button>
 
           {/* Indicador adicional sutil para móvil */}
-          <p className="text-xs sm:text-sm text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-1">
-            <FaWhatsapp className="w-4 h-4 text-green-600" />
+          <p className="text-xs sm:text-sm font-medium text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-1">
             Respuesta inmediata por WhatsApp
+            <FaWhatsapp className="w-4 h-4 text-green-600" />
           </p>
         </div>
       </div>

@@ -33,9 +33,9 @@ const CustomQuoteCTA = () => {
       </button>
 
       {/* Indicador adicional sutil para móvil */}
-      <p className="text-xs sm:text-sm text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-1">
-        <FaWhatsapp className="w-4 h-4 text-green-600" />
+      <p className="text-xs sm:text-sm font-medium text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-1">
         Respuesta inmediata por WhatsApp
+        <FaWhatsapp className="w-4 h-4 text-green-600" />
       </p>
     </div>
   );

@@ -1,4 +1,4 @@
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp } from "react-icons/fa";
 import { statsData } from "./data/reviewsData";
 
 const StatsSection = () => {
@@ -37,7 +37,6 @@ const StatsSection = () => {
         <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6 text-shadow-sm">
           ¿Listo para ser el próximo caso de éxito?
         </h3>
-
         {/* Botón CTA - mismo estilo que Hero y FAQ */}
         <button
           onClick={handleStartProject}
@@ -45,12 +44,11 @@ const StatsSection = () => {
         >
           Comenzar mi proyecto
         </button>
-
         {/* Indicador adicional sutil para móvil */}
-        <p className="text-xs sm:text-sm text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-1">
-          <FaWhatsapp className="w-4 h-4 text-green-600" />
+        <p className="text-xs sm:text-sm font-medium text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-1">
           Respuesta inmediata por WhatsApp
-        </p>
+          <FaWhatsapp className="w-4 h-4 text-green-600" />
+        </p>{" "}
       </div>
     </>
   );

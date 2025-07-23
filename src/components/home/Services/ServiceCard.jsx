@@ -152,7 +152,7 @@ const ServiceCard = ({ service, index }) => {
           {service.features.map((feature, i) => (
             <li
               key={i}
-              className="flex items-start gap-2 sm:gap-3 text-neutral-700 text-sm sm:text-base md:text-lg"
+              className="flex items-start gap-2 sm:gap-3 text-neutral-700 font-medium text-sm sm:text-base md:text-lg"
             >
               <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-0.5 flex-shrink-0" />
               <span className="leading-relaxed">{feature}</span>
