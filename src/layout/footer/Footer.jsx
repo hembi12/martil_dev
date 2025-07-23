@@ -19,7 +19,7 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t border-neutral-800">
+      <div className="border-t border-neutral-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
             {/* Copyright */}
