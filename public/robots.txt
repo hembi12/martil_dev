@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Permitir acceso a archivos CSS y JS para renderizado
+Allow: /src/
+Allow: /assets/
+Allow: /favicon/
+
+# Bloquear archivos sensibles o innecesarios
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /vite.config.js
+Disallow: /.gitignore
+Disallow: /README.md
+
+# Sitemap
+Sitemap: https://www.martil.dev/sitemap.xml
+
+# Crawl-delay (opcional, 1 segundo entre requests)
+Crawl-delay: 1
