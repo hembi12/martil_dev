@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom';
 
 export default function ServicesLinks() {
   const services = [
-    "Negocios pequeños",
     "Empresas medianas y grandes",
-    "Tiendas en línea",
+    "Reservas y citas en línea",
     "Influencers y creadores",
     "Freelancers y servicios",
-    "Reservas y citas en línea",
+    "Negocios pequeños",
+    "Tiendas en línea",
   ];
 
   const quickLinks = [
     { text: "Sobre nosotros", href: "/sobre-nosotros" },
-    { text: "Portafolio", href: "/portafolio" },
+    { text: "Bolsa de trabajo", href: "/bolsa-de-trabajo" },
+    { text: "Contacto", href: "/contacto" },
     { text: "Precios", href: "/precios" },
     { text: "Blog", href: "/blog" },
-    { text: "Contacto", href: "/contacto" },
   ];
 
   const handleScrollToServices = (e) => {

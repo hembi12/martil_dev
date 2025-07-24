@@ -209,15 +209,22 @@ export default function FAQ() {
           </p>
           <button
             onClick={handleContactUs}
-            className="w-auto sm:w-auto px-6 py-3 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
+            className="inline-flex items-center gap-2 w-auto sm:w-auto px-6 py-3 bg-green-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-green-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
           >
+            <FaWhatsapp className="w-5 h-5 text-white" />
             Contáctanos ahora
           </button>
 
-          {/* Indicador adicional sutil para móvil */}
-          <p className="text-xs sm:text-sm font-medium text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-1">
-            Respuesta inmediata por WhatsApp
-            <FaWhatsapp className="w-4 h-4 text-green-600" />
+          {/* Opciones de contacto adicionales */}
+          <p className="text-xs sm:text-sm font-medium text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-2">
+            También por{" "}
+            <a 
+              href="mailto:hectormartilb@gmail.com"
+              className="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-200 inline-flex items-center gap-1"
+            >
+              <Mail className="w-4 h-4" />
+              support@martil.dev
+            </a>
           </p>
         </div>
       </div>

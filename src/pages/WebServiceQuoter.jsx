@@ -8,7 +8,7 @@ import ClientInfoForm from "../components/webservicequoter/ClientInfoForm";
 import QuotationSummary from "../components/webservicequoter/QuotationSummary";
 import NavigationButtons from "../components/webservicequoter/NavigationButtons";
 import SummaryCard from "../components/webservicequoter/SummaryCard";
-import CustomQuoteCTA from "../components/home/Services/CustomQuoteCTA";
+import CustomCTA from "../components/webservicequoter/CustomCTA";
 import { services, budgetOptions, timelineOptions, additionalFeatures, steps } from "../components/webservicequoter/data/data";
 
 export default function WebServiceQuoter() {
@@ -124,6 +124,14 @@ export default function WebServiceQuoter() {
     setCurrentStep(0);
   };
 
+  const handleCustomCTAClick = () => {
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
+    const message = "¡Hola! Estuve usando el cotizador web y me gustaría recibir asesoría personalizada para mi proyecto.";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   const renderStep = () => {
     switch (currentStep) {
       case 0:
@@ -227,10 +235,13 @@ export default function WebServiceQuoter() {
           calculateTotal={calculateTotal}
         />
 
-        {/* CustomQuoteCTA - Added at the end with responsive spacing */}
-        <div className="mt-6 sm:mt-8 lg:mt-16">
-          <CustomQuoteCTA />
-        </div>
+        {/* Custom CTA - Aparece al final del proceso o cuando se necesite asesoría */}
+        {(currentStep === 5 || currentStep === 0) && (
+          <CustomCTA 
+            onClick={handleCustomCTAClick}
+            className="mt-8 mb-8"
+          />
+        )}
       </div>
     </div>
   );
