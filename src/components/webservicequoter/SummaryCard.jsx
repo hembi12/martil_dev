@@ -1,16 +1,13 @@
 export default function SummaryCard({ 
   currentStep, 
   selectedService, 
-  budgetOptions, 
   timelineOptions, 
-  budget, 
   timeline, 
   features, 
   calculateTotal 
 }) {
-  if (currentStep <= 0 || currentStep >= 5) return null;
+  if (currentStep <= 0 || currentStep >= 4) return null;
 
-  const selectedBudget = budgetOptions.find(b => b.value === budget);
   const selectedTimeline = timelineOptions.find(t => t.value === timeline);
 
   return (
@@ -27,12 +24,6 @@ export default function SummaryCard({
             <div className="flex justify-between items-start">
               <span className="text-gray-600 flex-shrink-0 mr-2">Servicio:</span>
               <span className="font-medium text-right leading-tight">{selectedService.title}</span>
-            </div>
-          )}
-          {budget && (
-            <div className="flex justify-between items-start">
-              <span className="text-gray-600 flex-shrink-0 mr-2">Presupuesto:</span>
-              <span className="font-medium text-right leading-tight">{selectedBudget?.label}</span>
             </div>
           )}
           {timeline && (
@@ -67,7 +58,7 @@ export default function SummaryCard({
             <h4 className="font-bold text-gray-900 text-sm">Resumen actual</h4>
             <div className="flex items-center text-xs text-gray-500">
               <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-1 animate-pulse"></div>
-              Paso {currentStep + 1}/6
+              Paso {currentStep + 1}/5
             </div>
           </div>
           
@@ -80,14 +71,6 @@ export default function SummaryCard({
                 </span>
               </div>
             )}
-            {budget && (
-              <div className="bg-gray-50 rounded-lg p-2">
-                <span className="text-gray-600 block">Presupuesto</span>
-                <span className="font-medium text-gray-900 text-xs leading-tight">
-                  {selectedBudget?.label}
-                </span>
-              </div>
-            )}
             {timeline && (
               <div className="bg-gray-50 rounded-lg p-2">
                 <span className="text-gray-600 block">Timeline</span>
@@ -97,7 +80,7 @@ export default function SummaryCard({
               </div>
             )}
             {features.length > 0 && (
-              <div className="bg-gray-50 rounded-lg p-2">
+              <div className="bg-gray-50 rounded-lg p-2 col-span-2">
                 <span className="text-gray-600 block">Extras</span>
                 <span className="font-medium text-blue-600 text-xs">
                   {features.length} seleccionado{features.length !== 1 ? 's' : ''}

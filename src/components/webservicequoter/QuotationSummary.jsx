@@ -1,18 +1,15 @@
-import { Star, DollarSign, Timer } from "lucide-react";
+import { Star, Timer } from "lucide-react";
 
 export default function QuotationSummary({
   selectedService,
-  budgetOptions,
   timelineOptions,
   additionalFeatures,
-  budget,
   timeline,
   features,
   calculateTotal,
   // eslint-disable-next-line no-unused-vars
   onModifyProject = () => {},
 }) {
-  const selectedBudget = budgetOptions.find((b) => b.value === budget);
   const selectedTimeline = timelineOptions.find((t) => t.value === timeline);
 
   return (
@@ -40,12 +37,6 @@ export default function QuotationSummary({
                     <Star className="w-5 h-5 text-blue-500 mr-2" />
                     <span className="text-gray-700">
                       <strong>Tipo:</strong> {selectedService?.title}
-                    </span>
-                  </div>
-                  <div className="flex items-center">
-                    <DollarSign className="w-5 h-5 text-green-500 mr-2" />
-                    <span className="text-gray-700">
-                      <strong>Presupuesto:</strong> {selectedBudget?.label}
                     </span>
                   </div>
                   <div className="flex items-center">

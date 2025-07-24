@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ProgressBar from "../components/webservicequoter/ProgressBar";
 import ServiceSelection from "../components/webservicequoter/ServiceSelection";
-import BudgetSelection from "../components/webservicequoter/BudgetSelection";
 import TimelineSelection from "../components/webservicequoter/TimelineSelection";
 import FeaturesSelection from "../components/webservicequoter/FeaturesSelection";
 import ClientInfoForm from "../components/webservicequoter/ClientInfoForm";
@@ -9,12 +8,11 @@ import QuotationSummary from "../components/webservicequoter/QuotationSummary";
 import NavigationButtons from "../components/webservicequoter/NavigationButtons";
 import SummaryCard from "../components/webservicequoter/SummaryCard";
 import CustomCTA from "../components/webservicequoter/CustomCTA";
-import { services, budgetOptions, timelineOptions, additionalFeatures, steps } from "../components/webservicequoter/data/data";
+import { services, timelineOptions, additionalFeatures, steps } from "../components/webservicequoter/data/data";
 
 export default function WebServiceQuoter() {
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedService, setSelectedService] = useState(null);
-  const [budget, setBudget] = useState("");
   const [timeline, setTimeline] = useState("");
   const [features, setFeatures] = useState([]);
   const [clientInfo, setClientInfo] = useState({
@@ -28,12 +26,6 @@ export default function WebServiceQuoter() {
     if (!selectedService) return 0;
     
     let total = selectedService.basePrice;
-    
-    // Aplicar multiplicador de presupuesto
-    const budgetOption = budgetOptions.find(b => b.value === budget);
-    if (budgetOption) {
-      total *= budgetOption.multiplier;
-    }
     
     // Aplicar multiplicador de tiempo
     const timelineOption = timelineOptions.find(t => t.value === timeline);
@@ -67,11 +59,10 @@ export default function WebServiceQuoter() {
   const canProceed = () => {
     switch (currentStep) {
       case 0: return selectedService !== null;
-      case 1: return budget !== "";
-      case 2: return timeline !== "";
-      case 3: return true; // Las características adicionales son opcionales
-      case 4: return clientInfo.name && clientInfo.email;
-      case 5: return true;
+      case 1: return timeline !== "";
+      case 2: return true; // Las características adicionales son opcionales
+      case 3: return clientInfo.name && clientInfo.email;
+      case 4: return true;
       default: return false;
     }
   };
@@ -80,7 +71,6 @@ export default function WebServiceQuoter() {
     // Crear objeto con todos los datos de la cotización
     const quotationData = {
       service: selectedService,
-      budget: budgetOptions.find(b => b.value === budget),
       timeline: timelineOptions.find(t => t.value === timeline),
       selectedFeatures: features.map(featureId => 
         additionalFeatures.find(f => f.id === featureId)
@@ -144,21 +134,13 @@ export default function WebServiceQuoter() {
         );
       case 1:
         return (
-          <BudgetSelection 
-            budgetOptions={budgetOptions}
-            budget={budget}
-            setBudget={setBudget}
-          />
-        );
-      case 2:
-        return (
           <TimelineSelection 
             timelineOptions={timelineOptions}
             timeline={timeline}
             setTimeline={setTimeline}
           />
         );
-      case 3:
+      case 2:
         return (
           <FeaturesSelection 
             additionalFeatures={additionalFeatures}
@@ -166,21 +148,19 @@ export default function WebServiceQuoter() {
             setFeatures={setFeatures}
           />
         );
-      case 4:
+      case 3:
         return (
           <ClientInfoForm 
             clientInfo={clientInfo}
             setClientInfo={setClientInfo}
           />
         );
-      case 5:
+      case 4:
         return (
           <QuotationSummary 
             selectedService={selectedService}
-            budgetOptions={budgetOptions}
             timelineOptions={timelineOptions}
             additionalFeatures={additionalFeatures}
-            budget={budget}
             timeline={timeline}
             features={features}
             calculateTotal={calculateTotal}
@@ -227,16 +207,14 @@ export default function WebServiceQuoter() {
         <SummaryCard 
           currentStep={currentStep}
           selectedService={selectedService}
-          budgetOptions={budgetOptions}
           timelineOptions={timelineOptions}
-          budget={budget}
           timeline={timeline}
           features={features}
           calculateTotal={calculateTotal}
         />
 
         {/* Custom CTA - Aparece al final del proceso o cuando se necesite asesoría */}
-        {(currentStep === 5 || currentStep === 0) && (
+        {(currentStep === 4 || currentStep === 0) && (
           <CustomCTA 
             onClick={handleCustomCTAClick}
             className="mt-8 mb-8"

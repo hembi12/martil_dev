@@ -172,7 +172,6 @@ export const services = [
   
   export const steps = [
     { title: "Tipo de proyecto", description: "¿Qué tipo de sitio web necesitas?" },
-    { title: "Presupuesto", description: "¿Cuál es tu presupuesto aproximado?" },
     { title: "Tiempo", description: "¿Cuándo necesitas tu sitio web?" },
     { title: "Características", description: "¿Qué funcionalidades adicionales necesitas?" },
     { title: "Información", description: "Cuéntanos sobre tu proyecto" },

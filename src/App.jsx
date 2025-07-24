@@ -7,7 +7,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
-import WebServiceQuoter from "./pages/WebServiceQuoter";
+import WebConfig from "./pages/WebConfig";
 
 // Layout para páginas normales
 const MainLayout = ({ children }) => (
@@ -45,7 +45,7 @@ function App() {
           path="/cotizacion"
           element={
             <FooterOnlyLayout>
-              <WebServiceQuoter />
+              <WebConfig />
             </FooterOnlyLayout>
           }
         />

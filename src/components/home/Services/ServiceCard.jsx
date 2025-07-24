@@ -65,7 +65,7 @@ const ServiceCard = ({ service, index }) => {
 
   return (
     <div
-      className={`bg-white shadow-md hover:shadow-lg rounded-lg p-6 sm:p-8 text-left card-hover flex flex-col justify-between min-h-[560px] md:min-h-[670px] animate-fade-in-up ${
+      className={`bg-white shadow-md hover:shadow-lg rounded-lg p-6 sm:p-8 text-left transition-all duration-300 flex flex-col justify-between min-h-[555px] sm:min-h-[580px] md:min-h-[600px] ${
         index === 1
           ? "animate-delay-1"
           : index === 2
@@ -98,20 +98,20 @@ const ServiceCard = ({ service, index }) => {
         </div>
 
         {/* Precio y tiempo estimado - MEJORADO */}
-        <div className="mb-4">
+        <div className="mb-4 sm:mb-6">
           <p className="text-lg sm:text-xl md:text-2xl mb-2">
-            <span className="text-neutral-600 font-normal text-base sm:text-lg">Desde </span>
-            <span className="text-blue-600 font-bold text-2xl sm:text-3xl text-shadow-md">{service.priceUSD}</span>
-            <span className="text-neutral-600 font-normal text-base sm:text-lg"> USD</span>
+            <span className="text-neutral-600 font-normal text-sm sm:text-base md:text-lg">Desde </span>
+            <span className="text-blue-600 font-bold text-xl sm:text-2xl md:text-3xl text-shadow-md">{service.priceUSD}</span>
+            <span className="text-neutral-600 font-normal text-sm sm:text-base md:text-lg"> USD</span>
           </p>
-          <p className="text-neutral-500 font-medium text-sm sm:text-base md:text-lg mb-4">
+          <p className="text-neutral-500 font-medium text-xs sm:text-sm md:text-base mb-4">
             {service.priceMXN}
           </p>
           
           {/* Tiempo estimado */}
           <div className="flex items-center gap-2 text-green-700">
-            <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-sm sm:text-base md:text-lg font-medium">
+            <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-green-700" />
+            <span className="text-xs sm:text-sm md:text-base font-medium">
               Tiempo estimado: {service.estimatedTime}
             </span>
           </div>
@@ -148,21 +148,26 @@ const ServiceCard = ({ service, index }) => {
         </p>
 
         {/* Lista de características - MEJORADA */}
-        <ul className="space-y-2 sm:space-y-3 mb-4">
-          {service.features.map((feature, i) => (
-            <li
-              key={i}
-              className="flex items-start gap-2 sm:gap-3 text-neutral-700 font-medium text-sm sm:text-base md:text-lg"
-            >
-              <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-0.5 flex-shrink-0" />
-              <span className="leading-relaxed">{feature}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="space-y-3 mb-4">
+          <h4 className="font-semibold text-neutral-900 text-xs sm:text-sm md:text-base">
+            Qué incluye este servicio:
+          </h4>
+          <ul className="space-y-2 sm:space-y-3">
+            {service.features.map((feature, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-2 sm:gap-3 text-neutral-700 font-medium text-xs sm:text-sm md:text-base"
+              >
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                <span className="leading-relaxed">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         {/* Texto adicional sobre más características - MEJORADO */}
         <div className="mb-4">
-          <p className="text-neutral-600 text-sm sm:text-base leading-relaxed">
+          <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
             Conoce todas las funcionalidades haciendo clic en el botón
           </p>
         </div>
@@ -172,7 +177,7 @@ const ServiceCard = ({ service, index }) => {
       <div className="mt-auto">
         <button 
           onClick={handleWhatsAppClick}
-          className="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+          className="w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-xs sm:text-sm md:text-base text-center text-shadow-md border-2 border-blue-600 hover:border-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
         >
           Me interesa
         </button>
