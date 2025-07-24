@@ -67,7 +67,7 @@ export default function ContactSection() {
           const IconComponent = item.icon;
           return (
             <div key={index} className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 bg-blue-600/20 rounded-lg flex items-center justify-center mt-0.5">
+              <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center mt-0.5">
                 <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-blue-50" />
               </div>
               <div className="min-w-0 flex-1">

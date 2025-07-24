@@ -39,7 +39,7 @@ export default function PaymentMethodsSingleCard() {
           {paymentOptions.map((option, index) => (
             <li
               key={index}
-              className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 md:p-2 lg:p-3 hover:bg-blue-50 shadow-md hover:shadow-lg rounded-lg border border-neutral-200 transition-all duration-300 cursor-pointer bg-white"
+              className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 md:p-2 lg:p-3 hover:bg-blue-50 shadow-md hover:shadow-lg rounded-lg border border-neutral-200 transition-all duration-300 bg-white"
             >
               {/* Icon Container */}
               <div className="p-2 sm:p-2.5 md:p-3 flex-shrink-0">

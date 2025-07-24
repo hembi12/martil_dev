@@ -1,16 +1,13 @@
 import { CheckCircle, ShieldCheck, CircleHelp } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
   const [activeTooltip, setActiveTooltip] = useState(null);
+  const navigate = useNavigate();
 
-  const handleWhatsAppClick = () => {
-    const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
-    const message = "¡Hola! Me interesa solicitar una cotización gratuita para mi sitio web";
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
-    window.open(whatsappUrl, '_blank');
+  const handleQuoteClick = () => {
+    navigate('/cotizacion');
   };
 
   return (
@@ -95,9 +92,9 @@ export default function Hero() {
           </div>
 
           <div className="mt-4 sm:mt-6">
-            {/* Botón CTA - MEJORADO */}
+            {/* Botón CTA - MEJORADO CON ENRUTAMIENTO */}
             <button 
-              onClick={handleWhatsAppClick}
+              onClick={handleQuoteClick}
               className="w-auto sm:w-auto px-6 py-3 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
             >
               Cotización gratuita
