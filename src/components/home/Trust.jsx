@@ -37,7 +37,7 @@ export default function Trust() {
         {[...Array(fullStars)].map((_, i) => (
           <span
             key={i}
-            className="text-amber-500 text-shadow-sm text-lg sm:text-xl md:text-2xl"
+            className="text-amber-500 text-shadow-md text-lg sm:text-xl md:text-2xl"
           >
             ★
           </span>
@@ -83,11 +83,11 @@ export default function Trust() {
   };
 
   return (
-    <section className="bg-gradient-to-br from-blue-500 to-blue-700 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-b from-blue-600 to-blue-700 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Título opcional de la sección */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 mb-4 sm:mb-6 text-shadow-sm">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 mb-4 sm:mb-6 text-shadow-md">
             Confianza respaldada por nuestros clientes
           </h2>
         </div>
@@ -113,15 +113,15 @@ export default function Trust() {
                     <div className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-2 flex items-center">
                       {item.name === "Credibleon" ? (
                         <div className="flex items-center">
-                          <span className="font-light text-green-600 text-shadow-sm">
+                          <span className="font-light text-green-600 text-shadow-md">
                             Credi
                           </span>
-                          <span className="font-bold text-green-700 text-shadow-sm">
+                          <span className="font-bold text-green-700 text-shadow-md">
                             bleon
                           </span>
                         </div>
                       ) : (
-                        <span className="text-green-600 text-shadow-sm">
+                        <span className="text-green-600 text-shadow-md">
                           {item.name}
                         </span>
                       )}
@@ -132,9 +132,9 @@ export default function Trust() {
 
                     {/* Puntaje y número de reseñas - MEJORADO */}
                     <div className="text-center">
-                      <p className="text-2xl sm:text-3xl text-shadow-sm font-bold text-blue-600 mb-1">
+                      <p className="text-2xl sm:text-3xl text-shadow-md font-bold text-green-500 mb-1">
                         {item.score}
-                        <span className="text-base sm:text-lg lg:text-xl text-shadow-sm text-blue-900">
+                        <span className="text-base sm:text-lg lg:text-xl text-shadow-md text-green-900">
                           /5
                         </span>
                       </p>
@@ -158,15 +158,15 @@ export default function Trust() {
                   <div className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-2 h-12 flex items-center">
                     {item.name === "Credibleon" ? (
                       <div className="flex items-center">
-                        <span className="font-light text-green-600 text-shadow-sm">
+                        <span className="font-light text-green-600 text-shadow-md">
                           Credi
                         </span>
-                        <span className="font-bold text-green-700 text-shadow-sm">
+                        <span className="font-bold text-green-700 text-shadow-md">
                           bleon
                         </span>
                       </div>
                     ) : (
-                      <span className="text-green-600 text-shadow-sm">
+                      <span className="text-green-600 text-shadow-md">
                         {item.name}
                       </span>
                     )}
@@ -216,8 +216,8 @@ export default function Trust() {
               disabled={currentIndex === 0}
               className={`flex items-center justify-center w-10 h-10 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border ${
                 currentIndex === 0 
-                  ? 'bg-blue-400 text-blue-200 cursor-not-allowed border-blue-400' 
-                  : 'bg-blue-500 hover:bg-blue-600 text-blue-50 border-blue-500'
+                  ? 'bg-blue-400 text-white cursor-not-allowed border-blue-400' 
+                  : 'bg-blue-500 hover:bg-blue-600 text-blue-50 border-blue-400'
               }`}
               aria-label="Anterior"
             >
@@ -241,8 +241,8 @@ export default function Trust() {
               disabled={currentIndex === ratings.length - 1}
               className={`flex items-center justify-center w-10 h-10 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border ${
                 currentIndex === ratings.length - 1
-                  ? 'bg-blue-400 text-blue-200 cursor-not-allowed border-blue-400' 
-                  : 'bg-blue-500 hover:bg-blue-600 text-blue-50 border-blue-500'
+                  ? 'bg-blue-400 text-white cursor-not-allowed border-blue-400' 
+                  : 'bg-blue-500 hover:bg-blue-600 text-blue-50 border-blue-400'
               }`}
               aria-label="Siguiente"
             >

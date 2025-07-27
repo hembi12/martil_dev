@@ -20,7 +20,7 @@ export default function Navigation({
     <>
       {/* Botón de hamburguesa */}
       <button
-        className="lg:hidden text-neutral-700 hover:text-blue-600 focus:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg p-2 transition-all duration-200 relative z-50"
+        className="lg:hidden text-neutral-100 hover:text-blue-100 focus:text-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-offset-2 rounded-lg p-2 transition-all duration-200 relative z-50"
         onClick={(e) => {
           e.stopPropagation();
           setMenuOpen(!menuOpen);
@@ -45,8 +45,8 @@ export default function Navigation({
               onClick={() => onMenuClick(item)}
               className={`flex items-center gap-2 px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base font-medium transition-all duration-200 cursor-pointer min-h-[40px] ${
                 activeSection === item.id
-                  ? 'text-blue-600 bg-blue-100 shadow-md'
-                  : 'text-neutral-700 hover:text-blue-600 hover:bg-blue-50 focus:text-blue-600 focus:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1'
+                  ? 'text-blue-600 bg-white shadow-md'
+                  : 'text-neutral-100 hover:text-blue-600 hover:bg-blue-50 focus:text-blue-600 focus:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-offset-1'
               }`}
               role="menuitem"
               tabIndex={0}

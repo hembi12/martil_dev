@@ -1,24 +1,29 @@
 import { CheckCircle, ShieldCheck, CircleHelp } from "lucide-react";
+import { FaWhatsapp } from 'react-icons/fa';
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
   const [activeTooltip, setActiveTooltip] = useState(null);
-  const navigate = useNavigate();
 
   const handleQuoteClick = () => {
-    navigate('/cotizacion');
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
+    const message =
+      "¡Hola! Me interesa solicitar una cotización gratuita para mi sitio web.";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
-    <div className="bg-gradient-to-b from-neutral-100 to-neutral-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className="bg-gradient-to-b from-blue-700 to-blue-600 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
         {/* Texto principal */}
         <div className="text-center lg:text-left order-2 lg:order-1">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-blue-600 mb-4 sm:mb-6 text-shadow-md leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-100 mb-4 sm:mb-6 text-shadow-md leading-tight">
             Tu sitio web, sin plantillas, sin límites
           </h1>
-          <p className="mt-4 sm:mt-6 text-lg md:text-xl lg:text-2xl text-neutral-600 max-w-2xl mx-auto lg:mx-0">
+          <p className="mt-4 sm:mt-6 text-lg md:text-xl lg:text-2xl text-neutral-200 max-w-2xl mx-auto lg:mx-0">
             Olvídate de lo genérico. Diseñamos desde cero pensando en tu
             negocio, tus objetivos y tus clientes.
           </p>
@@ -41,9 +46,9 @@ export default function Hero() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="flex items-start sm:items-center gap-3 text-neutral-700 font-medium justify-center lg:justify-start relative"
+                className="flex items-start sm:items-center gap-3 text-neutral-200 font-medium justify-center lg:justify-start relative"
               >
-                <CheckCircle className="text-green-500 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <CheckCircle className="text-green-400 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 sm:mt-0" />
                 <span className="text-base md:text-lg text-left">
                   {item.text}
                 </span>
@@ -54,20 +59,20 @@ export default function Hero() {
                     onMouseEnter={() => setActiveTooltip(idx)}
                     onMouseLeave={() => setActiveTooltip(null)}
                     onClick={() => setActiveTooltip(activeTooltip === idx ? null : idx)}
-                    className="text-neutral-500 hover:text-blue-600 transition-colors duration-200 cursor-pointer"
+                    className="text-neutral-300 hover:text-neutral-300 transition-colors duration-200 cursor-pointer"
                   >
                     <CircleHelp className="w-4 h-4" />
                   </button>
                   
                   {/* Tooltip individual */}
                   {activeTooltip === idx && (
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 bg-blue-600 border border-neutral-200 rounded-lg shadow-lg p-3 z-20">
-                      <p className="text-xs text-white">
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 bg-neutral-100 border border-neutral-200 rounded-lg shadow-lg p-3 z-20">
+                      <p className="text-xs text-neutral-800">
                         {item.tooltip}
                       </p>
                       
                       {/* Flecha del tooltip */}
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-600"></div>
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-neutral-100"></div>
                     </div>
                   )}
                 </div>
@@ -77,32 +82,33 @@ export default function Hero() {
 
           {/* Precio - MEJORADO */}
           <div className="mt-4 sm:mt-6 text-center lg:text-left">
-            <div className="text-3xl md:text-4xl font-bold text-neutral-900">
-              <span className="text-base sm:text-lg md:text-xl text-neutral-600 font-normal">
+            <div className="text-3xl md:text-4xl">
+              <span className="text-base sm:text-lg md:text-xl text-neutral-200 font-normal">
                 Desde
               </span>
-              <span className="ml-2 text-blue-600 text-shadow-sm">$99</span>
-              <span className="text-lg md:text-xl text-neutral-600 font-normal ml-1">
+              <span className="ml-2 text-yellow-400 font-bold text-shadow-md">$99</span>
+              <span className="text-lg md:text-xl text-neutral-200 font-normal ml-1">
                 USD
               </span>
             </div>
-            <p className="text-sm md:text-base font-medium text-neutral-700 mt-1">
+            <p className="text-sm md:text-base font-medium text-neutral-200 mt-1">
               $1,980 MXN Pago único.*
             </p>
           </div>
 
           <div className="mt-4 sm:mt-6">
-            {/* Botón CTA - MEJORADO CON ENRUTAMIENTO */}
+            {/* Botón CTA - MODIFICADO PARA WHATSAPP */}
             <button 
               onClick={handleQuoteClick}
-              className="w-auto sm:w-auto px-6 py-3 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
-            >
+              className="inline-flex items-center gap-2 w-auto sm:w-auto px-6 py-3 bg-green-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-green-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
+              >
+              <FaWhatsapp className="w-5 h-5" />
               Cotización gratuita
             </button>
 
             {/* Badge de seguridad - MEJORADO */}
-            <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-neutral-600">
-              <ShieldCheck className="w-4 h-4 text-green-500" />
+            <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-neutral-200">
+              <ShieldCheck className="w-4 h-4 text-green-400" />
               <span className="text-xs font-medium sm:text-sm">Garantía de satisfacción*</span>
             </div>
           </div>
