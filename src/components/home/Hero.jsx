@@ -46,7 +46,7 @@ export default function Hero() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="flex items-start sm:items-center gap-3 text-neutral-200 font-medium justify-center lg:justify-start relative"
+                className="flex items-start sm:items-center gap-3 text-neutral-100 font-medium justify-center lg:justify-start relative"
               >
                 <CheckCircle className="text-green-400 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 sm:mt-0" />
                 <span className="text-base md:text-lg text-left">

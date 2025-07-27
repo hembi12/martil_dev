@@ -45,8 +45,8 @@ export default function Navigation({
               onClick={() => onMenuClick(item)}
               className={`flex items-center gap-2 px-3 xl:px-4 py-2 xl:py-2.5 rounded-lg text-sm xl:text-base font-medium transition-all duration-200 cursor-pointer min-h-[40px] ${
                 activeSection === item.id
-                  ? 'text-blue-600 bg-white shadow-md'
-                  : 'text-neutral-100 hover:text-blue-600 hover:bg-blue-50 focus:text-blue-600 focus:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-offset-1'
+                  ? 'text-blue-600 bg-white text-shadow-md'
+                  : 'text-neutral-100 text-shadow-md hover:text-blue-600 hover:bg-white focus:text-blue-600 focus:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-offset-1'
               }`}
               role="menuitem"
               tabIndex={0}
