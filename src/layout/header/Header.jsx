@@ -101,7 +101,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-blue-600 shadow-md">
+    <header className="sticky top-0 z-50 bg-gray-900 shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
         <Logo />
         

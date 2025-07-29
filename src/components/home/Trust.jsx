@@ -83,7 +83,7 @@ export default function Trust() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-blue-500 to-blue-600 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-b from-gray-950 to-gray-900 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Título opcional de la sección */}
         <div className="text-center mb-8 sm:mb-12">

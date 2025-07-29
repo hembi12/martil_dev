@@ -16,7 +16,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-blue-600 to-blue-500 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className="bg-gradient-to-b from-gray-900 to-gray-950 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
         {/* Texto principal */}
         <div className="text-center lg:text-left order-2 lg:order-1">
