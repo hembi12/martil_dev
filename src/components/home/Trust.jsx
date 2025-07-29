@@ -216,8 +216,8 @@ export default function Trust() {
               disabled={currentIndex === 0}
               className={`flex items-center justify-center w-10 h-10 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border ${
                 currentIndex === 0 
-                  ? 'bg-blue-400 text-white cursor-not-allowed border-blue-400' 
-                  : 'bg-blue-500 hover:bg-blue-600 text-blue-50 border-blue-400'
+                  ? 'bg-neutral-200 text-neutral-600 cursor-not-allowed border-neutral-200' 
+                  : 'bg-blue-400 hover:bg-blue-300 text-white border-blue-400'
               }`}
               aria-label="Anterior"
             >
@@ -241,8 +241,8 @@ export default function Trust() {
               disabled={currentIndex === ratings.length - 1}
               className={`flex items-center justify-center w-10 h-10 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border ${
                 currentIndex === ratings.length - 1
-                  ? 'bg-blue-400 text-white cursor-not-allowed border-blue-400' 
-                  : 'bg-blue-500 hover:bg-blue-600 text-blue-50 border-blue-400'
+                ? 'bg-neutral-200 text-neutral-600 cursor-not-allowed border-neutral-200' 
+                : 'bg-blue-400 hover:bg-blue-300 text-white border-blue-400'
               }`}
               aria-label="Siguiente"
             >

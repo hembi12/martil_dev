@@ -65,7 +65,7 @@ const ServiceCard = ({ service, index }) => {
 
   return (
     <div
-      className={`bg-white shadow-md hover:shadow-lg rounded-lg p-6 sm:p-8 text-left transition-all duration-300 flex flex-col justify-between min-h-[555px] sm:min-h-[580px] md:min-h-[600px] ${
+      className={`bg-white shadow-md hover:shadow-lg rounded-lg p-6 sm:p-8 text-left transition-all duration-300 flex flex-col justify-between min-h-[555px] sm:min-h-[580px] md:min-h-[690px] ${
         index === 1
           ? "animate-delay-1"
           : index === 2
@@ -149,14 +149,14 @@ const ServiceCard = ({ service, index }) => {
 
         {/* Lista de características - MEJORADA */}
         <div className="space-y-3 mb-4">
-          <h4 className="font-semibold text-neutral-900 text-xs sm:text-sm md:text-base">
+          <h4 className="font-medium text-neutral-600 text-xs sm:text-sm md:text-base">
             Qué incluye este servicio:
           </h4>
           <ul className="space-y-2 sm:space-y-3">
             {service.features.map((feature, i) => (
               <li
                 key={i}
-                className="flex items-start gap-2 sm:gap-3 text-neutral-700 font-medium text-xs sm:text-sm md:text-base"
+                className="flex items-start gap-2 sm:gap-3 text-neutral-600 font-semibold text-xs sm:text-sm md:text-base"
               >
                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-0.5 flex-shrink-0" />
                 <span className="leading-relaxed">{feature}</span>
@@ -177,7 +177,7 @@ const ServiceCard = ({ service, index }) => {
       <div className="mt-auto">
         <button 
           onClick={handleWhatsAppClick}
-          className="w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-xs sm:text-sm md:text-base text-center text-shadow-md border-2 border-blue-600 hover:border-blue-700 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+          className="w-full px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg text-xs sm:text-sm md:text-base text-center text-shadow-md transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
         >
           Me interesa
         </button>

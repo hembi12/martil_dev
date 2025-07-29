@@ -39,7 +39,7 @@ export default function Services() {
   return (
     <section
       id="servicios"
-      className="bg-gradient-to-b from-neutral-50 to-neutral-100 py-8 sm:py-12 px-4 sm:px-6 lg:px-8"
+      className="bg-gradient-to-b from-blue-600 to-blue-500 py-8 sm:py-12 px-4 sm:px-6 lg:px-8"
     >
       {/* Estilos CSS para ocultar scrollbar */}
       <style>{`
@@ -55,7 +55,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
         {/* Header minimalista */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-md">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 mb-4 sm:mb-6 text-shadow-md">
             Soluciones únicas
           </h2>
         </div>
@@ -78,11 +78,11 @@ export default function Services() {
 
           {/* Indicador de scroll */}
           <div className="flex justify-center mt-4 gap-2">
-            <div className="text-sm text-neutral-500 flex items-center gap-2">
+            <div className="text-sm text-neutral-100 flex items-center gap-2">
               <span>Desliza para ver más servicios</span>
               <div className="flex gap-1">
                 <div className="w-2 h-2 rounded-full bg-blue-300"></div>
-                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                <div className="w-2 h-2 rounded-full bg-blue-100"></div>
                 <div className="w-2 h-2 rounded-full bg-blue-300"></div>
               </div>
             </div>
@@ -92,11 +92,11 @@ export default function Services() {
           <div className="flex justify-center mt-4 gap-4">
             <button
               onClick={scrollLeft}
-              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-md transition-all duration-300 hover:scale-110 border border-neutral-200 cursor-pointer"
+              className="flex items-center justify-center w-10 h-10 bg-blue-400 hover:bg-blue-300 border-blue-400 rounded-lg shadow-md transition-all duration-300 hover:scale-110 cursor-pointer"
               aria-label="Anterior"
             >
               <svg
-                className="w-6 h-6 text-blue-600"
+                className="w-6 h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -112,11 +112,11 @@ export default function Services() {
 
             <button
               onClick={scrollRight}
-              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-md transition-all duration-300 hover:scale-110 border border-neutral-200 cursor-pointer"
+              className="flex items-center justify-center w-10 h-10 bg-blue-400 hover:bg-blue-300 border-blue-400 rounded-lg shadow-md transition-all duration-300 hover:scale-110 cursor-pointer"
               aria-label="Siguiente"
             >
               <svg
-                className="w-6 h-6 text-blue-600"
+                className="w-6 h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
