@@ -1,4 +1,4 @@
-import { CheckCircle, ShieldCheck, CircleHelp } from "lucide-react";
+import { CheckCircle, ShieldCheck, CircleHelp, Globe } from "lucide-react";
 import { FaWhatsapp } from 'react-icons/fa';
 import { useState } from "react";
 
@@ -13,6 +13,12 @@ export default function Hero() {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
     window.open(whatsappUrl, "_blank");
+  };
+
+  const handleOnlineQuoteClick = () => {
+    // Aquí puedes redirigir a tu formulario de cotización en línea
+    // Por ejemplo: window.location.href = '/cotizacion-online';
+    console.log("Redirigir a cotización en línea");
   };
 
   return (
@@ -92,24 +98,36 @@ export default function Hero() {
               </span>
             </div>
             <p className="text-sm md:text-base font-medium text-neutral-200 mt-1">
-              $1,980 MXN Pago único.*
+              $1,980 MXN Pago único.
             </p>
           </div>
 
           <div className="mt-4 sm:mt-6">
-            {/* Botón CTA - MODIFICADO PARA WHATSAPP */}
-            <button 
-              onClick={handleQuoteClick}
-              className="inline-flex items-center gap-2 w-auto sm:w-auto px-6 py-3 bg-green-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-green-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
+            {/* Botones CTA */}
+            <div className="flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start">
+              {/* Botón primario - WhatsApp */}
+              <button 
+                onClick={handleQuoteClick}
+                className="inline-flex items-center gap-2 w-auto sm:w-auto px-6 py-3 bg-green-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-green-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
               >
-              <FaWhatsapp className="w-5 h-5" />
-              Cotización gratuita
-            </button>
+                <FaWhatsapp className="w-5 h-5" />
+                Cotización gratuita
+              </button>
+
+              {/* Botón secundario - Cotización en línea */}
+              <button 
+                onClick={handleOnlineQuoteClick}
+                className="inline-flex items-center gap-2 w-auto sm:w-auto px-6 py-3 bg-transparent border-2 border-neutral-300 text-neutral-100 text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-neutral-800 hover:border-neutral-200 transition duration-300 cursor-pointer"
+              >
+                <Globe className="w-5 h-5" />
+                Cotización en línea
+              </button>
+            </div>
 
             {/* Badge de seguridad - MEJORADO */}
             <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-neutral-200">
               <ShieldCheck className="w-4 h-4 text-green-400" />
-              <span className="text-xs font-medium sm:text-sm">Garantía de satisfacción*</span>
+              <span className="text-xs font-medium sm:text-sm">Garantía de satisfacción</span>
             </div>
           </div>
         </div>
