@@ -27,7 +27,7 @@ export default function MobileMenu({
         }`}
       >
         <nav 
-          className="px-4 sm:px-6 pb-4 space-y-1 bg-blue-600 shadow-md"
+          className="px-4 sm:px-6 pb-4 space-y-1 bg-gray-900 shadow-md"
           role="menu"
           aria-label="Menú de navegación móvil"
         >
@@ -43,7 +43,7 @@ export default function MobileMenu({
                 className={`flex items-center gap-3 w-full px-3 py-3 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer min-h-[44px] ${
                   activeSection === item.id
                     ? 'text-blue-600 bg-white text-shadow-md shadow-md'
-                    : 'text-neutral-100 text-shadow-md hover:text-blue-600 hover:bg-white focus:text-blue-600 focus:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset'
+                    : 'text-white text-shadow-md hover:text-blue-600 hover:bg-white'
                 }`}
                 role="menuitem"
                 tabIndex={0}
