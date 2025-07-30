@@ -10,7 +10,7 @@ import {
   export const testimonialsData = [
     {
       id: 1,
-      name: "María González",
+      name: "María G.",
       business: "Panadería Conchita",
       category: "Negocios pequeños",
       categoryIcon: "Briefcase",
@@ -24,7 +24,7 @@ import {
     },
     {
       id: 2,
-      name: "Carlos Mendoza",
+      name: "Carlos M.",
       business: "Constructora Mendoza",
       category: "Empresas medianas y grandes",
       categoryIcon: "Building",
@@ -38,7 +38,7 @@ import {
     },
     {
       id: 3,
-      name: "Ana Ruiz",
+      name: "Ana R.",
       business: "Boutique Moda Única",
       category: "Tiendas en línea",
       categoryIcon: "Store",
@@ -52,7 +52,7 @@ import {
     },
     {
       id: 4,
-      name: "Diego Herrera",
+      name: "Diego H.",
       business: "@DiegoFitness",
       category: "Influencers y creadores",
       categoryIcon: "Sparkles",
@@ -66,7 +66,7 @@ import {
     },
     {
       id: 5,
-      name: "Laura Vásquez",
+      name: "Laura V.",
       business: "Estudio Fotográfico LV",
       category: "Freelancers y servicios",
       categoryIcon: "Users",
@@ -80,7 +80,7 @@ import {
     },
     {
       id: 6,
-      name: "Dr. Roberto Sánchez",
+      name: "Dr. Roberto S.",
       business: "Consultorio Dental",
       category: "Reservas y citas en línea",
       categoryIcon: "Globe",

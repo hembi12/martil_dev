@@ -30,8 +30,11 @@ export default function PaymentMethodsSingleCard() {
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-shadow-md">
-            Métodos de Pago
-          </h2>
+            Métodos de{" "}
+            <span className="underline underline-offset-4 decoration-blue-500">
+              Pago
+            </span>
+          </h2>{" "}
         </div>
 
         {/* Payment Methods Grid - Sin contenedor de tarjeta */}
@@ -64,7 +67,9 @@ export default function PaymentMethodsSingleCard() {
           {/* Payment Terms - MEJORADO */}
           <p className="text-sm sm:text-base md:text-lg text-neutral-100 font-medium px-2 sm:px-4 mb-4 sm:mb-6 lg:mb-8">
             Aceptamos pagos hasta en{" "}
-            <strong className="text-amber-400 text-shadow-md">12 meses sin intereses*</strong>
+            <strong className="text-amber-400 text-shadow-md">
+              12 meses sin intereses*
+            </strong>
           </p>
 
           {/* Payment Logos - Contenedores individuales */}

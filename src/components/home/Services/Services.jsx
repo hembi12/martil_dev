@@ -56,8 +56,11 @@ export default function Services() {
         {/* Header minimalista */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 mb-4 sm:mb-6 text-shadow-md">
-            Soluciones únicas
-          </h2>
+            Soluciones{" "}
+            <span className="underline underline-offset-4 decoration-blue-500">
+              únicas
+            </span>
+          </h2>{" "}
         </div>
 
         {/* Scroll horizontal de servicios */}

@@ -85,13 +85,16 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="bg-gradient-to-b from-neutral-100 to-neutral-50 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8"
+      className="bg-gradient-to-b from-gray-900 to-gray-950 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-4xl mx-auto">
         {/* Header de la sección - títulos más balanceados */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-sm">
-            Preguntas frecuentes
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 text-shadow-sm">
+            Preguntas{" "}
+            <span className="underline underline-offset-4 decoration-blue-500">
+              frecuentes
+            </span>
           </h2>
         </div>
 
@@ -127,7 +130,7 @@ export default function FAQ() {
                       className={`p-2 rounded-lg transition-all duration-300 ${
                         openItem === index
                           ? "bg-blue-600 text-white"
-                          : "bg-blue-50 border border-blue-200 text-blue-600 hover:bg-blue-100 group-hover:border-blue-300"
+                          : "bg-blue-100 border border-blue-50 text-blue-600 hover:bg-blue-200"
                       }`}
                     >
                       {openItem === index ? (
@@ -172,13 +175,13 @@ export default function FAQ() {
             {hasMoreToShow ? (
               <button
                 onClick={showMoreFAQs}
-                className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm sm:text-base hover:text-blue-700 transition-all duration-300 group py-2 px-4 rounded-lg hover:bg-blue-50"
+                className="inline-flex items-center gap-2 text-neutral-100 font-semibold text-sm sm:text-base hover:text-blue-500 px-4 py-2 transition-all duration-300"
                 aria-label={`Mostrar ${Math.min(
                   2,
                   faqs.length - visibleItems
                 )} preguntas más`}
               >
-                <span className="underline-offset-2 group-hover:underline">
+                <span className="underline-offset-2 hover:underline cursor-pointer">
                   Ver más preguntas
                 </span>
                 <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
@@ -186,10 +189,10 @@ export default function FAQ() {
             ) : (
               <button
                 onClick={showLessFAQs}
-                className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm sm:text-base hover:text-blue-700 transition-all duration-300 group py-2 px-4 rounded-lg hover:bg-blue-50"
+                className="inline-flex items-center gap-2 text-neutral-100 font-semibold text-sm sm:text-base hover:text-blue-500 transition-all duration-300"
                 aria-label="Mostrar menos preguntas"
               >
-                <span className="underline-offset-2 group-hover:underline">
+                <span className="underline-offset-2 hover:underline cursor-pointer">
                   Ver menos preguntas
                 </span>
                 <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -200,13 +203,9 @@ export default function FAQ() {
 
         {/* CTA al final - actualizado con el mismo estilo del Hero */}
         <div className="text-center mt-8 sm:mt-12 lg:mt-16 px-2 sm:px-4">
-          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6 text-shadow-sm">
+          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6 text-shadow-sm">
             ¿Tienes alguna otra pregunta?
           </h3>
-          <p className="text-neutral-600 text-sm sm:text-base md:text-lg lg:text-xl mb-4 max-w-3xl mx-auto leading-relaxed px-4">
-            Nuestro equipo está aquí para ayudarte. Contáctanos y resolveremos
-            todas tus dudas sobre tu proyecto web.
-          </p>
           <button
             onClick={handleContactUs}
             className="inline-flex items-center gap-2 w-auto sm:w-auto px-6 py-3 bg-green-600 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg hover:bg-green-700 transition duration-300 shadow-md hover:shadow-lg cursor-pointer"
@@ -216,11 +215,11 @@ export default function FAQ() {
           </button>
 
           {/* Opciones de contacto adicionales */}
-          <p className="text-xs sm:text-sm font-medium text-neutral-600 mt-3 sm:mt-4 flex items-center justify-center gap-2">
+          <p className="text-xs sm:text-sm font-medium text-neutral-100 mt-3 sm:mt-4 flex items-center justify-center gap-2">
             También por{" "}
-            <a 
+            <a
               href="mailto:hectormartilb@gmail.com"
-              className="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-200 inline-flex items-center gap-1"
+              className="text-amber-400 hover:text-amber-300 hover:underline transition-colors duration-200 inline-flex items-center gap-1"
             >
               <Mail className="w-4 h-4" />
               support@martil.dev

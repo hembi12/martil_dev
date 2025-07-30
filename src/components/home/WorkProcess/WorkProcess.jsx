@@ -39,8 +39,11 @@ const WorkProcess = () => {
         {/* Header minimalista */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 text-shadow-md">
-            Proceso de trabajo
-          </h2>
+            Proceso de{" "}
+            <span className="underline underline-offset-4 decoration-blue-500">
+              trabajo
+            </span>
+          </h2>{" "}
         </div>
 
         {/* Scroll horizontal de pasos */}

@@ -39,8 +39,8 @@ const NavigationControls = ({
               onClick={() => onGoToTestimonial(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer shadow-md ${
                 index === currentIndex
-                  ? "bg-blue-600 w-8"
-                  : "bg-blue-300 hover:bg-blue-400"
+                  ? "bg-blue-500 w-8"
+                  : "bg-white hover:bg-blue-100"
               }`}
               aria-label={`Ir al testimonio ${index + 1}`}
             />

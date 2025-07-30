@@ -58,16 +58,19 @@ export default function Trust() {
       const cardWidth = window.innerWidth >= 640 ? 320 : 288; // w-80 en sm, w-72 en móvil
       const gap = window.innerWidth >= 640 ? 32 : 24; // gap-8 en sm, gap-6 en móvil
       const padding = 16; // px-4 = 16px de padding total
-      
+
       // Calcular la posición para centrar la tarjeta considerando el padding
       const cardPosition = (cardWidth + gap) * index + padding;
-      const scrollPosition = cardPosition - (containerWidth / 2) + (cardWidth / 2);
-      
+      const scrollPosition = cardPosition - containerWidth / 2 + cardWidth / 2;
+
       container.scrollTo({
-        left: Math.max(0, Math.min(scrollPosition, container.scrollWidth - containerWidth)),
-        behavior: "smooth"
+        left: Math.max(
+          0,
+          Math.min(scrollPosition, container.scrollWidth - containerWidth)
+        ),
+        behavior: "smooth",
       });
-      
+
       setCurrentIndex(index);
     }
   };
@@ -88,7 +91,11 @@ export default function Trust() {
         {/* Título opcional de la sección */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 text-shadow-md">
-            Confianza respaldada por nuestros clientes
+            Confianza{" "}
+            <span className="underline underline-offset-4 decoration-blue-500">
+              respaldada
+            </span>{" "}
+            por nuestros clientes
           </h2>
         </div>
 
@@ -106,7 +113,7 @@ export default function Trust() {
                   <div
                     key={index}
                     className={`flex-none w-72 sm:w-80 flex flex-col items-center p-6 sm:p-8 bg-white hover:bg-neutral-100 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform ${
-                      currentIndex === index ? 'scale-105' : ''
+                      currentIndex === index ? "scale-105" : ""
                     }`}
                   >
                     {/* Logo/Nombre de la plataforma - MEJORADO */}
@@ -201,7 +208,7 @@ export default function Trust() {
                   <div
                     key={index}
                     className={`w-2 h-2 rounded-lg transition-colors duration-300 ${
-                      currentIndex === index ? 'bg-white' : 'bg-blue-500'
+                      currentIndex === index ? "bg-white" : "bg-blue-500"
                     }`}
                   ></div>
                 ))}
@@ -215,9 +222,9 @@ export default function Trust() {
               onClick={scrollLeft}
               disabled={currentIndex === 0}
               className={`flex items-center justify-center w-10 h-10 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border ${
-                currentIndex === 0 
-                  ? 'bg-transparent text-white cursor-not-allowed border-white' 
-                  : 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600 hover:border-blue-600'
+                currentIndex === 0
+                  ? "bg-transparent text-white cursor-not-allowed border-white"
+                  : "bg-blue-600 hover:bg-blue-700 text-white border-blue-600 hover:border-blue-600"
               }`}
               aria-label="Anterior"
             >
@@ -241,8 +248,8 @@ export default function Trust() {
               disabled={currentIndex === ratings.length - 1}
               className={`flex items-center justify-center w-10 h-10 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border ${
                 currentIndex === ratings.length - 1
-                ? 'bg-transparent text-white cursor-not-allowed border-white' 
-                : 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600 hover:border-blue-600'
+                  ? "bg-transparent text-white cursor-not-allowed border-white"
+                  : "bg-blue-600 hover:bg-blue-700 text-white border-blue-600 hover:border-blue-600"
               }`}
               aria-label="Siguiente"
             >

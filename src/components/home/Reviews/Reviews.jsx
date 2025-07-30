@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { testimonialsData } from './data/reviewsData';
-import TestimonialCard from './TestimonialCard';
-import NavigationControls from './NavigationControls';
-import StatsSection from './StatsSection';
+import { testimonialsData } from "./data/reviewsData";
+import TestimonialCard from "./TestimonialCard";
+import NavigationControls from "./NavigationControls";
+import StatsSection from "./StatsSection";
 
 export default function Reviews() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,8 +58,11 @@ export default function Reviews() {
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 text-shadow-sm">
-            Lo que dicen nuestros clientes
-          </h2>
+            Lo que dicen nuestros{" "}
+            <span className="underline underline-offset-4 decoration-blue-500">
+              clientes
+            </span>
+          </h2>{" "}
         </div>
 
         {/* Testimonial Carousel */}
@@ -69,7 +72,7 @@ export default function Reviews() {
           onMouseLeave={handleMouseLeave}
         >
           <TestimonialCard testimonial={testimonialsData[currentIndex]} />
-          
+
           <NavigationControls
             currentIndex={currentIndex}
             totalTestimonials={testimonialsData.length}
