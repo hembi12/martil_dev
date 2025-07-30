@@ -101,7 +101,7 @@ export default function Hero() {
                 <span className="text-sm sm:text-base text-neutral-300 font-normal">
                   Mantenimiento opcional:
                 </span>
-                <span className="ml-2 text-yellow-400 font-semibold">$299</span>
+                <span className="ml-2 text-amber-400 font-semibold">$299</span>
                 <span className="text-base text-neutral-300 font-normal ml-1">
                   MXN/mes
                 </span>

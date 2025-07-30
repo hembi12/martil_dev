@@ -81,9 +81,9 @@ export default function Services() {
             <div className="text-sm text-neutral-100 flex items-center gap-2">
               <span>Desliza para ver más servicios</span>
               <div className="flex gap-1">
-                <div className="w-2 h-2 rounded-full bg-blue-300"></div>
-                <div className="w-2 h-2 rounded-full bg-blue-100"></div>
-                <div className="w-2 h-2 rounded-full bg-blue-300"></div>
+                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                <div className="w-2 h-2 rounded-full bg-white"></div>
+                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@ export default function Services() {
           <div className="flex justify-center mt-4 gap-4">
             <button
               onClick={scrollLeft}
-              className="flex items-center justify-center w-10 h-10 bg-blue-400 hover:bg-blue-300 border-blue-400 rounded-lg shadow-md transition-all duration-300 hover:scale-110 cursor-pointer"
+              className="flex items-center justify-center w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white border-blue-600 hover:border-blue-600 rounded-lg shadow-md transition-all duration-300 hover:scale-110 cursor-pointer"
               aria-label="Anterior"
             >
               <svg
@@ -112,7 +112,7 @@ export default function Services() {
 
             <button
               onClick={scrollRight}
-              className="flex items-center justify-center w-10 h-10 bg-blue-400 hover:bg-blue-300 border-blue-400 rounded-lg shadow-md transition-all duration-300 hover:scale-110 cursor-pointer"
+              className="flex items-center justify-center w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white border-blue-600 hover:border-blue-600 rounded-lg shadow-md transition-all duration-300 hover:scale-110 cursor-pointer"
               aria-label="Siguiente"
             >
               <svg

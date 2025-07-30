@@ -14,16 +14,10 @@ const CustomQuoteCTA = () => {
   return (
     <div className="text-center mt-6">
       {/* Título principal */}
-      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-100 mb-4 lg:mb-6 text-shadow-sm">
+      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6 text-shadow-sm">
         ¿No encuentras lo que necesitas?
       </h3>
-
-      {/* Descripción - MEJORADA */}
-      <p className="text-neutral-200 text-sm sm:text-base md:text-lg lg:text-xl mb-4 max-w-3xl mx-auto leading-relaxed px-4">
-        Creamos soluciones personalizadas para proyectos únicos. Cuéntanos tu
-        idea y te ayudamos a hacerla realidad.
-      </p>
-
+      
       {/* Botón principal con icono de WhatsApp */}
       <button
         onClick={handleQuoteRequest}

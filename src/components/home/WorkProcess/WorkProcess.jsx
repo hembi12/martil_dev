@@ -23,7 +23,7 @@ const WorkProcess = () => {
   return (
     <section
       id="work-process"
-      className="bg-gradient-to-b from-neutral-50 to-neutral-100 py-8 sm:py-12 px-4 sm:px-6 lg:px-8"
+      className="bg-gradient-to-b from-gray-950 to-gray-900 py-8 sm:py-12 px-4 sm:px-6 lg:px-8"
     >
       {/* Estilos CSS para ocultar scrollbar */}
       <style>{`
@@ -38,7 +38,7 @@ const WorkProcess = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header minimalista */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 text-shadow-md">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 text-shadow-md">
             Proceso de trabajo
           </h2>
         </div>
@@ -155,12 +155,12 @@ const WorkProcess = () => {
 
           {/* Indicador de scroll */}
           <div className="flex justify-center mt-4 gap-2">
-            <div className="text-sm text-neutral-500 flex items-center gap-2">
+            <div className="text-sm text-neutral-100 flex items-center gap-2">
               <span>Desliza para ver los pasos</span>
               <div className="flex gap-1">
-                <div className="w-2 h-2 rounded-full bg-blue-300"></div>
                 <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                <div className="w-2 h-2 rounded-full bg-blue-300"></div>
+                <div className="w-2 h-2 rounded-full bg-white"></div>
+                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
               </div>
             </div>
           </div>
@@ -169,11 +169,11 @@ const WorkProcess = () => {
           <div className="flex justify-center mt-4 gap-4">
             <button
               onClick={scrollLeft}
-              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-md transition-all duration-300 hover:scale-110 border border-neutral-200 cursor-pointer"
+              className="flex items-center justify-center w-10 h-10 bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-600 rounded-lg shadow-md transition-all duration-300 hover:scale-110 cursor-pointer"
               aria-label="Anterior"
             >
               <svg
-                className="w-6 h-6 text-blue-600"
+                className="w-6 h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -189,11 +189,11 @@ const WorkProcess = () => {
 
             <button
               onClick={scrollRight}
-              className="flex items-center justify-center w-10 h-10 bg-white hover:bg-blue-50 rounded-lg shadow-md transition-all duration-300 hover:scale-110 border border-neutral-200 cursor-pointer"
+              className="flex items-center justify-center w-10 h-10 bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-600 rounded-lg shadow-md transition-all duration-300 hover:scale-110 cursor-pointer"
               aria-label="Siguiente"
             >
               <svg
-                className="w-6 h-6 text-blue-600"
+                className="w-6 h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

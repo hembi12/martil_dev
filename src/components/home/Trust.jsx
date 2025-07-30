@@ -105,7 +105,7 @@ export default function Trust() {
                 {ratings.map((item, index) => (
                   <div
                     key={index}
-                    className={`flex-none w-72 sm:w-80 flex flex-col items-center p-6 sm:p-8 bg-neutral-100 hover:bg-neutral-100 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform ${
+                    className={`flex-none w-72 sm:w-80 flex flex-col items-center p-6 sm:p-8 bg-white hover:bg-neutral-100 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform ${
                       currentIndex === index ? 'scale-105' : ''
                     }`}
                   >
