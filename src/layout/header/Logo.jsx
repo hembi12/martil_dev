@@ -7,7 +7,7 @@ export default function Logo() {
       <div className="rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 p-1.5 sm:p-2 shadow-md">
         <Box className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
       </div>
-      <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-white text-shadow-md">
+      <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white text-shadow-md">
         Martil.dev
       </h1>
     </div>

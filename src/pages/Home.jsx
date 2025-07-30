@@ -1,4 +1,4 @@
-import Hero from "../components/home/Hero";
+import Hero from "../components/home/Hero/Hero";
 import Trust from "../components/home/Trust";
 import Services from "../components/home/Services/Services";
 import WorkProcess from "../components/home/WorkProcess/WorkProcess";

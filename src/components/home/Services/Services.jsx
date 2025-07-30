@@ -39,7 +39,7 @@ export default function Services() {
   return (
     <section
       id="servicios"
-      className="bg-gradient-to-b from-blue-600 to-blue-500 py-8 sm:py-12 px-4 sm:px-6 lg:px-8"
+      className="bg-gradient-to-b from-gray-900 to-gray-950 py-8 sm:py-12 px-4 sm:px-6 lg:px-8"
     >
       {/* Estilos CSS para ocultar scrollbar */}
       <style>{`

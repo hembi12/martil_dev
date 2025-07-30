@@ -87,7 +87,7 @@ export default function Trust() {
       <div className="max-w-7xl mx-auto">
         {/* Título opcional de la sección */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 mb-4 sm:mb-6 text-shadow-md">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 text-shadow-md">
             Confianza respaldada por nuestros clientes
           </h2>
         </div>
@@ -105,8 +105,8 @@ export default function Trust() {
                 {ratings.map((item, index) => (
                   <div
                     key={index}
-                    className={`flex-none w-72 sm:w-80 flex flex-col items-center p-6 sm:p-8 bg-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform ${
-                      currentIndex === index ? 'scale-105 ring-2 ring-blue-300 ring-opacity-50' : ''
+                    className={`flex-none w-72 sm:w-80 flex flex-col items-center p-6 sm:p-8 bg-neutral-100 hover:bg-neutral-100 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform ${
+                      currentIndex === index ? 'scale-105' : ''
                     }`}
                   >
                     {/* Logo/Nombre de la plataforma - MEJORADO */}
@@ -132,13 +132,13 @@ export default function Trust() {
 
                     {/* Puntaje y número de reseñas - MEJORADO */}
                     <div className="text-center">
-                      <p className="text-2xl sm:text-3xl text-shadow-md font-bold text-green-500 mb-1">
+                      <p className="text-2xl sm:text-3xl text-shadow-md font-bold text-green-600 mb-1">
                         {item.score}
-                        <span className="text-base sm:text-lg lg:text-xl text-shadow-md text-green-900">
+                        <span className="text-base sm:text-lg lg:text-xl text-shadow-md text-green-800">
                           /5
                         </span>
                       </p>
-                      <p className="text-sm sm:text-base font-medium text-neutral-900">
+                      <p className="text-sm sm:text-base font-medium text-blue-500">
                         {item.reviews} opiniones
                       </p>
                     </div>
@@ -152,7 +152,7 @@ export default function Trust() {
               {ratings.map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center p-8 bg-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                  className="flex flex-col items-center p-8 bg-white hover:bg-neutral-100 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
                 >
                   {/* Logo/Nombre de la plataforma */}
                   <div className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-2 h-12 flex items-center">
@@ -179,11 +179,11 @@ export default function Trust() {
                   <div className="text-center">
                     <p className="text-2xl sm:text-3xl font-bold text-green-600 mb-1">
                       {item.score}
-                      <span className="text-base sm:text-lg lg:text-xl text-green-900">
+                      <span className="text-base sm:text-lg lg:text-xl text-green-800">
                         /5
                       </span>
                     </p>
-                    <p className="text-sm sm:text-base text-neutral-900">
+                    <p className="text-sm sm:text-base text-blue-500">
                       {item.reviews} opiniones
                     </p>
                   </div>
@@ -201,7 +201,7 @@ export default function Trust() {
                   <div
                     key={index}
                     className={`w-2 h-2 rounded-lg transition-colors duration-300 ${
-                      currentIndex === index ? 'bg-white' : 'bg-blue-300'
+                      currentIndex === index ? 'bg-white' : 'bg-blue-500'
                     }`}
                   ></div>
                 ))}
@@ -216,8 +216,8 @@ export default function Trust() {
               disabled={currentIndex === 0}
               className={`flex items-center justify-center w-10 h-10 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border ${
                 currentIndex === 0 
-                  ? 'bg-neutral-200 text-neutral-600 cursor-not-allowed border-neutral-200' 
-                  : 'bg-blue-400 hover:bg-blue-300 text-white border-blue-400'
+                  ? 'bg-transparent text-white cursor-not-allowed border-white' 
+                  : 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600 hover:border-blue-600'
               }`}
               aria-label="Anterior"
             >
@@ -241,8 +241,8 @@ export default function Trust() {
               disabled={currentIndex === ratings.length - 1}
               className={`flex items-center justify-center w-10 h-10 rounded-lg shadow-lg transition-all duration-300 hover:scale-110 border ${
                 currentIndex === ratings.length - 1
-                ? 'bg-neutral-200 text-neutral-600 cursor-not-allowed border-neutral-200' 
-                : 'bg-blue-400 hover:bg-blue-300 text-white border-blue-400'
+                ? 'bg-transparent text-white cursor-not-allowed border-white' 
+                : 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600 hover:border-blue-600'
               }`}
               aria-label="Siguiente"
             >

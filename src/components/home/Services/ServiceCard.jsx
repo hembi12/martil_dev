@@ -177,7 +177,7 @@ const ServiceCard = ({ service, index }) => {
       <div className="mt-auto">
         <button 
           onClick={handleWhatsAppClick}
-          className="w-full px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg text-xs sm:text-sm md:text-base text-center text-shadow-md transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+          className="w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-xs sm:text-sm md:text-base text-center text-shadow-md transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
         >
           Me interesa
         </button>
